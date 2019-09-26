@@ -1,4 +1,5 @@
 let mapleader = " "
+"let g:snipMate.snippet_version = 1
 
 colorscheme evening
 
@@ -9,6 +10,8 @@ autocmd winNew * highlight trailingWhitespace ctermbg=Red guibg=red
 autocmd bufRead * match trailingWhitespace /\s\+$/
 autocmd sourcePre * match trailingWhitespace /\s\+$/
 autocmd winNew * match trailingWhitespace /\s\+$/
+
+filetype plugin on
 
 noremap <Leader>v :tabedit $MYVIMRC<CR>
 noremap <Leader>vv :source $MYVIMRC<CR>
@@ -31,4 +34,3 @@ set tabstop=4
 set wildmode=longest
 
 syntax enable
-syntax on

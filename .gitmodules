@@ -1,0 +1,9 @@
+[submodule "snipMate"]
+	path = vim/pack/foo/start/snipMate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "vim-addon-mw-utils"]
+	path = vim/pack/foo/start/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "tlib"]
+	path = vim/pack/foo/start/tlib
+	url = https://github.com/tomtom/tlib_vim.git
