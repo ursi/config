@@ -1,0 +1,12 @@
+[user]
+	email = masondeanm@aol.com
+	name = Mason Mackaman
+[core]
+	pager = less -x1,5
+	editor = vim
+[alias]
+	graph-all = log --oneline --abbrev=0 --graph --all
+	first-push = push -u origin master
+	ga = graph-all
+[winUpdater]
+	recentlySeenVersion = 2.23.0.windows.1
