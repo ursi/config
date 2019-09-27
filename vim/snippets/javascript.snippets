@@ -1,44 +1,27 @@
-snippet fof
-	for (let ${1:value} of ${2:iterable}) {
-		$3
-	}
-
-snippet div
-	<div${1: id="${2:id}"}${3: class="${4:class}"}>
-		$0
-	</
-
 snippet ael
-	addEventListener(`${1:click}`, ${2:function()}$3);
+	addEventListener(\`${1:click}\`, ${2:function()}$3);
 
 snippet a
 	{
 		$1
-	}
+	};
 
 snippet afunc
 	async function ${1:name}($2) {
 		$3
 	}
 
-#  'case':
-#	'prefix': 'case'
-#	'body': """
-#	case ${1:value}:
-#		$2; break;
-#	"""
-#																								  
-#  'console.log':
-#	'prefix': 'cl'
-#	'body': "console.log(${1:`test`});$2"
-#																								  
-#  'do...while':
-#	'prefix': 'do'
-#	'body': """
-#	do {
-#		$3
-#	} while ($1);${2:\n}
-#	"""
+snippet case
+	case ${1:value}:
+		$2; break;
+
+snippet cl
+	console.log(${1:\`test\`});$2
+
+snippet do
+	do {
+		$2
+	} while (${1:true});
 #																								  
 #  'document.createElement':
 #	'prefix': 'dce'
@@ -67,7 +50,11 @@ snippet afunc
 #		$2
 #	}
 #	"""
-#																								  
+snippet fof
+	for (let ${1:value} of ${2:iterable}) {
+		$3
+	}
+
 #  'for':
 #	'prefix': 'for'
 #	'body': """

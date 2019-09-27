@@ -3,13 +3,15 @@ let mapleader = " "
 
 colorscheme evening
 
-autocmd bufRead * highlight trailingWhitespace ctermbg=Red guibg=red
-autocmd sourcePre * highlight trailingWhitespace ctermbg=Red guibg=red
-autocmd winNew * highlight trailingWhitespace ctermbg=Red guibg=red
+autocmd bufRead,sourcePre,winNew * highlight trailingWhitespace ctermbg=Red guibg=red
+"autocmd sourcePre * highlight trailingWhitespace ctermbg=Red guibg=red
+"autocmd winNew * highlight trailingWhitespace ctermbg=Red guibg=red
 
-autocmd bufRead * match trailingWhitespace /\s\+$/
-autocmd sourcePre * match trailingWhitespace /\s\+$/
-autocmd winNew * match trailingWhitespace /\s\+$/
+autocmd bufRead,sourcePre,winNew * match trailingWhitespace /\s\+$/
+"autocmd sourcePre * match trailingWhitespace /\s\+$/
+"autocmd winNew * match trailingWhitespace /\s\+$/
+
+autocmd bufRead,BufNewFile *.pug set wrap
 
 filetype plugin on
 
