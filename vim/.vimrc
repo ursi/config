@@ -25,24 +25,24 @@ inoremap <S-CR> <CR><Tab>
 
 autocmd BufRead,BufNewFile * hi Folded ctermbg=DarkBlue ctermfg=White guibg=#666666 guifg=white
 
-set autoindent
-set autoread
-set backspace=indent,eol,start
-set complete=.
-set encoding=utf-8
-set foldmethod=indent
-set guifont=consolas:h12
-set guioptions=""
-set hlsearch ignorecase incsearch
-set nowrap
-set relativenumber
-set ruler
-set scrolloff=1 sidescrolloff=1
-set shiftwidth=0
-set smartcase
-set splitbelow splitright
-"set showtabline=2
-set tabstop=4
-set wildmode=longest
+set
+	\ autoindent
+	\ autoread
+	\ backspace=indent,eol,start
+	\ complete=.
+	\ encoding=utf-8
+	\ foldmethod=indent
+	\ guifont=consolas:h12
+	\ guioptions=""
+	\ hlsearch ignorecase incsearch
+	\ nowrap
+	\ relativenumber
+	\ ruler
+	\ scrolloff=1 sidescrolloff=1
+	\ shiftwidth=0
+	\ smartcase
+	\ splitbelow splitright
+	\ tabstop=4
+	\ wildmode=longest
 
 syntax enable
