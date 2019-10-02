@@ -33,18 +33,14 @@ set encoding=utf-8
 set foldmethod=indent
 set guifont=consolas:h12
 set guioptions=""
-set hlsearch
-set ignorecase
-set incsearch
+set hlsearch ignorecase incsearch
 set nowrap
 set relativenumber
 set ruler
-set scrolloff=1
+set scrolloff=1 sidescrolloff=1
 set shiftwidth=0
-set sidescrolloff=1
 set smartcase
-set splitbelow
-set splitright
+set splitbelow splitright
 "set showtabline=2
 set tabstop=4
 set wildmode=longest
