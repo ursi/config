@@ -33,7 +33,7 @@ set
 	\ encoding=utf-8
 	\ foldmethod=indent
 	\ guifont=consolas:h12
-	\ guioptions=""
+	\ guioptions=
 	\ hlsearch ignorecase incsearch
 	\ nowrap
 	\ relativenumber
