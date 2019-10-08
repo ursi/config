@@ -19,6 +19,7 @@ noremap <Leader>n :noh<CR>
 noremap <Leader>v :tabedit $MYVIMRC<CR>
 noremap <Leader>vv :source $MYVIMRC<CR>
 
+nnoremap <Leader>d ^elxd$o<Tab><Esc>p$r,o|" change from a single line delclaration to a multiline one
 nnoremap <Leader>g :!git<Space>
 
 inoremap <S-CR> <CR><Tab>
