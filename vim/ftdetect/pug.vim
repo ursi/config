@@ -1,1 +1,1 @@
-autocmd bufRead,bufNewFile *.pug set filetype=pug
+autocmd BufRead,BufNewFile *.pug set filetype=pug

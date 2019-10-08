@@ -73,6 +73,43 @@ snippet func
 snippet gebid
 	getElementById(\`$1\`)${2:,}
 
+snippet gulp
+	const
+		gulpPugClient = require(\`gulp-pug-client\`),
+		gulpPug = require(\`gulp-pug\`),
+		{
+			src,
+			dest,
+			parallel,
+			watch,
+		} = require(\`gulp\`),
+		path = require(\`path\`),
+		{Transform} = require(\`stream\`),
+		input = \`src/\`,
+		output = \`public/\`;
+
+	function copy() {
+		return src([input + \`*.js\`, input + \`*.css\`])
+			.pipe(dest(output));
+	}
+
+	function pugClient() {
+		return src(input + \`pug-client/*.pug\`)
+			.pipe(gulpPugClient())
+			.pipe(dest(output + \`pug-client\`));
+	}
+
+	function pug() {
+		return src(input + \`*.pug\`)
+			.pipe(gulpPug())
+			.pipe(dest(output));
+	}
+
+	exports.default = parallel(copy, pug, pugClient);
+	watch([input + \`*.js\`, input + \`*.css\`], copy);
+	watch(input + \`*.pug\`, pug);
+	watch(input + \`pug-client/*.pug\`, pugClient);
+
 snippet iiafe
 	(async()=>{
 		$2
