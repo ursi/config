@@ -12,6 +12,7 @@ autocmd BufRead,SourcePre,WinNew * match trailingWhitespace /\s\+$/
 "autocmd winNew * match trailingWhitespace /\s\+$/
 
 autocmd BufRead,BufNewFile *.pug setlocal wrap
+autocmd BufWinEnter * normal zi
 
 filetype plugin on
 
