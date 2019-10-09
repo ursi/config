@@ -1,5 +1,4 @@
 let mapleader = "\<Space>"
-"let g:snipMate.snippet_version = 1
 
 colorscheme evening
 
@@ -25,7 +24,7 @@ nnoremap <Leader>g :!git<Space>
 
 inoremap <S-CR> <CR><Tab>
 
-autocmd BufRead,BufNewFile * hi Folded ctermbg=DarkBlue ctermfg=White guibg=#666666 guifg=white
+autocmd BufRead,BufNewFile * highlight Folded ctermbg=DarkBlue ctermfg=White guibg=#666666 guifg=white
 
 set
 	\ autoindent
