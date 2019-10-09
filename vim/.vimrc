@@ -3,12 +3,7 @@ let mapleader = "\<Space>"
 colorscheme evening
 
 autocmd BufRead,SourcePre,WinNew * highlight trailingWhitespace ctermbg=Red guibg=red
-"autocmd sourcePre * highlight trailingWhitespace ctermbg=Red guibg=red
-"autocmd winNew * highlight trailingWhitespace ctermbg=Red guibg=red
-
 autocmd BufRead,SourcePre,WinNew * match trailingWhitespace /\s\+$/
-"autocmd sourcePre * match trailingWhitespace /\s\+$/
-"autocmd winNew * match trailingWhitespace /\s\+$/
 
 autocmd BufRead,BufNewFile *.pug setlocal wrap
 autocmd BufWinEnter * normal zi
