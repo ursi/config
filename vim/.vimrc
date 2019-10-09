@@ -2,11 +2,14 @@ let mapleader = "\<Space>"
 
 colorscheme evening
 
-autocmd BufRead,SourcePre,WinNew * highlight trailingWhitespace ctermbg=Red guibg=red
-autocmd BufRead,SourcePre,WinNew * match trailingWhitespace /\s\+$/
-
-autocmd BufRead,BufNewFile *.pug setlocal wrap
-autocmd BufWinEnter * normal zi
+aug vimrc
+	au!
+	au BufRead,SourcePre,WinNew * highlight trailingWhitespace ctermbg=Red guibg=red
+	au BufRead,SourcePre,WinNew * match trailingWhitespace /\s\+$/
+	au BufRead,BufNewFile *.pug setlocal wrap
+	au BufWinEnter * normal zi
+	au BufRead,BufNewFile * highlight Folded ctermbg=DarkBlue ctermfg=White guibg=#666666 guifg=white
+aug end
 
 filetype plugin on
 
@@ -18,8 +21,6 @@ nnoremap <Leader>d ^elxd$o<Tab><Esc>p$r,o|" change from a single line delclarati
 nnoremap <Leader>g :!git<Space>
 
 inoremap <S-CR> <CR><Tab>
-
-autocmd BufRead,BufNewFile * highlight Folded ctermbg=DarkBlue ctermfg=White guibg=#666666 guifg=white
 
 set
 	\ autoindent
