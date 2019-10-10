@@ -23,23 +23,22 @@ nnoremap <Leader>g :!git<Space>
 inoremap <S-CR> <CR><Tab>
 
 set
-	\ autoindent
-	\ autoread
-	\ backspace=indent,eol,start
-	\ complete=.
-	\ encoding=utf-8
-	\ foldmethod=indent
-	\ guifont=consolas:h12
-	\ guioptions=
-	\ hlsearch ignorecase incsearch
-	\ nowrap
-	\ relativenumber
-	\ ruler
-	\ scrolloff=1 sidescrolloff=1
-	\ shiftwidth=0
-	\ smartcase
-	\ splitbelow splitright
-	\ tabstop=4
-	\ wildmode=longest
+\	autoindent
+\	autoread
+\	backspace=indent,eol,start
+\	complete=.
+\	encoding=utf-8
+\	foldmethod=indent
+\	guifont=consolas:h12
+\	guioptions=
+\	hlsearch ignorecase incsearch
+\	nowrap
+\	relativenumber
+\	ruler
+\	scrolloff=1 sidescrolloff=1
+\	shiftwidth=0 tabstop=4
+\	smartcase
+\	splitbelow splitright
+\	wildmode=longest
 
 syntax enable
