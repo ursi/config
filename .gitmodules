@@ -16,3 +16,6 @@
 [submodule "ultisnips"]
 	path = vim/pack/foo/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "vim-match"]
+	path = vim/pack/foo/start/vim-match
+	url = https://github.com/Ursi/vim-match.git
