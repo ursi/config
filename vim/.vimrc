@@ -2,6 +2,8 @@ let mapleader = "\<Space>"
 
 colorscheme evening
 
+filetype plugin on
+
 aug vimrc
 	au!
 	au BufRead,SourcePre,WinNew * highlight trailingWhitespace ctermbg=Red guibg=red
@@ -9,18 +11,18 @@ aug vimrc
 	au BufRead,BufNewFile *.pug setlocal wrap
 	au BufWinEnter * normal zi
 	au BufRead,BufNewFile * highlight Folded ctermbg=DarkBlue ctermfg=White guibg=#666666 guifg=white
+	au FileType * set formatoptions&
 aug end
-
-filetype plugin on
 
 noremap <Leader>n :noh<CR>
 noremap <Leader>v :tabedit $MYVIMRC<CR>
-noremap <Leader>vv :source $MYVIMRC<CR>
+noremap <Leader>s :write<CR>:source %<CR>
+noremap <Leader>f :h function-list<CR>
 
 nnoremap <Leader>d ^elxd$o<Tab><Esc>p$r,o|" change from a single line delclaration to a multiline one
 nnoremap <Leader>g :!git<Space>
 
-inoremap <S-CR> <CR><Tab>
+inoremap <C-J> <Right>
 
 set
 \	autoindent
