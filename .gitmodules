@@ -11,5 +11,8 @@
 	path = vim/pack/foo/start/surround
 	url = https://tpope.io/vim/surround.git
 [submodule "vim-snipmate"]
-	path = vim/pack/foo/start/vim-snipmate
+	path = vim/pack/foo/opt/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
+[submodule "ultisnips"]
+	path = vim/pack/foo/opt/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
