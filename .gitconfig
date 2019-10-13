@@ -8,5 +8,6 @@
 	graph-all = log --oneline --abbrev=0 --graph --all
 	first-push = push -u origin master
 	ga = graph-all
+	cloners = clone --recurse-submodules
 [winUpdater]
 	recentlySeenVersion = 2.23.0.windows.1
