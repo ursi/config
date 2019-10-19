@@ -1,2 +1,2 @@
-noremap <Leader>r :w<CR>:!node %<CR>
+noremap <buffer> <Leader>r :w<CR>:!node %<CR>
 setlocal iskeyword+=-
