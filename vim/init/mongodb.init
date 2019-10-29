@@ -1,0 +1,17 @@
+(async()=>{
+	const
+		{MongoClient} = require(`mongodb`),
+		client = new MongoClient(``);
+		db = (await client.connect()).db();
+
+	await Promise.all([
+	].map(async c => {
+		eval(`globalThis.${c} = db.collection('${c}')`);
+		db.dropCollection(c).catch(()=>{});
+	}));
+
+	await Promise.all([
+	]);
+
+	client.close();
+})();

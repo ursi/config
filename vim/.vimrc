@@ -44,3 +44,14 @@ set
 \	wildmode=longest
 
 syntax enable
+
+fu! Init(test)
+	let lnum = line(".")
+	let lines =readfile(findfile("init/" . a:test . ".init", &runtimepath))
+	let first_line = lines[0]
+	let rest = lines[1:]
+	cal setline(lnum, first_line)
+	cal append(lnum, rest)
+endf
+
+command! -nargs=1 Init :cal Init(<f-args>)
