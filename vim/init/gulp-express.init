@@ -1,0 +1,30 @@
+const
+	{
+		src,
+		dest,
+		series,
+		parallel,
+		watch,
+	} = require(`gulp`),
+	input = `gulp/`,
+	globs = {};
+
+globs. =;
+function () {
+	return src(globs.)
+		.pipe()
+		.pipe(dest());
+}
+
+function build(watchTask) {
+	return ;
+}
+
+async function watchFiles() {
+	watch(globs., );
+}
+
+module.exports = {
+	default: parallel(build(), watchFiles),
+	build: build(),
+};

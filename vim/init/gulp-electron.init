@@ -1,0 +1,75 @@
+const
+	gulpPugClient = require(`gulp-pug-client`),
+	gulpPug = require(`gulp-pug`),
+	gulpBabel = require(`gulp-babel`),
+	{
+		src,
+		dest,
+		series,
+		parallel,
+		watch,
+	} = require(`gulp`),
+	input = `src/`,
+	output = `dist/`,
+	globs = {};
+
+globs.copy = [
+	`**/*.js`,
+	`**/*.css`,
+	`**/*.json`,
+	`**/*.png`,
+].map(g => input + g)
+	.concat([
+		`!${input}node_modules/**`,
+		`!${input}win/modules/**/*.js`,
+	]);
+
+function copy() {
+	return src(globs.copy)
+		.pipe(dest(output));
+}
+
+globs.nodeModules = [input + `node_modules/**`, input + `node_modules/.bin/**`];
+function copyNodeModules() {
+	return src(globs.nodeModules, {dot: true})
+		.pipe(dest(output + `node_modules`));
+}
+
+globs.pugClient = input + `win/pug-client/*.pug`;
+function pugClient() {
+	return src(globs.pugClient)
+		.pipe(gulpPugClient())
+		.pipe(dest(output + `win/pug-client`));
+}
+
+globs.pug = input + `win/*.pug`;
+function pug() {
+	return src(globs.pug)
+		.pipe(gulpPug())
+		.pipe(dest(output + `win`));
+}
+
+globs.babel = input + `win/modules/**/*.js`;
+function babel() {
+	return src(globs.babel)
+		.pipe(gulpBabel({plugins: [`@babel/plugin-transform-modules-commonjs`]}))
+		.pipe(dest(output + `win/modules`));
+}
+
+function build() {
+	return parallel(copy, copyNodeModules, pug, pugClient, babel);
+}
+
+async function watchFiles() {
+	const cry = {usePolling: true};
+	watch(globs.copy, cry, copy);
+	watch(globs.nodeModules, copyNodeModules);
+	watch(globs.pug, pug);
+	watch(globs.pugClient, pugClient);
+	watch(globs.babel, babel);
+}
+
+module.exports = {
+	default: parallel(build(), watchFiles),
+	build: build(),
+};

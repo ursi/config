@@ -5,12 +5,14 @@
 		db = (await client.connect()).db();
 
 	await Promise.all([
+		`SIDs`,
 	].map(async c => {
 		eval(`globalThis.${c} = db.collection('${c}')`);
 		db.dropCollection(c).catch(()=>{});
 	}));
 
 	await Promise.all([
+		SIDs.createIndex({assigned: 1}, {expireAfterSeconds: 30 * 86400}),
 	]);
 
 	client.close();
