@@ -55,3 +55,17 @@ fu! Init(test)
 endf
 
 command! -nargs=1 Init :cal Init(<f-args>)
+
+fu! Bracket()
+	let cur_line = getline(".")
+	let last_char = nr2char(strgetchar(cur_line, strlen(cur_line) - 1))
+	if last_char == ";"
+		retu "^l%la{\<Enter>\<Tab>\<Esc>o\<BS>}\<Esc>k"
+	elsei last_char == ")"
+		retu "A {\<Esc>jo\<BS>}\<Esc>k"
+	elsei last_char == "{"
+		retu "$2x\<S-D>2jdd2k"
+	en
+endf
+
+nn <expr> <Leader>b Bracket()
