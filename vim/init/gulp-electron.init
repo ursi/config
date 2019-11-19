@@ -13,16 +13,11 @@ const
 	output = `dist/`,
 	globs = {};
 
-globs.copy = [
-	`**/*.js`,
-	`**/*.css`,
-	`**/*.json`,
-	`**/*.png`,
-].map(g => input + g)
-	.concat([
-		`!${input}node_modules/**`,
-		`!${input}win/modules/**/*.js`,
-	]);
+globs.copy = [input + `**`, ...[
+	`node_modules/**`,
+	`win/web-modules/**`,
+	`**/*.pug`,
+].map(g => `!` + input + g)];
 
 function copy() {
 	return src(globs.copy)
@@ -56,20 +51,17 @@ function babel() {
 		.pipe(dest(output + `win/modules`));
 }
 
-function build() {
-	return parallel(copy, copyNodeModules, pug, pugClient, babel);
-}
+const lightBuild = parallel(copy, pug, pugClient, babel);
 
 async function watchFiles() {
 	const cry = {usePolling: true};
 	watch(globs.copy, cry, copy);
-	watch(globs.nodeModules, copyNodeModules);
 	watch(globs.pug, pug);
 	watch(globs.pugClient, pugClient);
 	watch(globs.babel, babel);
 }
 
 module.exports = {
-	default: parallel(build(), watchFiles),
-	build: build(),
+	default: parallel(lightBuild, watchFiles),
+	build: parallel(lightBuild, copyNodeModules),
 };

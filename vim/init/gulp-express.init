@@ -1,4 +1,5 @@
 const
+	gulpPugClient = require(`gulp-pug-client`),
 	{
 		src,
 		dest,
@@ -9,22 +10,20 @@ const
 	input = `gulp/`,
 	globs = {};
 
-globs. =;
-function () {
-	return src(globs.)
-		.pipe()
-		.pipe(dest());
+globs.pugClient = input + `pug-client/*.pug`;
+function pugClient() {
+	return src(globs.pugClient)
+		.pipe(gulpPugClient())
+		.pipe(dest(`public/pug-client`));
 }
 
-function build(watchTask) {
-	return ;
-}
+const build = pugClient;
 
 async function watchFiles() {
-	watch(globs., );
+	watch(globs.pugClient, pugClient);
 }
 
 module.exports = {
-	default: parallel(build(), watchFiles),
-	build: build(),
+	default: parallel(build, watchFiles),
+	build: build,
 };

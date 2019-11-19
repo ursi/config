@@ -4,11 +4,11 @@ const
 	express = require(`express`),
 	path = require(`path`),
 	cookieParser = require(`cookie-parser`),
-	UserManager = require(`user-manager`),
+	UserManager = require(`user-manager`);
 
 const
 	{MongoClient} = require(`mongodb`),
-	client = new MongoClient(``),
+	client = new MongoClient(process.env.),
 	db = (await client.connect()).db(),
 	users = db.collection(`users`),
 	sids = db.collection(`SIDs`);
@@ -19,7 +19,7 @@ express()
 	.set(`view engine`, `pug`)
 	.use(express.static(path.join(__dirname, `public`)))
 	.use(express.urlencoded({extended: true}))
-	.use(cookieParser())
+	.use(cookieParser(null, {decode: c => c}))
 	.use(um.get())
 	.get(`/`, (req, res) => res.sendStatus(200))
 	.post(`/auth`, um.auth())
