@@ -35,7 +35,7 @@ set
 \	guioptions=
 \	hlsearch ignorecase incsearch
 \	nowrap
-\	relativenumber
+\	number relativenumber
 \	ruler
 \	scrolloff=1 sidescrolloff=1
 \	shiftwidth=0 tabstop=4
