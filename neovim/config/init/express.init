@@ -1,0 +1,9 @@
+const
+	express = require(`express`),
+	path = require(`path`);
+
+express()
+	.set(`view engine`, `pug`)
+	.use(express.static(path.join(__dirname, `public`)))
+	.get(`/`, (req, res) => res.sendStatus(200))
+	.listen(process.env.PORT || 80);

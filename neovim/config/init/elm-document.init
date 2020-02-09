@@ -1,0 +1,34 @@
+module Main exposing (..)
+import Browser exposing (Document)
+import Css as C
+import Html.Styled as H exposing (Html)
+import Html.Styled.Attributes as A
+import Html.Styled.Events as E
+todo = Debug.todo ""
+main : Program () Model Msg
+main =
+    Browser.document
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        , view = view
+        }
+-- MODEL
+type alias Model = ()
+init : () -> ( Model, Cmd Msg )
+init _ = todo
+-- UPDATE
+type Msg = Todo
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        _ -> todo
+-- SUBSCRIPTIONS
+subscriptions : Model -> Sub Msg
+subscriptions _ = Sub.none
+-- VIEW
+view : Model -> Document Msg
+view model =
+    { title = ""
+    , body = [ todo ] |> List.map H.toUnstyled
+    }

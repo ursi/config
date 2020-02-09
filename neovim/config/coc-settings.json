@@ -1,0 +1,18 @@
+{
+	//"coc.preferences.formatOnInsertLeave": true,
+	"coc.preferences.formatOnSaveFiletypes": ["elm"],
+	"diagnostic.maxWindowHeight": 50,
+	"languageserver": {
+		"elmLS": {
+			"command": "elm-language-server.cmd",
+			"filetypes": ["elm"],
+			"rootPatterns": ["elm.json"],
+			"initializationOptions": {
+				"elmPath": "elm", // optional
+				"elmFormatPath": "elm-format", // optional
+				"elmAnalyseTrigger": "never" // optional
+			}
+		}
+	},
+	"suggest.autoTrigger": "none"
+}
