@@ -1,0 +1,54 @@
+port module Name exposing (Msg(..), in_)
+
+import Json.Decode as D exposing (Decoder, Value, decodeValue)
+import Json.Encode as E
+
+
+type CmdMsg
+    = CmdMsg
+
+
+type Msg
+    = Error D.Error
+
+
+type alias MsgData =
+    { msg : String
+    , data : Value
+    }
+
+
+out : CmdMsg -> Cmd msg
+out outMsg =
+    outPort
+        (case outMsg of
+            CmdMsg ->
+                MsgData
+                    "CmdMsg"
+                    (Debug.todo "CmdMsg encoder")
+        )
+
+
+in_ : (Msg -> msg) -> Sub msg
+in_ dataToMsg =
+    inPort <|
+        \msgData ->
+            let
+                decoder : Decoder Msg
+                decoder =
+                    case msgData.msg of
+                        incorrect ->
+                            D.map Error <| D.fail <| incorrect ++ " is not a valid message"
+            in
+            case decodeValue decoder msgData.data of
+                Ok value ->
+                    dataToMsg <| value
+
+                Err error ->
+                    dataToMsg <| Error error
+
+
+port portOut : MsgData -> Cmd msg
+
+
+port portIn : (MsgData -> msg) -> Sub msg
