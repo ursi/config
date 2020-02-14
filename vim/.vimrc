@@ -1,3 +1,4 @@
+let g:polyglot_disabled = ['elm']
 let mapleader = "\<Space>"
 
 colorscheme evening
@@ -9,12 +10,12 @@ aug vimrc
 	au BufRead,SourcePre,WinNew * highlight trailingWhitespace ctermbg=Red guibg=red
 	au BufRead,SourcePre,WinNew * match trailingWhitespace /\s\+$/
 	au BufRead,BufNewFile *.pug setlocal wrap
-	au BufWinEnter * normal zi
 	au BufRead,BufNewFile * highlight Folded ctermbg=DarkBlue ctermfg=White guibg=#666666 guifg=white
-	au FileType * set formatoptions&
+	"au FileType * set formatoptions&
+	au FileType * set formatoptions-=o
 aug end
 
-noremap <Leader>n :noh<CR>
+noremap <Leader>n :nohlsearch<CR>
 noremap <Leader>v :tabedit $MYVIMRC<CR>
 noremap <Leader>s :write<CR>:source %<CR>
 noremap <Leader>f :h function-list<CR>
@@ -34,6 +35,7 @@ set
 \	guifont=consolas:h12
 \	guioptions=
 \	hlsearch ignorecase incsearch
+\	nofoldenable
 \	nowrap
 \	number relativenumber
 \	ruler
