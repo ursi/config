@@ -64,5 +64,5 @@ Plug 'andys8/vim-elm-syntax'
 " Pug
 Plug 'digitaltoad/vim-pug'
 
-Plug 'Ursi/vim-match'
+Plug 'ursi/vim-match'
 call plug#end()
