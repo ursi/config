@@ -11,4 +11,9 @@
 	cloners = clone --recurse-submodules
 	tpush = push --tags origin master
 [winUpdater]
-	recentlySeenVersion = 2.23.0.windows.1
+	recentlySeenVersion = 2.25.1.windows.1
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
