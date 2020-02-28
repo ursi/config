@@ -15,6 +15,20 @@ aug vimrc
 	au FileType * set formatoptions-=o
 aug end
 
+fu! MapEvery(mapStr)
+	let prefixes = ['', 'v', 's', 'i', 'l', 't']
+	let almostAllMapCmds = map(prefixes, 'v:val . "noremap"')
+	"let allMapCmds = add(almostAllMapCmds, 'noremap!')
+	"let allMaps = map(allMapCmds, 'v:val . " " . a:mapStr')
+	let allMaps = map(almostAllMapCmds, 'v:val . " " . a:mapStr')
+	cal map(allMaps, 'execute(v:val)')
+endf
+
+"cal MapEvery('<Tab> <Esc>')
+"cal MapEvery('<CR> <Tab>')
+"unmap! <CR>
+"cnoremap <Tab> <C-C>
+
 noremap <Leader>n :nohlsearch<CR>
 noremap <Leader>v :tabedit $MYVIMRC<CR>
 noremap <Leader>s :write<CR>:source %<CR>
@@ -71,3 +85,9 @@ fu! Bracket()
 endf
 
 nn <expr> <Leader>b Bracket()
+
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'ursi/vim-match'
+Plug 'sheerun/vim-polyglot'
+call plug#end()
