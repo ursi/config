@@ -44,11 +44,11 @@ function pug() {
 		.pipe(dest(output + `win`));
 }
 
-globs.babel = input + `win/modules/**/*.js`;
+globs.babel = input + `web-modules/**/*.js`;
 function babel() {
 	return src(globs.babel)
 		.pipe(gulpBabel({plugins: [`@babel/plugin-transform-modules-commonjs`]}))
-		.pipe(dest(output + `win/modules`));
+		.pipe(dest(output + `web-modules`));
 }
 
 const lightBuild = parallel(copy, pug, pugClient, babel);
