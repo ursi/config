@@ -1,54 +1,28 @@
-port module Name exposing (Msg(..), in_)
+port module Ports exposing (Msg(..), in_)
 
-import Json.Decode as D exposing (Decoder, Value, decodeValue)
+import Json.Decode as D exposing (Value)
 import Json.Encode as E
-
-
-type CmdMsg
-    = CmdMsg
+import SupPort
 
 
 type Msg
     = Error D.Error
 
 
-type alias MsgData =
-    { msg : String
-    , data : Value
-    }
-
-
-out : CmdMsg -> Cmd msg
-out outMsg =
-    outPort
-        (case outMsg of
-            CmdMsg ->
-                MsgData
-                    "CmdMsg"
-                    (Debug.todo "CmdMsg encoder")
-        )
+out : String -> List Value -> Cmd msg
+out =
+    SupPort.out portsOut
 
 
 in_ : (Msg -> msg) -> Sub msg
-in_ dataToMsg =
-    inPort <|
-        \msgData ->
-            let
-                decoder : Decoder Msg
-                decoder =
-                    case msgData.msg of
-                        incorrect ->
-                            D.map Error <| D.fail <| incorrect ++ " is not a valid message"
-            in
-            case decodeValue decoder msgData.data of
-                Ok value ->
-                    dataToMsg <| value
-
-                Err error ->
-                    dataToMsg <| Error error
+in_ =
+    SupPort.in_
+        portsIn
+        Error
+        []
 
 
-port portOut : MsgData -> Cmd msg
+port portsOut : Value -> Cmd msg
 
 
-port portIn : (MsgData -> msg) -> Sub msg
+port portsIn : (Value -> msg) -> Sub msg
