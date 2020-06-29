@@ -1,16 +1,24 @@
 call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'ursi/vim-match'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
 
 " Elm
 Plug 'andys8/vim-elm-syntax'
 
+" JavaScript
+Plug 'pangloss/vim-javascript'
+
 " Pug
 Plug 'digitaltoad/vim-pug'
 
-Plug 'relastle/bluewery.vim'
+" PureScript
+Plug 'purescript-contrib/purescript-vim'
+
+"Plug 'relastle/bluewery.vim'
 call plug#end()
 
 let mapleader = "\<Space>"
@@ -18,6 +26,8 @@ let mapleader = "\<Space>"
 let gruvbox_invert_tabline = 1
 let gruvbox_invert_selection = 0
 colorscheme gruvbox
+
+let g:ale_fix_on_save = 1
 
 " since this is primarily going to be used for elm for now
 let match_autoindent = 0
@@ -28,7 +38,7 @@ aug vimrc
 	au BufRead,SourcePre,WinNew * match trailingwhitespace /\s\+$/
 
 	" ftplugins like to change this setting
-	au BufWinEnter * set formatoptions-=o formatoptions -=r
+	au BufWinEnter * set formatoptions-=o formatoptions-=r indentexpr=""
 
 	" make autoread work like gvim
 	au FocusGained * :checktime
@@ -57,8 +67,15 @@ noremap <Leader>s :write<CR>:source %<CR>
 
 inoremap <C-J> <Right>
 
+nnoremap <Down> gj
+nnoremap <Up> gk
+
+"to use n spaces instead of tabs
+"se sw=n et
+
 set
-\	complete=.
+\	complete=.,w
+\	directory=.
 \	foldmethod=indent
 \	ignorecase smartcase
 \	nofoldenable
