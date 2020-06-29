@@ -1,1 +1,1 @@
-set spell spelllang=en
+set spell
