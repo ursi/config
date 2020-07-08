@@ -1,1 +1,1 @@
-noremap <Leader>f :h function-list<CR>
+noremap <buffer> <Leader>f :h function-list<CR>
