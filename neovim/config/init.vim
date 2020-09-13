@@ -92,20 +92,19 @@ vnoremap q :normal ^@q<CR>
 "se sw=n et
 
 "\	backupdir-=.
-set
-\	complete=.,w
+set	complete=.,w
 " something to do with PureScript tooling I believe
-\	backupcopy=yes
-\	directory=.
-\	foldmethod=indent
-\	ignorecase smartcase
-\	nofoldenable
-\	nowrap
-\	relativenumber
-\	scrolloff=1 sidescrolloff=1
-\	shiftwidth=0 tabstop=4
-\	splitbelow splitright
-\	wildmode=longest
+set	backupcopy=yes
+set	directory=.
+set	foldmethod=indent
+set	ignorecase smartcase
+set	nofoldenable
+set	nowrap
+set	relativenumber
+set	scrolloff=1 sidescrolloff=1
+set	shiftwidth=0 tabstop=4
+set	splitbelow splitright
+set	wildmode=longest
 " ftplugins like to change this setting
 "set formatoptions-=o
 
