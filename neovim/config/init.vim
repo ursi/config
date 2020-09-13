@@ -18,8 +18,22 @@ Plug 'digitaltoad/vim-pug'
 " PureScript
 Plug 'purescript-contrib/purescript-vim'
 
+" Dhall (Windows)
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'powershell -executionpolicy bypass -File install.ps1',
+    \ }
+
+Plug 'vmchale/dhall-vim'
+
 "Plug 'relastle/bluewery.vim'
 call plug#end()
+
+let g:LanguageClient_serverCommands = {
+    \ 'dhall': ['dhall-lsp-server'],
+    \ }
+
+let g:dhall_format=1
 
 let mapleader = "\<Space>"
 
@@ -27,6 +41,7 @@ let gruvbox_invert_tabline = 1
 let gruvbox_invert_selection = 0
 colorscheme gruvbox
 
+let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 
 " since this is primarily going to be used for elm for now
@@ -61,6 +76,7 @@ endf
 "cal MapEvery('<BS> <Tab>')
 "cnoremap <Tab> <Esc>
 
+noremap <Leader>c :cd %:h<CR>
 noremap <Leader>n :nohlsearch<CR>
 noremap <Leader>v :tabedit $MYVIMRC<CR>
 noremap <Leader>s :write<CR>:source %<CR>
@@ -70,11 +86,16 @@ inoremap <C-J> <Right>
 nnoremap <Down> gj
 nnoremap <Up> gk
 
+vnoremap q :normal ^@q<CR>
+
 "to use n spaces instead of tabs
 "se sw=n et
 
+"\	backupdir-=.
 set
 \	complete=.,w
+" something to do with PureScript tooling I believe
+\	backupcopy=yes
 \	directory=.
 \	foldmethod=indent
 \	ignorecase smartcase
