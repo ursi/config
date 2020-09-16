@@ -1,6 +1,5 @@
-setlocal
-\	shiftwidth=2 expandtab
-\	iskeyword+='
+setlocal shiftwidth=2 expandtab
+setlocal iskeyword+='
 
 let b:ale_fixers = ['purty']
 let b:ale_linters = 'all'

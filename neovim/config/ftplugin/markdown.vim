@@ -1,3 +1,2 @@
-setlocal
-\	wrap
-\	spell
+setlocal wrap
+setlocal spell
