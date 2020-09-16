@@ -18,10 +18,10 @@ Plug 'digitaltoad/vim-pug'
 " PureScript
 Plug 'purescript-contrib/purescript-vim'
 
-" Dhall (Windows)
+" Dhall
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
-    \ 'do': 'powershell -executionpolicy bypass -File install.ps1',
+    \ 'do': 'bash install.sh',
     \ }
 
 Plug 'vmchale/dhall-vim'
