@@ -88,12 +88,10 @@
     xkbOptions = "eurosign:e";
 
     # Enable the KDE Desktop Environment.
-    displayManager.sddm.enable = true;
+    # displayManager.sddm.enable = true;
     # desktopManager.plasma5.enable = true;
-    windowManager.i3.enable = true;
 
-    # Disable mouse acceleration
-    libinput.accelProfile = "flat"; # Didn't change the setting :(
+    windowManager.i3.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
