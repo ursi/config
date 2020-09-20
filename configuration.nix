@@ -87,6 +87,13 @@
     layout = "us";
     xkbOptions = "eurosign:e";
 
+    # Disable mouse acceleration
+    libinput = {
+      enable = true;
+      accelProfile = "flat";
+      accelSpeed = "0";
+    };
+
     # Enable the KDE Desktop Environment.
     # displayManager.sddm.enable = true;
     # desktopManager.plasma5.enable = true;
