@@ -81,24 +81,26 @@
   # Enable touchpad support.
   # services.xserver.libinput.enable = true;
 
-  services.xserver = {
-    # Enable the X11 windowing system.
-    enable = true;
-    layout = "us";
-    xkbOptions = "eurosign:e";
-
-    # Disable mouse acceleration
-    libinput = {
+  services = {
+    xserver = {
+      # Enable the X11 windowing system.
       enable = true;
-      accelProfile = "flat";
-      accelSpeed = "0";
+      layout = "us";
+      xkbOptions = "eurosign:e";
+
+      # Disable mouse acceleration
+      libinput = {
+        enable = true;
+        accelProfile = "flat";
+        accelSpeed = "0";
+      };
+
+      # Enable the KDE Desktop Environment.
+      # displayManager.sddm.enable = true;
+      # desktopManager.plasma5.enable = true;
+
+      windowManager.i3.enable = true;
     };
-
-    # Enable the KDE Desktop Environment.
-    # displayManager.sddm.enable = true;
-    # desktopManager.plasma5.enable = true;
-
-    windowManager.i3.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
