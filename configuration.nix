@@ -134,12 +134,12 @@
           wally-cli
         ];
 
-        password = " ";
+        password = "";
       };
 
       root = {
         extraGroups = [ "root" ];
-        password = " ";
+        password = "";
       };
     };
   };
