@@ -49,6 +49,7 @@
     neovim
     ntfs3g
     unzip
+    xfce.xfce4-terminal
     w3m
   ];
 
@@ -125,7 +126,11 @@
         packages = with pkgs; [
           brave
           discord
-          xfce.xfce4-terminal
+          go-sct
+          pavucontrol
+          signal-desktop
+          spectacle
+          xclip
           wally-cli
         ];
 
