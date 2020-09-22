@@ -48,6 +48,7 @@
     git
     neovim
     ntfs3g
+    unzip
     w3m
   ];
 

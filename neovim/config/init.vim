@@ -26,6 +26,9 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 Plug 'vmchale/dhall-vim'
 
+" Nix
+Plug 'LnL7/vim-nix'
+
 "Plug 'relastle/bluewery.vim'
 call plug#end()
 
