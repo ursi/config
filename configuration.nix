@@ -44,19 +44,23 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    brave
-    git
-    neovim
-    ntfs3g
-    parted
-    pavucontrol
-    spectacle
-    unzip
-    xclip
-    xfce.xfce4-terminal
-    w3m
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      brave
+      git
+      neovim
+      ntfs3g
+      parted
+      pavucontrol
+      spectacle
+      unzip
+      xclip
+      xfce.xfce4-terminal
+      w3m
+    ];
+
+    variables = { EDITOR = "nvim"; };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
