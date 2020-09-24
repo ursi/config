@@ -48,6 +48,7 @@
     git
     neovim
     ntfs3g
+    parted
     unzip
     xfce.xfce4-terminal
     w3m
