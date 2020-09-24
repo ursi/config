@@ -123,6 +123,7 @@
 
     users = {
       mason = {
+        createHome = true;
         description = "Mason Mackaman";
         extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
         isNormalUser = true;
