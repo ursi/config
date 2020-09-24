@@ -45,11 +45,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    brave
     git
     neovim
     ntfs3g
     parted
+    pavucontrol
+    spectacle
     unzip
+    xclip
     xfce.xfce4-terminal
     w3m
   ];
@@ -118,13 +122,9 @@
         isNormalUser = true;
 
         packages = with pkgs; [
-          brave
           discord
           go-sct
-          pavucontrol
           signal-desktop
-          spectacle
-          xclip
           wally-cli
         ];
 
