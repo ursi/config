@@ -18,12 +18,18 @@ function gitBranch {
 	fi
 }
 
+function nixShell
+	if [[ $IN_NIX_SHELL != "" ]]; then
+		echo "$nixShellColor[nix] "
+	fi
+
 function makeColor { echo "\e[$1m"; }
 reset=$(makeColor 0)
 bold=$(makeColor 1)
 mainColor=$(makeColor 32)
 branchColor=$(makeColor 31)
 sepColor=$(makeColor "38;2;0;150;255")
+nixShellColor=$(makeColor 33)
 function makeTitle { echo "\e]0;$1\a"; }
 title=$(makeTitle "\w")
-PROMPT_COMMAND='export PS1="$title\n$bold$mainColor\w $(gitBranch)$mainColor\$$reset "'
+PROMPT_COMMAND='export PS1="$title\n$bold$(nixShell)$mainColor\w $(gitBranch)$mainColor\$$reset "'
