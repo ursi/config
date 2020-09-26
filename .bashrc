@@ -13,13 +13,13 @@ function trash { mv $1 ~/.trash; }
 function gitBranch {
 	a=$(git branch --show-current 2> /dev/null)
 
-	if [[ $a != "" ]]; then
+	if [[ -n $a ]]; then
 		echo "$sepColor| $branchColor$a "
 	fi
 }
 
 function nixShell
-	if [[ $IN_NIX_SHELL != "" ]]; then
+	if [[ -n $IN_NIX_SHELL ]]; then
 		echo "$nixShellColor[nix] "
 	fi
 
