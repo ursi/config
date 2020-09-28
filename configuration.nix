@@ -48,7 +48,7 @@
     systemPackages = with pkgs; [
       brave
       git
-      neovim
+      (neovim.override { withNodeJs = true; })
       ntfs3g
       parted
       pavucontrol
