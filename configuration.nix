@@ -22,11 +22,15 @@
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
-  networking.interfaces.eno1.useDHCP = true;
+  networking = {
+    networkmanager.enable = true;
+
+    # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+    # Per-interface useDHCP will be mandatory in the future, so this generated config
+    # replicates the default behaviour.
+    useDHCP = false;
+    interfaces.eno1.useDHCP = true;
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -70,6 +74,8 @@
   #   enableSSHSupport = true;
   #   pinentryFlavor = "gnome3";
   # };
+
+  programs.nm-applet.enable = true;
 
   # List services that you want to enable:
 
@@ -128,7 +134,7 @@
       mason = {
         createHome = true;
         description = "Mason Mackaman";
-        extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+        extraGroups = [ "networkmanager" "wheel" ];
         isNormalUser = true;
 
         packages = with pkgs; [
