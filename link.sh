@@ -5,8 +5,9 @@ function replaceDir {
 
 	if [[ -h $dir ]]; then
 		rm $dir
-		ln -rs $1 $dir
 	fi
+
+	ln -rs $1 $dir
 }
 
 # bash
