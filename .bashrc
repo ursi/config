@@ -1,14 +1,28 @@
 alias apply="source ~/.bashrc"
 alias day="sct 6500"
-alias i3conf="nvim ~/dotfiles/i3/config"
+
+function gitclonecd {
+	git clone $1 && {
+		dir=$(echo $1 | sed -E 's/^.*\/([^./]+)(.git)?$/\1/')
+		mcd $dir
+	}
+}
+
 alias lls="ls --color | less -r"
 alias ls="ls -A --color=tty --group-directories-first"
 alias lsL="ls -L"
+function mcd { mkdir -p $1 && cd $1; }
+function mcp { mkdir -p $2 && cp $1 $2; }
+function mcpd { mkdir -p $2 && cp $1 $2 && cd $2; }
+function mmv { mkdir -p $2 && mv $1 $2; }
 alias night="sct 3000"
+
+function trash {
+	mv $1 ~/.trash/$(basename $1)@$(date +%Y-%m-%d~%H:%M:%S)
+}
+
 alias xclipc="xclip -selection clipboard"
 alias xclipng="xclip -t image/png -selection clipboard"
-
-function trash { mv $1 ~/.trash; }
 
 function gitBranch {
 	a=$(git branch --show-current 2> /dev/null)
