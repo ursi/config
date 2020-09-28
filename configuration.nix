@@ -137,12 +137,35 @@
         extraGroups = [ "networkmanager" "wheel" ];
         isNormalUser = true;
 
-        packages = with pkgs; [
-          discord
-          go-sct
-          signal-desktop
-          wally-cli
-        ];
+        packages = with pkgs;
+          let
+            communication = [
+              discord
+              signal-desktop
+            ];
+
+            editor =
+              let
+                elm = with elmPackages; [
+                  elm-language-server
+                  elm-format
+                ];
+
+                node = with nodePackages; [
+                  purescript-language-server
+                ];
+              in
+                elm ++ node;
+          in
+            [
+              gnome3.nautilus # for seeing images
+              go-sct
+              nodePackages.node2nix
+              (polybar.override { i3Support = true; })
+              wally-cli
+            ]
+              ++ communication
+              ++ editor;
 
         password = "";
       };
