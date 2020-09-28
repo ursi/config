@@ -42,7 +42,7 @@ reset=$(makeColor 0)
 bold=$(makeColor 1)
 mainColor=$(makeColor 32)
 branchColor=$(makeColor 31)
-sepColor=$(makeColor "34")
+sepColor=$(makeColor 34)
 nixShellColor=$(makeColor 33)
 function makeTitle { echo "\[\e]0;$1\a\]"; }
 title=$(makeTitle "\w")
