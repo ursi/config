@@ -17,11 +17,7 @@ function mcp { mkdir -p $2 && cp $1 $2; }
 function mcpd { mkdir -p $2 && cp $1 $2 && cd $2; }
 function mmv { mkdir -p $2 && mv $1 $2; }
 alias night="sct 3000"
-
-function trash {
-	mv $1 ~/.trash/$(basename $1)@$(date +%Y-%m-%d~%H:%M:%S)
-}
-
+alias trash=trash-put
 alias xclipc="xclip -selection clipboard"
 alias xclipng="xclip -t image/png -selection clipboard"
 

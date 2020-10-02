@@ -57,6 +57,7 @@
       parted
       pavucontrol
       spectacle
+      trash-cli
       unzip
       xclip
       xfce.xfce4-terminal
