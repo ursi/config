@@ -3,8 +3,12 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'ursi/vim-match'
+
+" CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dense-analysis/ale'
+Plug 'kevinoid/vim-jsonc'
+
+" Plug 'dense-analysis/ale'
 
 " Elm
 Plug 'andys8/vim-elm-syntax'
