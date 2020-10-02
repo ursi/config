@@ -18,7 +18,8 @@ ln -frs git/.gitconfig ~/
 replaceDir git git
 
 # i3
-replaceDir i3 i3
+replaceDir i3/i3 i3
+replaceDir i3/i3status i3status
 
 # neovim
 replaceDir neovim/config nvim
