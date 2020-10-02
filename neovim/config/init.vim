@@ -64,6 +64,8 @@ aug vimrc
 
 	" make autoread work like gvim
 	au FocusGained * :checktime
+
+	au TermOpen * startinsert
 aug end
 
 "highlight Folded ctermbg=DarkBlue ctermfg=White guibg=#666666 guifg=white
