@@ -1,10 +1,17 @@
 alias apply="source ~/.bashrc"
 alias day="sct 6500 & disown"
 
-function gitclonecd {
+function gh-clone-cd {
+	git clone git@github.com:$1/$2 && {
+		local -r dir=$2
+		cd $dir
+	}
+}
+
+function git-clone-cd {
 	git clone $1 && {
-		dir=$(echo $1 | sed -E 's/^.*\/([^./]+)(.git)?$/\1/')
-		mcd $dir
+		local -r dir=$(echo $1 | sed -E 's/^.*\/([^./]+)(.git)?$/\1/')
+		cd $dir
 	}
 }
 
