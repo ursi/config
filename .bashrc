@@ -30,7 +30,7 @@ alias xclipc="xclip -selection clipboard"
 alias xclipng="xclip -t image/png -selection clipboard"
 
 function gitBranch {
-	a=$(git branch --show-current 2> /dev/null)
+	local -r a=$(git branch --show-current 2> /dev/null)
 
 	if [[ -n $a ]]; then
 		echo "$sepColor| $branchColor$a "
