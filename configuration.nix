@@ -158,7 +158,6 @@
               gnome3.nautilus # for seeing images
               go-sct
               nodePackages.node2nix
-              (polybar.override { i3Support = true; })
               wally-cli
             ]
               ++ communication
