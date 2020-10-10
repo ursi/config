@@ -197,6 +197,7 @@ bindsym --whole-window $mod+button3 kill
 # finds out, if available)
 bar {
 	status_command i3status
+	workspace_min_width 35
 	strip_workspace_numbers yes
 	tray_padding 6
 	bindsym button4 nop
