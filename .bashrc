@@ -25,6 +25,7 @@ function mcpd { mkdir -p $2 && cp $1 $2 && cd $2; }
 function mmv { mkdir -p $2 && mv $1 $2; }
 alias night="sct 3000 & disown"
 alias rm="rm -I"
+alias sus="systemctl suspend"
 alias trash=trash-put
 alias xclipc="xclip -selection clipboard"
 alias xclipng="xclip -t image/png -selection clipboard"
