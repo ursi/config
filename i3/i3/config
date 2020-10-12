@@ -18,6 +18,7 @@ set $up k
 set $right l
 
 focus_on_window_activation focus
+focus_wrapping no
 
 default_border pixel
 default_floating_border normal
