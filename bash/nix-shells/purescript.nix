@@ -6,5 +6,5 @@ mkShell {
     nodejs
     purescript
     spago
-  ]
+  ];
 }
