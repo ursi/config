@@ -19,6 +19,11 @@ alias i3conf="nvim ~/config/i3/i3/config"
 alias lls="ls --color | less -r"
 alias ls="ls -A --color=tty --group-directories-first"
 alias lsL="ls -L"
+
+make-shell () {
+	cp ~/config/bash/nix-shells/$1.nix ./shell.nix
+}
+
 function mcd { mkdir -p $1 && cd $1; }
 function mcp { mkdir -p $2 && cp $1 $2; }
 function mcpd { mkdir -p $2 && cp $1 $2 && cd $2; }

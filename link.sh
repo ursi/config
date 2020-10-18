@@ -11,7 +11,7 @@ function replaceDir {
 }
 
 # bash
-ln -frs .bashrc ~/
+ln -frs bash/.bashrc ~/
 
 # git
 ln -frs git/.gitconfig ~/
