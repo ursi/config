@@ -21,6 +21,6 @@ time {
 
 volume default {
 	format = "🔊 %volume"
-	format_muted = "🔈(%volume)"
+	format_muted = "🔈 (%volume)"
 	align = center
 }
