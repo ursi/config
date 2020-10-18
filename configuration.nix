@@ -149,6 +149,7 @@
                 ];
 
                 node = with nodePackages; [
+                  purty
                   purescript-language-server
                 ];
               in
