@@ -157,6 +157,7 @@
             [
               gnome3.nautilus # for seeing images
               go-sct
+              niv
               nodePackages.node2nix
               wally-cli
             ]
