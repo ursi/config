@@ -54,6 +54,9 @@ let g:ale_fix_on_save = 1
 " since this is primarily going to be used for elm for now
 let match_autoindent = 0
 
+let netrw_bufsettings_defaults = "noma nomod nonu nowrap ro nobl"
+let g:netrw_bufsettings = netrw_bufsettings_defaults
+
 aug vimrc
 	au!
 	" highlight trailing whitespace
