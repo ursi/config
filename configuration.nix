@@ -139,6 +139,7 @@
             communication = [
               discord
               signal-desktop
+              zulip
             ];
 
             editor =
