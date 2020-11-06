@@ -42,6 +42,7 @@
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
   # };
+  fonts.fonts = with pkgs; [ (nerdfonts.override {fonts = [ "Cousine" ]; }) ];
 
   # Set your time zone.
   # time.timeZone = "Europe/Amsterdam";
