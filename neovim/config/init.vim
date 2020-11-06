@@ -54,6 +54,7 @@ let g:ale_fix_on_save = 1
 " since this is primarily going to be used for elm for now
 let match_autoindent = 0
 
+" enable my settings in netrw (not sure why this has that effect)
 let netrw_bufsettings_defaults = "noma nomod nonu nowrap ro nobl"
 let g:netrw_bufsettings = netrw_bufsettings_defaults
 
@@ -71,7 +72,6 @@ aug vimrc
 	au TermOpen * startinsert
 aug end
 
-"highlight Folded ctermbg=DarkBlue ctermfg=White guibg=#666666 guifg=white
 highlight trailingWhitespace ctermbg=Red guibg=red
 
 fu! MapEvery(mapStr)
