@@ -179,7 +179,11 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = rec {
+    # pkgs = import (builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/<commit>.tar.gz") { inherit config; };
+    config.allowUnfree = true;
+  };
+
 
   system = {
     autoUpgrade = {
