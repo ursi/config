@@ -140,6 +140,7 @@
           let
             communication = [
               discord
+              mattermost-desktop
               signal-desktop
               zulip
             ];
