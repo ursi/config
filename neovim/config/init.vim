@@ -63,7 +63,7 @@ aug vimrc
 	" highlight trailing whitespace
 	au BufRead,SourcePre,WinNew * match trailingwhitespace /\s\+$/
 
-	" ftplugins like to change this setting
+	" ftplugins like to change these settings
 	au BufWinEnter * set formatoptions-=o formatoptions-=r indentexpr=""
 
 	" make autoread work like gvim
