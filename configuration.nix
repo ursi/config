@@ -186,10 +186,7 @@
 
 
   system = {
-    autoUpgrade = {
-      enable = true;
-      allowReboot = true;
-    };
+    autoUpgrade.enable = true;
 
     # don't change - man configuration.nix
     stateVersion = "20.03"; # Did you read the comment?
