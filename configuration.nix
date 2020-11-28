@@ -23,6 +23,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   networking = {
+    firewall.enable = false;
     networkmanager.enable = true;
 
     # The global useDHCP flag is deprecated, therefore explicitly set to false here.
@@ -83,12 +84,6 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
