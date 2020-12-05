@@ -165,6 +165,7 @@
                 elm ++ node;
           in
             [
+              brightness
               gnome3.nautilus # for seeing images
               go-sct
               niv
