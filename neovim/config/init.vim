@@ -88,6 +88,8 @@ endf
 "cal MapEvery('<BS> <Tab>')
 "cnoremap <Tab> <Esc>
 
+
+noremap <Leader>b :ls<CR>:b 
 noremap <Leader>c :cd %:h<CR>
 noremap <Leader>n :nohlsearch<CR>
 noremap <Leader>v :tabedit $MYVIMRC<CR>
@@ -104,11 +106,12 @@ vnoremap q :normal ^@q<CR>
 "se sw=n et
 
 "set backupdir-=.
-set complete=.,w
+set complete=.,w,b
 " something to do with PureScript tooling I believe
 set backupcopy=yes
 set directory=.
 set foldmethod=indent
+set hidden
 set ignorecase smartcase
 set nofoldenable
 set nowrap
