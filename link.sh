@@ -26,3 +26,5 @@ replaceDir neovim/config nvim
 
 # nix
 ln -f nix/configuration.nix /etc/nixos/
+ln -f nix/flake.nix /etc/nixos/
+ln -f nix/flake.lock /etc/nixos/

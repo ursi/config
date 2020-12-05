@@ -1,0 +1,58 @@
+{
+  "nodes": {
+    "brightness": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1607129238,
+        "narHash": "sha256-8LmJ2djiX5Rq3OxdJHQXB89u2K2fL6o0xzEp7FdGFOI=",
+        "owner": "ursi",
+        "repo": "brightness",
+        "rev": "c3d38562c4a4034fc0ae1da337f9e2a0fb884323",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ursi",
+        "repo": "brightness",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1607112761,
+        "narHash": "sha256-JPLqSLlw7oDK2nUK/uzrjJMJFwppUbGZ19EbSLzqPA0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1917e6fd9e793f8279c8e3b5e03b13355bbb3784",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1607119371,
+        "narHash": "sha256-hF6ZRb83P5UhqAQvUuANvP7EhZNoedf/HYfOQfG1QDw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "40440b2209ed82520194ca40010b7cb3a65e233a",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "brightness": "brightness",
+        "nixpkgs": "nixpkgs_2"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
