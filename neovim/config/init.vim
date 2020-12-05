@@ -103,20 +103,20 @@ vnoremap q :normal ^@q<CR>
 "to use n spaces instead of tabs
 "se sw=n et
 
-"\	backupdir-=.
-set	complete=.,w
+"set backupdir-=.
+set complete=.,w
 " something to do with PureScript tooling I believe
-set	backupcopy=yes
-set	directory=.
-set	foldmethod=indent
-set	ignorecase smartcase
-set	nofoldenable
-set	nowrap
-set	relativenumber
-set	scrolloff=1 sidescrolloff=1
-set	shiftwidth=0 tabstop=4
-set	splitbelow splitright
-set	wildmode=longest
+set backupcopy=yes
+set directory=.
+set foldmethod=indent
+set ignorecase smartcase
+set nofoldenable
+set nowrap
+set relativenumber
+set scrolloff=1 sidescrolloff=1
+set shiftwidth=0 tabstop=4
+set splitbelow splitright
+set wildmode=longest
 " ftplugins like to change this setting
 "set formatoptions-=o
 
