@@ -25,4 +25,4 @@ replaceDir i3/i3status i3status
 replaceDir neovim/config nvim
 
 # nix
-ln -f configuration.nix /etc/nixos/
+ln -f nix/configuration.nix /etc/nixos/
