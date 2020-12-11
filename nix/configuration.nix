@@ -165,7 +165,6 @@
                 elm ++ node;
           in
             [
-              brightness
               gnome3.nautilus # for seeing images
               go-sct
               niv
@@ -173,7 +172,8 @@
               wally-cli
             ]
               ++ communication
-              ++ editor;
+              ++ editor
+              ++ flakePackages;
 
         password = "";
       };
