@@ -1,11 +1,14 @@
 {
-  inputs.brightness.url = "github:ursi/brightness";
+  inputs = {
+    brightness.url = "github:ursi/brightness";
+    json-format.url = "github:ursi/json-format";
+  };
 
   outputs =
     {
       self, nixpkgs,
       utils,
-      brightness
+      brightness, json-format,
     }:
       let
         system = "x86_64-linux";
@@ -14,7 +17,7 @@
           inherit system;
           config = { allowUnfree = true; };
           overlays = [
-            (utils.mkFlakePackages system { inherit brightness; })
+            (utils.mkFlakePackages system { inherit brightness json-format; })
           ];
         };
       in
