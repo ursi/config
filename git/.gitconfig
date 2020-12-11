@@ -9,6 +9,7 @@
 	dc = diff --cached
 	first-push = push -u origin master
 	ga = graph-all
+	graph = log --oneline --abbrev=0 --graph
 	graph-all = log --oneline --abbrev=0 --graph --all
 	tpush = push --tags origin master
 	wdiff = diff --word-diff
