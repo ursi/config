@@ -32,7 +32,6 @@
   };
 
   fonts.fonts = with pkgs; [ (nerdfonts.override {fonts = [ "Cousine" ]; }) ];
-
   hardware.pulseaudio.enable = true;
 
   networking = {
@@ -62,11 +61,6 @@
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "shpadoinkle.cachix.org-1:aRltE7Yto3ArhZyVjsyqWh1hmcCf27pYSmO1dPaadZ8="
     ];
-  };
-
-  nixpkgs = rec {
-    # pkgs = import (builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/<commit>.tar.gz") { inherit config; };
-    config.allowUnfree = true;
   };
 
   programs.nm-applet.enable = true;
