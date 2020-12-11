@@ -6,30 +6,11 @@
       ./hardware-configuration.nix
     ];
 
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = "experimental-features = nix-command flakes";
-  };
-
   boot.loader.grub = {
     enable = true;
     version = 2;
     device = "/dev/disk/by-id/ata-WDC_WD10EZEX-08M2NA0_WD-WCC3FE0JTJMX";
   };
-
-  networking = {
-    firewall.enable = false;
-    networkmanager.enable = true;
-    # wireless.enable = true; # Enables wireless support via wpa_supplicant.
-
-    # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-    # Per-interface useDHCP will be mandatory in the future, so this generated config
-    # replicates the default behaviour.
-    useDHCP = false;
-    interfaces.eno1.useDHCP = true;
-  };
-
-  fonts.fonts = with pkgs; [ (nerdfonts.override {fonts = [ "Cousine" ]; }) ];
 
   environment = {
     systemPackages = with pkgs; [
@@ -50,9 +31,45 @@
     variables = { EDITOR = "nvim"; };
   };
 
-  programs.nm-applet.enable = true;
-  sound.enable = true;
+  fonts.fonts = with pkgs; [ (nerdfonts.override {fonts = [ "Cousine" ]; }) ];
+
   hardware.pulseaudio.enable = true;
+
+  networking = {
+    firewall.enable = false;
+    networkmanager.enable = true;
+    # wireless.enable = true; # Enables wireless support via wpa_supplicant.
+
+    # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+    # Per-interface useDHCP will be mandatory in the future, so this generated config
+    # replicates the default behaviour.
+    useDHCP = false;
+    interfaces.eno1.useDHCP = true;
+  };
+
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = "experimental-features = nix-command flakes";
+
+    binaryCaches = [
+      "https://nixcache.reflex-frp.org"
+      "https://cache.nixos.org"
+      "https://shpadoinkle.cachix.org"
+    ];
+
+    binaryCachePublicKeys = [
+      "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "shpadoinkle.cachix.org-1:aRltE7Yto3ArhZyVjsyqWh1hmcCf27pYSmO1dPaadZ8="
+    ];
+  };
+
+  nixpkgs = rec {
+    # pkgs = import (builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/<commit>.tar.gz") { inherit config; };
+    config.allowUnfree = true;
+  };
+
+  programs.nm-applet.enable = true;
 
   services = {
     picom = {
@@ -87,6 +104,15 @@
 
       windowManager.i3.enable = true;
     };
+  };
+
+  sound.enable = true;
+
+  system = {
+    autoUpgrade.enable = true;
+
+    # don't change - man configuration.nix
+    stateVersion = "20.03";
   };
 
   users = {
@@ -140,18 +166,5 @@
         password = "";
       };
     };
-  };
-
-  nixpkgs = rec {
-    # pkgs = import (builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/<commit>.tar.gz") { inherit config; };
-    config.allowUnfree = true;
-  };
-
-
-  system = {
-    autoUpgrade.enable = true;
-
-    # don't change - man configuration.nix
-    stateVersion = "20.03";
   };
 }
