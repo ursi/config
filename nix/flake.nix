@@ -2,6 +2,7 @@
   inputs = {
     brightness.url = "github:ursi/brightness";
     json-format.url = "github:ursi/json-format";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-signal.url = "github:NixOS/nixpkgs/22148780509c003bf5288bba093051a50e738ce9";
   };
 
