@@ -155,11 +155,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1607654575,
-        "narHash": "sha256-2PJN7rI44BbqA6Q6FfjkMX1otmGxKvUGoGhkb3K5+UE=",
+        "lastModified": 1607748401,
+        "narHash": "sha256-/ryth5F4fo81RIoStjqvbBELlqjo38t6nXH89H6nSy8=",
         "owner": "ursi",
         "repo": "flake-utils",
-        "rev": "b30e0ebfac6e38d3ec5f50664fbaa8a77292c00c",
+        "rev": "61f7cc3879f92ff4513436a02caa447f83378b9b",
         "type": "github"
       },
       "original": {
