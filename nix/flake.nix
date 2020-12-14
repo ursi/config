@@ -20,7 +20,10 @@
           inherit system;
           config = { allowUnfree = true; };
           overlays = [
-            (utils.mkFlakePackages system { inherit brightness json-format; })
+            (_: _: {
+              flakePackages = utils.defaultPackages system { inherit brightness json-format; };
+            })
+
             (_: _: { inherit (signal-desktop-nixpkgs.legacyPackages.${system}) signal-desktop; })
           ];
         };
