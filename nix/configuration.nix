@@ -133,6 +133,7 @@
             [
               gnome3.nautilus # for seeing images
               go-sct
+              lxappearance
               nodePackages.node2nix
               wally-cli
             ]
