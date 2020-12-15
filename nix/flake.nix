@@ -34,7 +34,10 @@
         {
            nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
              inherit pkgs system;
-             modules = [ ./configuration.nix ];
+             modules = [
+               ./configuration.nix
+               ./work.nix
+             ];
            };
         };
 }
