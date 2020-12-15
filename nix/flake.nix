@@ -32,12 +32,12 @@
         };
       in
         {
-           nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-             inherit pkgs system;
-             modules = [
-               ./configuration.nix
-               ./work.nix
-             ];
-           };
+          nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+            inherit pkgs system;
+            modules = [
+              ./configuration.nix
+              ./work.nix
+            ];
+          };
         };
 }
