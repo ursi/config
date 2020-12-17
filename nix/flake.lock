@@ -203,11 +203,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1608006156,
-        "narHash": "sha256-uJIXQy/KbUom6/9dqbsc0XoWl+moP/yGjJk3/5a4ja8=",
+        "lastModified": 1608165536,
+        "narHash": "sha256-uV0sDf0gte63Samp+t2TOHx9VcFzcZIqbyOri6egl4I=",
         "owner": "ursi",
         "repo": "psnp",
-        "rev": "335bbc45de5c80ff197e1f881fb31bc5afaa5964",
+        "rev": "53dd2d55b3e0d2f7abf576527897dec974260ad2",
         "type": "github"
       },
       "original": {
