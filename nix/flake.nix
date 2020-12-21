@@ -3,7 +3,6 @@
     brightness.url = "github:ursi/brightness";
     json-format.url = "github:ursi/json-format";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    psnp.url = "github:ursi/psnp";
     signal-desktop-nixpkgs.url = "github:NixOS/nixpkgs/22148780509c003bf5288bba093051a50e738ce9";
   };
 
@@ -11,7 +10,7 @@
     {
       self, nixpkgs,
       utils,
-      brightness, json-format, psnp,
+      brightness, json-format,
       signal-desktop-nixpkgs
     }:
       let
@@ -23,7 +22,7 @@
           overlays = [
             (_: _: {
               flakePackages = utils.defaultPackages system {
-                inherit brightness json-format psnp;
+                inherit brightness json-format;
               };
             })
 
