@@ -2,6 +2,7 @@
   inputs = {
     brightness.url = "github:ursi/brightness";
     json-format.url = "github:ursi/json-format";
+    make-flake.url = "github:ursi/make-flake";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     signal-desktop-nixpkgs.url = "github:NixOS/nixpkgs/22148780509c003bf5288bba093051a50e738ce9";
   };
@@ -10,7 +11,7 @@
     {
       self, nixpkgs,
       utils,
-      brightness, json-format,
+      brightness, json-format, make-flake,
       signal-desktop-nixpkgs
     }:
       let
@@ -22,7 +23,7 @@
           overlays = [
             (_: _: {
               flakePackages = utils.defaultPackages system {
-                inherit brightness json-format;
+                inherit brightness json-format make-flake;
               };
             })
 
