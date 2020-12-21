@@ -36,7 +36,6 @@
             inherit pkgs system;
             modules = [
               ./configuration.nix
-              ./work.nix
             ];
           };
         };
