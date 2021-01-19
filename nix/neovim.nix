@@ -1,4 +1,4 @@
-{ neovim, mkOverlayableNeovim, vimPlugins }: with vimPlugins
+{ neovim, mkOverlayableNeovim, vimPlugins }: with vimPlugins;
   mkOverlayableNeovim
     (neovim.override { withNodeJs = true; })
     {
@@ -138,4 +138,4 @@
 
         command! -nargs=1 Init :cal Init(<f-args>)
       '';
-    };
+    }
