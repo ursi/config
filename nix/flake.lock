@@ -41,11 +41,11 @@
         "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1608855013,
-        "narHash": "sha256-Zt8/fbWPeX1L0HypCpGJVgZcYOHM0E7jM9fwpWfqbJk=",
+        "lastModified": 1611032283,
+        "narHash": "sha256-GYi5wPL6BDtigEvgRTrPB7hMjZMD7m4Sr1JPYYar0Wk=",
         "owner": "ursi",
         "repo": "flake-make",
-        "rev": "b9843ff5cfdcbfb39f27984d20f438607936ff81",
+        "rev": "29f0299f1fc5849a98cbc39673faf653c713ce31",
         "type": "github"
       },
       "original": {
