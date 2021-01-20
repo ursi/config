@@ -28,9 +28,9 @@
               flakePackages = utils.defaultPackages system {
                 inherit brightness flake-make json-format;
               };
-            })
 
-            (_: _: { inherit (signal-desktop-nixpkgs.legacyPackages.${system}) signal-desktop; })
+              inherit (signal-desktop-nixpkgs.legacyPackages.${system}) signal-desktop;
+            })
           ];
         };
 
