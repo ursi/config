@@ -16,7 +16,10 @@
     systemPackages = with pkgs; [
       brave
       git
+      graphviz
+      ncdu
       (neovim.override { withNodeJs = true; })
+      nix-du
       ntfs3g
       parted
       pavucontrol
