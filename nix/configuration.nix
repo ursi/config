@@ -83,8 +83,11 @@
       # Disable mouse acceleration
       libinput = {
         enable = true;
-        accelProfile = "flat";
-        accelSpeed = "0";
+
+        mouse = {
+          accelProfile = "flat";
+          accelSpeed = "0";
+        };
       };
 
       windowManager.i3.enable = true;

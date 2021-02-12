@@ -7,7 +7,6 @@
     localVim.url = "github:ursi/nix-local-vim";
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    signal-desktop-nixpkgs.url = "github:NixOS/nixpkgs/22148780509c003bf5288bba093051a50e738ce9";
   };
 
   outputs =
@@ -15,7 +14,6 @@
       self, nixpkgs,
       utils, localVim,
       brightness, flake-make, json-format,
-      signal-desktop-nixpkgs
     }:
       let
         system = "x86_64-linux";
@@ -28,8 +26,6 @@
               flakePackages = utils.defaultPackages system {
                 inherit brightness flake-make json-format;
               };
-
-              inherit (signal-desktop-nixpkgs.legacyPackages.${system}) signal-desktop;
             })
           ];
         };
