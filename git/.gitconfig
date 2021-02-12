@@ -12,6 +12,7 @@
 	graph-all = log --oneline --abbrev=0 --graph --all
 	tpush = push --tags origin master
 	wd = diff --word-diff
+	wdc = diff --word-diff --cached
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
