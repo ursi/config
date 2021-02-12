@@ -15,8 +15,10 @@
   environment = {
     systemPackages = with pkgs; [
       brave
+      gimp
       git
       graphviz
+      imagemagick
       ncdu
       (neovim.override { withNodeJs = true; })
       nix-du
