@@ -19,6 +19,7 @@
       git
       graphviz
       imagemagick
+      jq
       ncdu
       (neovim.override { withNodeJs = true; })
       nix-du

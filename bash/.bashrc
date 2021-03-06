@@ -16,6 +16,7 @@ function git-clone-cd {
 }
 
 alias i3conf="nvim ~/config/i3/i3/config"
+jql () { jq -C $1 $2 | less -r; }
 alias lls="ls --color | less -r"
 alias ls="ls -A --color=tty --group-directories-first"
 alias lsL="ls -L"
