@@ -1,45 +1,45 @@
 { neovim, mkOverlayableNeovim, vimPlugins }: with vimPlugins;
   mkOverlayableNeovim
     (neovim.override { withNodeJs = true; })
-    {
-      packages.myPackage = {
-        start = [
-          gruvbox
-          vim-surround
-          vim-commentary
-          #vim-match
+    { packages.myPackage =
+        { start =
+            [ gruvbox
+              vim-surround
+              vim-commentary
+              #vim-match
 
-          # CoC
-          coc-nvim
-          #vim-jsonc
+              # CoC
+              coc-nvim
+              #vim-jsonc
 
-          ale
+              ale
 
-          # Elm
-          vim-elm-syntax
+              # Elm
+              vim-elm-syntax
 
-          # JavaScript
-          vim-javascript
+              # JavaScript
+              vim-javascript
 
-          # JSX
-          vim-jsx-pretty
+              # JSX
+              vim-jsx-pretty
 
-          # Pug
-          vim-pug
+              # Pug
+              vim-pug
 
-          # PureScript
-          purescript-vim
+              # PureScript
+              purescript-vim
 
-          # Dhall
-          LanguageClient-neovim
-          dhall-vim
+              # Dhall
+              LanguageClient-neovim
+              dhall-vim
 
-          # Nix
-          vim-nix
-        ];
-      };
+              # Nix
+              vim-nix
+            ];
+        };
 
-      customRC = ''
+      customRC =
+        ''
         let g:LanguageClient_serverCommands = {
             \ 'dhall': ['dhall-lsp-server'],
             \ }
@@ -137,5 +137,5 @@
         endf
 
         command! -nargs=1 Init :cal Init(<f-args>)
-      '';
+        '';
     }
