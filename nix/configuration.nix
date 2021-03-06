@@ -38,7 +38,11 @@
   };
 
   fonts.fonts = with pkgs; [ (nerdfonts.override {fonts = [ "Cousine" ]; }) ];
-  hardware.pulseaudio.enable = true;
+
+  hardware = {
+    keyboard.zsa.enable = true;
+    pulseaudio.enable = true;
+  };
 
   networking = {
     firewall.enable = false;
@@ -67,12 +71,6 @@
     };
 
     udev.extraRules = ''
-      # Teensy rules for the Ergodox EZ
-      ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
-      ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
-      SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
-      KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
-
       #GameCube Controller Adapter
       SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="0337", TAG+="uaccess"
 
@@ -113,7 +111,7 @@
       mason = {
         createHome = true;
         description = "Mason Mackaman";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "plugdev" "wheel" ];
         isNormalUser = true;
 
         packages = with pkgs;
