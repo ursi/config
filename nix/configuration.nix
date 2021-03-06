@@ -125,18 +125,26 @@
                   elm-format
                 ];
 
+                haskell = with haskellPackages; [
+                  haskell-language-server
+                ];
+
                 node = with nodePackages; [
                   purty
                   purescript-language-server
                 ];
               in
-                elm ++ node;
+                elm ++ haskell ++ node;
           in
             [
               gnome3.nautilus # for seeing images
               go-sct
               lxappearance
               nodePackages.node2nix
+              (writeShellScriptBin
+                "snowball"
+                "bash <( curl https://gitlab.com/fresheyeball/snowball/-/raw/master/generator.sh )"
+              )
               wally-cli
             ]
               ++ communication
