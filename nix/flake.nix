@@ -38,11 +38,14 @@
         {
           packages.${system}.neovim = neovim;
 
-          nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-            inherit pkgs system;
-            modules = [
-              ./configuration.nix
-            ];
-          };
+          nixosConfigurations.desktop =
+            nixpkgs.lib.nixosSystem
+              { inherit pkgs system;
+
+                modules =
+                  [ ./configuration.nix
+                    ./desktop
+                  ];
+              };
         };
 }

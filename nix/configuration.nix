@@ -1,11 +1,6 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   boot.loader.grub = {
     enable = true;
     version = 2;
@@ -65,7 +60,6 @@
 
   services = {
     picom = {
-      backend = "glx";
       enable = true;
       vSync = true;
     };
