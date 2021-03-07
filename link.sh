@@ -3,18 +3,18 @@ cd $(dirname $0)
 function replaceDir {
 	dir=~/.config/$2
 
-	if [[ -h $dir ]]; then
-		rm $dir
+	if [[ -e $dir ]]; then
+		rm -fr $dir
 	fi
 
-	ln -rs $1 $dir
+	ln -s $(realpath $1) $dir
 }
 
 # bash
-ln -frs bash/.bashrc ~/
+ln -fs $(realpath bash/.bashrc) ~/
 
 # git
-ln -frs git/.gitconfig ~/
+ln -fs $(realpath git/.gitconfig) ~/
 replaceDir git git
 
 # i3
