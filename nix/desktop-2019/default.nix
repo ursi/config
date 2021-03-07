@@ -7,7 +7,7 @@
       };
 
   networking =
-    { hostName = "desktop";
+    { hostName = "desktop-2019";
       interfaces.eno1.useDHCP = true;
     };
 

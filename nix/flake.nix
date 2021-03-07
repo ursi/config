@@ -41,13 +41,13 @@
       in
         { packages.${system}.neovim = neovim;
 
-          nixosConfigurations.desktop =
+          nixosConfigurations.desktop-2019 =
             nixpkgs.lib.nixosSystem
               { inherit pkgs system;
 
                 modules =
                   [ ./configuration.nix
-                    ./desktop
+                    ./desktop-2019
                   ];
               };
         };
