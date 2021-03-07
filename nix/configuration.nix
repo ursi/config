@@ -1,11 +1,5 @@
 { pkgs, ... }:
-  { boot.loader.grub =
-      { enable = true;
-        version = 2;
-        device = "/dev/disk/by-id/ata-WDC_WD10EZEX-08M2NA0_WD-WCC3FE0JTJMX";
-      };
-
-    environment =
+  { environment =
       { systemPackages = with pkgs;
           [ brave
             gimp
@@ -46,7 +40,6 @@
         # Per-interface useDHCP will be mandatory in the future, so this generated config
         # replicates the default behaviour.
         useDHCP = false;
-        interfaces.eno1.useDHCP = true;
       };
 
     nix =
