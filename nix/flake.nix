@@ -50,5 +50,15 @@
                     ./desktop-2019
                   ];
               };
+
+          nixosConfigurations.hp-envy =
+            nixpkgs.lib.nixosSystem
+              { inherit pkgs system;
+
+                modules =
+                  [ ./configuration.nix
+                    ./hp-envy
+                  ];
+              };
         };
 }
