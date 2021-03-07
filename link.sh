@@ -23,6 +23,3 @@ replaceDir i3/i3status i3status
 
 # neovim
 replaceDir neovim/config nvim
-
-# nix
-(cd nix; . link.sh)
