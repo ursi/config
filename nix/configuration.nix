@@ -83,13 +83,7 @@
       };
 
     sound.enable = true;
-
-    system =
-      { autoUpgrade.enable = true;
-
-        # don't change - man configuration.nix
-        stateVersion = "20.03";
-      };
+    system.autoUpgrade.enable = true;
 
     users =
       { mutableUsers = false;

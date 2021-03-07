@@ -13,5 +13,7 @@
 
   nix.buildCores = 3;
   services.picom.backend = "glx";
+  # don't change - man configuration.nix
+  system.stateVersion = "20.03";
 }
 

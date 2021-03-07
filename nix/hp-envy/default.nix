@@ -11,5 +11,7 @@
     };
 
   nix.buildCores = 7;
+  # don't change - man configuration.nix
+  system.stateVersion = "20.09";
 }
 
