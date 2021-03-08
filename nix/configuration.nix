@@ -45,6 +45,36 @@
     nix =
       { extraOptions = "experimental-features = nix-command flakes";
         package = pkgs.nixFlakes;
+
+        registry =
+          { nixpkgs =
+              { from =
+                  { id = "nixpkgs";
+                    type = "indirect";
+                  };
+
+                to =
+                  { owner = "NixOS";
+                    repo = "nixpkgs";
+                    ref = "nixpkgs-unstable";
+                    type = "github";
+                  };
+              };
+
+            utils =
+              { from =
+                  { id = "utils";
+                    type = "indirect";
+                  };
+
+                to =
+                  { owner = "ursi";
+                    repo = "flake-utils";
+                    type = "github";
+                  };
+              };
+          };
+
         trustedUsers = [ "mason" "root" ];
       };
 
