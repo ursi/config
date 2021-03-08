@@ -114,6 +114,7 @@
 
     sound.enable = true;
     system.autoUpgrade.enable = true;
+    time.timeZone = "America/Toronto";
 
     users =
       { mutableUsers = false;
