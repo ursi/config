@@ -14,6 +14,7 @@
             parted
             pavucontrol
             spectacle
+            tmate
             trash-cli
             unzip
             xclip
