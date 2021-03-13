@@ -397,8 +397,7 @@
         "json-format": "json-format",
         "localVim": "localVim",
         "nixpkgs": "nixpkgs_11",
-        "utils": "utils_5",
-        "work": "work"
+        "utils": "utils_5"
       }
     },
     "utils": {
