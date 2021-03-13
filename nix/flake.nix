@@ -27,7 +27,13 @@
                 [ (_: super:
                     { alacritty =
                         super.writeScriptBin "alacritty"
-                          "${super.alacritty}/bin/alacritty --config-file ${../alacritty.yml} $@";
+                          ''
+                          if [[ $@ = *--config-file* ]]; then
+                            ${super.alacritty}/bin/alacritty $@;
+                          else
+                            ${super.alacritty}/bin/alacritty --config-file ${../alacritty.yml} $@;
+                          fi
+                          '';
 
                       flakePackages =
                         utils.defaultPackages system
