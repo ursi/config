@@ -26,3 +26,6 @@ key_bindings:
   - { key: Minus,    mods: Control, action: DecreaseFontSize }
   - { key: N,        mods: Control, action: SpawnNewInstance }
   - { key: C,        mods: Alt,     action: Copy             }
+
+mouse_bindings:
+  - { mouse: Right, action: Copy }
