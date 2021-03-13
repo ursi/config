@@ -39,9 +39,7 @@
               inherit (nixpkgs.legacyPackages.${system}) neovim vimPlugins;
             };
       in
-        { packages.${system}.neovim = neovim;
-
-          nixosConfigurations.desktop-2019 =
+        { nixosConfigurations.desktop-2019 =
             nixpkgs.lib.nixosSystem
               { inherit pkgs system;
 
@@ -60,5 +58,7 @@
                     ./hp-envy
                   ];
               };
+
+          packages.${system}.neovim = neovim;
         };
 }
