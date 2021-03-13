@@ -1,4 +1,5 @@
 alias apply=". ~/.bashrc"
+cl () { cd $1; ls; }
 alias day="sct 6500 & disown"
 
 function gh-clone-cd {
