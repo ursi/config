@@ -62,7 +62,7 @@
               };
 
           packages.${system} =
-            { inherit (pkgs) alacrity;
+            { inherit (pkgs) alacritty;
               inherit neovim;
             };
         };
