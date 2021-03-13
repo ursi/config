@@ -27,7 +27,7 @@ function mcp { mkdir -p $2 && cp $1 $2; }
 function mcpd { mkdir -p $2 && cp $1 $2 && cd $2; }
 function mmv { mkdir -p $2 && mv $1 $2; }
 alias night="sct 3000 & disown"
-alias rm="rm -I"
+alias rm='echo if you really wanna use this, use \\rm'
 alias sus="systemctl suspend"
 alias trash=trash-put
 alias xclipc="xclip -selection clipboard"
