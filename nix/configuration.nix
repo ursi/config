@@ -1,7 +1,8 @@
 { pkgs, ... }:
   { environment =
       { systemPackages = with pkgs;
-          [ brave
+          [ alacritty
+            brave
             gimp
             git
             graphviz
@@ -18,7 +19,6 @@
             trash-cli
             unzip
             xclip
-            xfce.xfce4-terminal
             w3m
           ];
 

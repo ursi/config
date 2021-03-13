@@ -24,8 +24,12 @@
               config = { allowUnfree = true; };
 
               overlays =
-                [ (_: _:
-                    { flakePackages =
+                [ (_: super:
+                    { alacritty =
+                        super.writeScriptBin "alacritty"
+                          "${super.alacritty}/bin/alacritty --config-file ${../alacritty.yml} $@";
+
+                      flakePackages =
                         utils.defaultPackages system
                           { inherit brightness flake-make json-format; };
                     }
@@ -59,6 +63,9 @@
                   ];
               };
 
-          packages.${system}.neovim = neovim;
+          packages.${system} =
+            { inherit (pkgs) alacrity;
+              inherit neovim;
+            };
         };
 }
