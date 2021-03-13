@@ -46,6 +46,13 @@ function _nixShell
 		echo "$_nixShellColor[nix] "
 	fi
 
+_downgraded-nix () {
+	# if [[ $(nix --version) = "nix (Nix) 2.3*" ]]; then
+	if [[ $(nix --version) = "nix (Nix) 2.3"* ]]; then
+		echo "[nix 2.3]"
+	fi
+}
+
 function _makeColor { echo "\[\e[$1m\]"; }
 _reset=$(_makeColor 0)
 _bold=$(_makeColor 1)
@@ -55,4 +62,4 @@ _sepColor=$(_makeColor 34)
 _nixShellColor=$(_makeColor 33)
 function _makeTitle { echo "\[\e]0;$1\a\]"; }
 _title=$(_makeTitle "\w")
-PROMPT_COMMAND='export PS1="$_title\n$_bold$(_nixShell)$_mainColor\w $(_gitBranch)$_mainColor\$$_reset "'
+PROMPT_COMMAND='export PS1="$_title\n$_bold$(_downgraded-nix)$(_nixShell)$_mainColor\w $(_gitBranch)$_mainColor\$$_reset "'
