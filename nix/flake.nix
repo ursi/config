@@ -1,5 +1,6 @@
 { inputs =
-    { brightness.url = "github:ursi/brightness";
+    { breeze.url = "github:ursi/breeze";
+      brightness.url = "github:ursi/brightness";
       flake-make.url = "github:ursi/flake-make";
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
@@ -10,6 +11,7 @@
     { self
     , nixpkgs
     , utils
+    , breeze
     , localVim
     , brightness
     , flake-make
@@ -64,6 +66,12 @@
           packages.${system} =
             { inherit (pkgs) alacritty;
               inherit neovim;
+
+              icons =
+                import ./icons.nix
+                  { inherit pkgs;
+                    cursor = breeze.packages.${system}.cursors.breeze;
+                  };
             };
         };
 }
