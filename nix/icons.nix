@@ -1,4 +1,4 @@
-{ pkgs, cursor }: with pkgs; with lib;
+{ pkgs, cursor }: with pkgs;
   { gtk =
       writeTextDir "/settings.ini"
         ''
@@ -8,8 +8,8 @@
 
     icons =
       let
-        index =
-          writeText "index.theme"
+        default =
+          writeTextDir "/index.theme"
             ''
             [icon theme]
             Inherits=${cursor.name}
@@ -24,8 +24,7 @@
               mkdir $out
               cd $out
               ln -s ${cursor} ${cursor.name}
-              mkdir default
-              ln -s ${index} default/index.theme
+              ln -s ${default} default
               '';
           };
   }
