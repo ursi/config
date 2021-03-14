@@ -8,14 +8,14 @@
     };
 
   outputs =
-    { self
-    , nixpkgs
+    { nixpkgs
     , utils
     , breeze
-    , localVim
     , brightness
     , flake-make
     , json-format
+    , localVim
+    , ...
     }:
       let
         system = "x86_64-linux";
