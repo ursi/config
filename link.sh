@@ -1,13 +1,16 @@
 cd $(dirname $0)
 
-function replaceDir {
-	dir=~/.config/$2
-
-	if [[ -e $dir ]]; then
-		rm -fr $dir
+rm-and-run () {
+	if [[ -e $1 ]]; then
+		rm -r $1
 	fi
 
-	ln -s $(realpath $1) $dir
+	$2 $1
+}
+
+replace-config () {
+	# f is needed because symlinks to nowhere don't pass the -e test
+	rm-and-run ~/.config/$1 "ln -fs $(realpath $2)"
 }
 
 # bash
@@ -15,11 +18,11 @@ ln -fs $(realpath bash/.bashrc) ~/
 
 # git
 ln -fs $(realpath git/.gitconfig) ~/
-replaceDir git git
+replace-config git git
 
 # i3
-replaceDir i3/i3 i3
-replaceDir i3/i3status i3status
+replace-config i3 i3/i3
+replace-config i3status i3/i3status
 
 # neovim
-replaceDir neovim/config nvim
+replace-config nvim neovim/config
