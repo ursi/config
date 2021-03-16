@@ -51,7 +51,23 @@
               inherit (nixpkgs.legacyPackages.${system}) neovim vimPlugins;
             };
       in
-        { nixosConfigurations = with nixpkgs.lib;
+        { devShell.${system} =
+            pkgs.mkShell
+              { shellHook =
+                  ''
+                  nixos-work-test() {
+                    sudo nixos-rebuild test \
+                      && git restore flake.lock
+                  }
+
+                  nixos-work-switch() {
+                    sudo nixos-rebuild switch \
+                      && git restore flake.lock
+                  }
+                  '';
+              };
+
+        nixosConfigurations = with nixpkgs.lib;
             mapAttrs
               (_: modules:
                 nixosSystem
