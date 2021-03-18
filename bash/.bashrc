@@ -1,4 +1,4 @@
-_ls() { ls -A --color=tty --group-directories-first; }
+_ls() { ls -A --color=tty --group-directories-first $@; }
 
 alias apply=". ~/.bashrc"
 cl () { cd $@; _ls; }
