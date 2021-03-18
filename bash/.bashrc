@@ -1,5 +1,7 @@
+_ls() { ls -A --color=tty --group-directories-first; }
+
 alias apply=". ~/.bashrc"
-cl () { cd $1; ls; }
+cl () { cd $@; _ls; }
 
 gh-clone-cd () {
 	git clone git@github.com:$1/$2 && cd $2
@@ -10,7 +12,7 @@ git-clone-cd () {
 }
 
 jql () { jq -C $1 $2 | less -r; }
-alias ls="ls -A --color=tty --group-directories-first"
+alias ls=_ls
 function mcd { mkdir -p $1 && cd $1; }
 alias rm='echo if you really wanna use this, use \\rm'
 alias sus="systemctl suspend"
