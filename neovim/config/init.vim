@@ -118,7 +118,7 @@ set relativenumber
 set scrolloff=1 sidescrolloff=1
 set shiftwidth=0 tabstop=4
 set splitbelow splitright
-set wildmode=longest
+set wildmode=longest:full,full
 " ftplugins like to change this setting
 "set formatoptions-=o
 
