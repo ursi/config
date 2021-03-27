@@ -132,3 +132,19 @@ fu! Init(type)
 endf
 
 command! -nargs=1 Init :cal Init(<f-args>)
+
+function! SplitOff(line1, line2)
+	let top = a:line1
+	let size = a:line2 - a:line1 + 1
+	execute "normal " . top . "G"
+	execute size . "sp"
+	let scroll = min([&scrolloff, float2nr((size - 1) / 2)])
+
+	if scroll != 0
+		execute "normal zt" . scroll . "\<c-e>"
+	endif
+
+	execute "normal \<c-w>W"
+endfunction
+
+command! -range SplitOff :call SplitOff(<line1>, <line2>)
