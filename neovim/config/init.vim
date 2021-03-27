@@ -96,6 +96,7 @@ noremap <Leader>v :tabedit $MYVIMRC<CR>
 noremap <Leader>s :write<CR>:source %<CR>
 
 inoremap <C-J> <Right>
+cnoremap <C-J> <Right>
 
 nnoremap <Down> gj
 nnoremap <Up> gk
