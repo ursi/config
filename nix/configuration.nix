@@ -79,7 +79,16 @@
         trustedUsers = [ "mason" "root" ];
       };
 
-    programs.nm-applet.enable = true;
+    programs =
+      { bash.shellAliases =
+          { nix-use = "nix-env -if nix.nix";
+            nix-remove = "nix-env -e nix";
+            nixbuild = "nix build -f .";
+            nixshell = "nix develop -f shell.nix";
+          };
+
+        nm-applet.enable = true;
+      };
 
     services =
       { picom =
