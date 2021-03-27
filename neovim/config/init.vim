@@ -114,7 +114,6 @@ set foldmethod=indent
 set hidden
 set ignorecase smartcase
 set nofoldenable
-set nowrap
 set relativenumber
 set scrolloff=1 sidescrolloff=1
 set shiftwidth=0 tabstop=4
