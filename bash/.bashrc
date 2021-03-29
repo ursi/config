@@ -1,3 +1,5 @@
+set -o vi
+
 alias apply=". ~/.bashrc"
 alias ls="ls -A --color=tty --group-directories-first"
 cl () { cd $@; ls; }
