@@ -111,6 +111,7 @@ set complete=.,w,b
 " something to do with PureScript tooling I believe
 set backupcopy=yes
 set directory=.
+set noequalalways
 set foldmethod=indent
 set hidden
 set ignorecase smartcase
@@ -138,14 +139,14 @@ function! SplitOff(line1, line2)
 	let top = a:line1
 	let size = a:line2 - a:line1 + 1
 	execute "normal " . top . "G"
-	execute size . "sp"
+	execute "above " . size . "sp"
 	let scroll = min([&scrolloff, float2nr((size - 1) / 2)])
 
 	if scroll != 0
 		execute "normal zt" . scroll . "\<c-e>"
 	endif
 
-	execute "normal \<c-w>W"
+	execute "normal \<c-w>w"
 endfunction
 
 command! -range SplitOff :call SplitOff(<line1>, <line2>)
