@@ -96,15 +96,6 @@
             vSync = true;
           };
 
-        udev.extraRules =
-          ''
-          #GameCube Controller Adapter
-          SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="0337", TAG+="uaccess"
-
-          #Mayflash DolphinBar
-          SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="0306", TAG+="uaccess"
-          '';
-
         xserver =
           { enable = true;
 
@@ -123,6 +114,16 @@
       };
 
     sound.enable = true;
+
+    ssbm =
+      { cache.enable = true;
+
+        gcc =
+          { oc-kmod.enable = true;
+            rules.enable = true;
+          };
+      };
+
     system.autoUpgrade.enable = true;
     time.timeZone = "America/Toronto";
 
@@ -170,6 +171,7 @@
                         "snowball"
                         "bash <( curl https://gitlab.com/fresheyeball/snowball/-/raw/master/generator.sh )"
                       )
+                      slippi-netplay
                       wally-cli
                     ]
                       ++ communication

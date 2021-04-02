@@ -5,6 +5,7 @@
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+      ssbm.url = "github:djanatyn/ssbm-nix";
     };
 
   outputs =
@@ -15,6 +16,7 @@
     , flake-make
     , json-format
     , localVim
+    , ssbm
     , ...
     }:
       let
@@ -42,6 +44,7 @@
                           { inherit brightness flake-make json-format; };
                     }
                   )
+                  ssbm.overlay
                 ];
             };
 
@@ -72,7 +75,11 @@
               (_: modules:
                 nixosSystem
                   { inherit pkgs system;
-                    modules = [ ./configuration.nix ] ++ modules;
+                    modules =
+                      [ ./configuration.nix
+                        ssbm.nixosModule
+                      ]
+                      ++ modules;
                   }
               )
               { desktop-2019 = [ ./desktop-2019 ];
