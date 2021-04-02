@@ -54,7 +54,9 @@
               inherit (nixpkgs.legacyPackages.${system}) neovim vimPlugins;
             };
       in
-        { devShell.${system} =
+        { apps.${system}.alacritty = pkgs.alacritty;
+
+          devShell.${system} =
             pkgs.mkShell
               { shellHook =
                   ''
