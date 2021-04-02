@@ -13,7 +13,7 @@ git-clone-cd () {
 }
 
 jql () { jq -C $1 $2 | less -r; }
-alias grep="grep -n"
+alias grep="grep --color=always -n"
 function mcd { mkdir -p $1 && cd $1; }
 alias rm='echo if you really wanna use this, use \\rm'
 alias sus="systemctl suspend"
