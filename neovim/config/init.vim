@@ -140,10 +140,11 @@ function! SplitOff(line1, line2)
 	let size = a:line2 - a:line1 + 1
 	execute "normal " . top . "G"
 	execute "above " . size . "sp"
+	normal zt
 	let scroll = min([&scrolloff, float2nr((size - 1) / 2)])
 
 	if scroll != 0
-		execute "normal zt" . scroll . "\<c-e>"
+		execute "normal " . scroll . "\<c-e>"
 	endif
 
 	execute "normal \<c-w>w"
