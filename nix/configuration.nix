@@ -1,4 +1,5 @@
 { pkgs, ... }:
+  let p = pkgs; in
   { environment =
       { systemPackages = with pkgs;
           [ alacritty
@@ -26,7 +27,7 @@
         variables = { EDITOR = "nvim"; };
       };
 
-    fonts.fonts = with pkgs; [ (nerdfonts.override {fonts = [ "Cousine" ]; }) ];
+    fonts.fonts = [ (p.nerdfonts.override {fonts = [ "Cousine" ]; }) ];
 
     hardware =
       { keyboard.zsa.enable = true;
@@ -34,7 +35,7 @@
       };
 
     icons.users.mason =
-      { cursor = pkgs.icons.breeze.cursors.breeze-snow;
+      { cursor = p.icons.breeze.cursors.breeze-snow;
         mutableIcons = false;
       };
 
@@ -51,7 +52,7 @@
 
     nix =
       { extraOptions = "experimental-features = nix-command flakes";
-        package = pkgs.nixUnstable;
+        package = p.nixUnstable;
 
         registry =
           { nixpkgs =
