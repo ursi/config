@@ -6,11 +6,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1615681793,
-        "narHash": "sha256-Yg/h5ZmiXc9NPjlCxucY6KjKhmfEahDT1v3VzW+oWDM=",
+        "lastModified": 1617644629,
+        "narHash": "sha256-cZNn8OukuYHjUC0IopN+fOIofuXdm3jLZiCCU/frdtg=",
         "owner": "ursi",
         "repo": "breeze",
-        "rev": "16fdf6cdcdfc846f86130d6f1eb4a421372ca52a",
+        "rev": "2561568c5e95848e5fe90e413cf1eba055e569e2",
         "type": "github"
       },
       "original": {
