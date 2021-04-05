@@ -35,7 +35,7 @@
       };
 
     icons.users.mason =
-      { cursor = p.icons.breeze.cursors.breeze-snow;
+      { cursor = p.icons.breeze.cursors.breeze;
         mutableIcons = false;
       };
 
