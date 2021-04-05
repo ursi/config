@@ -39,6 +39,8 @@
                           fi
                           '';
 
+                      icons = { breeze = breeze.packages.${system}; };
+
                       flakePackages =
                         utils.defaultPackages system
                           { inherit brightness flake-make json-format; };
@@ -80,6 +82,7 @@
                     modules =
                       [ ./configuration.nix
                         ssbm.nixosModule
+                        ./icons.nix
                       ]
                       ++ modules;
                   }
@@ -91,12 +94,6 @@
           packages.${system} =
             { inherit (pkgs) alacritty;
               inherit neovim;
-
-              icons =
-                import ./icons.nix
-                  { inherit pkgs;
-                    cursor = breeze.packages.${system}.cursors.breeze;
-                  };
             };
         };
 }

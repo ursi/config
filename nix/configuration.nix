@@ -33,6 +33,11 @@
         pulseaudio.enable = true;
       };
 
+    icons.users.mason =
+      { cursor = pkgs.icons.breeze.cursors.breeze-snow;
+        mutableIcons = false;
+      };
+
     networking =
       { firewall.enable = false;
         networkmanager.enable = true;

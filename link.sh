@@ -20,10 +20,6 @@ ln -fs $(realpath bash/.bashrc) ~/
 ln -fs $(realpath git/.gitconfig) ~/
 replace-config git git
 
-# icons
-rm-and-run ~/.config/gtk-3.0 "nix build ./nix#icons.gtk -o"
-rm-and-run ~/.local/share/icons "nix build ./nix#icons.icons -o"
-
 # i3
 replace-config i3 i3/i3
 replace-config i3status i3/i3status
