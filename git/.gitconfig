@@ -6,6 +6,7 @@
 	editor = nvim
 [alias]
 	cloners = clone --recurse-submodules
+	co = checkout
 	dc = diff --cached
 	ga = log --oneline --abbrev=0 --graph --all
 	graph = log --oneline --abbrev=0 --graph
