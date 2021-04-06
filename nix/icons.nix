@@ -29,7 +29,7 @@
     config =
       { system.activationScripts =
           l.mapAttrs'
-            (k: v:
+            (name: v:
                let
                  inherit (v) cursor;
 
@@ -44,7 +44,7 @@
                          '';
                    };
 
-                 home = config.users.users.${k}.home;
+                 home = config.users.users.${name}.home;
 
                  icons =
                    { path = "${home}/.local/share/icons";
@@ -68,9 +68,9 @@
                    };
                in
                l.nameValuePair
-                 ("icons-" + k)
+                 ("icons-" + name)
                  ''
-                 ${if config.icons.users.${k}.mutableIcons then ""
+                 ${if config.icons.users.${name}.mutableIcons then ""
                    else "rm -rf ${gtk.path} ${icons.path}"
                  }
 
