@@ -56,44 +56,44 @@
               inherit (nixpkgs.legacyPackages.${system}) neovim vimPlugins;
             };
       in
-        { apps.${system}.alacritty = pkgs.alacritty;
+      { apps.${system}.alacritty = pkgs.alacritty;
 
-          devShell.${system} =
-            pkgs.mkShell
-              { shellHook =
-                  ''
-                  nixos-work-test() {
-                    sudo nixos-rebuild test \
-                      && git restore flake.lock
-                  }
+        devShell.${system} =
+          pkgs.mkShell
+            { shellHook =
+                ''
+                nixos-work-test() {
+                  sudo nixos-rebuild test \
+                    && git restore flake.lock
+                }
 
-                  nixos-work-switch() {
-                    sudo nixos-rebuild switch \
-                      && git restore flake.lock
-                  }
-                  '';
-              };
-
-        nixosConfigurations = with nixpkgs.lib;
-            mapAttrs
-              (_: modules:
-                nixosSystem
-                  { inherit pkgs system;
-                    modules =
-                      [ ./configuration.nix
-                        ssbm.nixosModule
-                        ./icons.nix
-                      ]
-                      ++ modules;
-                  }
-              )
-              { desktop-2019 = [ ./desktop-2019 ];
-                hp-envy = [ ./hp-envy ];
-              };
-
-          packages.${system} =
-            { inherit (pkgs) alacritty;
-              inherit neovim;
+                nixos-work-switch() {
+                  sudo nixos-rebuild switch \
+                    && git restore flake.lock
+                }
+                '';
             };
-        };
+
+      nixosConfigurations = with nixpkgs.lib;
+          mapAttrs
+            (_: modules:
+               nixosSystem
+                 { inherit pkgs system;
+                   modules =
+                     [ ./configuration.nix
+                       ssbm.nixosModule
+                       ./icons.nix
+                     ]
+                     ++ modules;
+                 }
+            )
+            { desktop-2019 = [ ./desktop-2019 ];
+              hp-envy = [ ./hp-envy ];
+            };
+
+        packages.${system} =
+          { inherit (pkgs) alacritty;
+            inherit neovim;
+          };
+      };
 }

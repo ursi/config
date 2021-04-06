@@ -168,20 +168,20 @@
                             purescript-language-server
                           ];
                       in
-                        elm ++ haskell ++ node;
+                      elm ++ haskell ++ node;
                   in
-                    [ gnome3.nautilus # for seeing images
-                      nodePackages.node2nix
-                      (writeShellScriptBin
-                        "snowball"
-                        "bash <( curl https://gitlab.com/fresheyeball/snowball/-/raw/master/generator.sh )"
-                      )
-                      slippi-netplay
-                      wally-cli
-                    ]
-                      ++ communication
-                      ++ editor
-                      ++ flakePackages;
+                  [ gnome3.nautilus # for seeing images
+                    nodePackages.node2nix
+                    (writeShellScriptBin
+                       "snowball"
+                       "bash <( curl https://gitlab.com/fresheyeball/snowball/-/raw/master/generator.sh )"
+                    )
+                    slippi-netplay
+                    wally-cli
+                  ]
+                  ++ communication
+                  ++ editor
+                  ++ flakePackages;
 
                 password = "";
               };

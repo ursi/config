@@ -18,7 +18,6 @@
                                { type = t.bool;
                                  default = true;
                                };
-
                          };
                      }
                   );
@@ -59,31 +58,31 @@
                              Inherits=${cursor.name}
                              '';
                        in
-                         p.runCommand "icons" {}
-                           ''
-                           mkdir $out
-                           cd $out
-                           ln -s ${cursor} ${cursor.name}
-                           ln -s ${default} default
-                           '';
+                       p.runCommand "icons" {}
+                         ''
+                         mkdir $out
+                         cd $out
+                         ln -s ${cursor} ${cursor.name}
+                         ln -s ${default} default
+                         '';
                    };
                in
-                 l.nameValuePair
-                   ("icons-" + k)
-                   ''
-                   ${if config.icons.users.${k}.mutableIcons then ""
-                     else "rm -rf ${gtk.path} ${icons.path}"
-                   }
+               l.nameValuePair
+                 ("icons-" + k)
+                 ''
+                 ${if config.icons.users.${k}.mutableIcons then ""
+                   else "rm -rf ${gtk.path} ${icons.path}"
+                 }
 
-                   ${if cursor != null then
-                       ''
-                       ln -s ${gtk.drv} ${gtk.path}
-                       ln -s ${icons.drv} ${icons.path}
-                       ''
-                     else
-                        ""
-                   }
-                   ''
+                 ${if cursor != null then
+                     ''
+                     ln -s ${gtk.drv} ${gtk.path}
+                     ln -s ${icons.drv} ${icons.path}
+                     ''
+                   else
+                      ""
+                 }
+                 ''
             )
             config.icons.users;
       };
