@@ -11,6 +11,7 @@
             ix
             jq
             ncdu
+            neofetch
             (neovim.override { withNodeJs = true; })
             nix-du
             ntfs3g
