@@ -5,7 +5,8 @@
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-      ssbm.url = "github:djanatyn/ssbm-nix";
+      ssbm.url = "github:ursi/ssbm-nix/service";
+      # ssbm.url = "github:djanatyn/ssbm-nix";
     };
 
   outputs =
@@ -19,81 +20,81 @@
     , ssbm
     , ...
     }:
-      let
-        system = "x86_64-linux";
+    let
+      system = "x86_64-linux";
 
-        pkgs =
-          import nixpkgs
-            { inherit system;
-              config = { allowUnfree = true; };
+      pkgs =
+        import nixpkgs
+          { inherit system;
+            config = { allowUnfree = true; };
 
-              overlays =
-                [ (_: super:
-                    { alacritty =
-                        super.writeScriptBin "alacritty"
-                          ''
-                          if [[ $@ = *--config-file* ]]; then
-                            ${super.alacritty}/bin/alacritty $@;
-                          else
-                            ${super.alacritty}/bin/alacritty --config-file ${../alacritty.yml} $@;
-                          fi
-                          '';
+            overlays =
+              [ (_: super:
+                  { alacritty =
+                      super.writeScriptBin "alacritty"
+                        ''
+                        if [[ $@ = *--config-file* ]]; then
+                          ${super.alacritty}/bin/alacritty $@;
+                        else
+                          ${super.alacritty}/bin/alacritty --config-file ${../alacritty.yml} $@;
+                        fi
+                        '';
 
-                      icons = { breeze = breeze.packages.${system}; };
+                    icons = { breeze = breeze.packages.${system}; };
 
-                      flakePackages =
-                        utils.defaultPackages system
-                          { inherit brightness flake-make json-format; };
-                    }
-                  )
-                  ssbm.overlay
-                ];
-            };
-
-        neovim =
-          import ./neovim.nix
-            { inherit (localVim) mkOverlayableNeovim;
-              inherit (nixpkgs.legacyPackages.${system}) neovim vimPlugins;
-            };
-      in
-      { apps.${system}.alacritty = pkgs.alacritty;
-
-        devShell.${system} =
-          pkgs.mkShell
-            { shellHook =
-                ''
-                nixos-work-test() {
-                  sudo nixos-rebuild test \
-                    && git restore flake.lock
-                }
-
-                nixos-work-switch() {
-                  sudo nixos-rebuild switch \
-                    && git restore flake.lock
-                }
-                '';
-            };
-
-      nixosConfigurations = with nixpkgs.lib;
-          mapAttrs
-            (_: modules:
-               nixosSystem
-                 { inherit pkgs system;
-                   modules =
-                     [ ./configuration.nix
-                       ssbm.nixosModule
-                       ./icons.nix
-                     ]
-                     ++ modules;
-                 }
-            )
-            { desktop-2019 = [ ./desktop-2019 ];
-              hp-envy = [ ./hp-envy ];
-            };
-
-        packages.${system} =
-          { inherit (pkgs) alacritty;
-            inherit neovim;
+                    flakePackages =
+                      utils.defaultPackages system
+                        { inherit brightness flake-make json-format; };
+                  }
+                )
+                ssbm.overlay
+              ];
           };
-      };
+
+      neovim =
+        import ./neovim.nix
+          { inherit (localVim) mkOverlayableNeovim;
+            inherit (nixpkgs.legacyPackages.${system}) neovim vimPlugins;
+          };
+    in
+    { apps.${system}.alacritty = pkgs.alacritty;
+
+      devShell.${system} =
+        pkgs.mkShell
+          { shellHook =
+              ''
+              nixos-work-test() {
+                sudo nixos-rebuild test \
+                  && git restore flake.lock
+              }
+
+              nixos-work-switch() {
+                sudo nixos-rebuild switch \
+                  && git restore flake.lock
+              }
+              '';
+          };
+
+    nixosConfigurations = with nixpkgs.lib;
+        mapAttrs
+          (_: modules:
+             nixosSystem
+               { inherit pkgs system;
+                 modules =
+                   [ ./configuration.nix
+                     ssbm.nixosModule
+                     ./icons.nix
+                   ]
+                   ++ modules;
+               }
+          )
+          { desktop-2019 = [ ./desktop-2019 ];
+            hp-envy = [ ./hp-envy ];
+          };
+
+      packages.${system} =
+        { inherit (pkgs) alacritty;
+          inherit neovim;
+        };
+    };
 }
