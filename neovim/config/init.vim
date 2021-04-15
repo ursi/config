@@ -34,7 +34,13 @@ Plug 'vmchale/dhall-vim'
 Plug 'LnL7/vim-nix'
 
 "Plug 'relastle/bluewery.vim'
+
+Plug 'euclio/vim-markdown-composer'
 call plug#end()
+
+let g:markdown_composer_open_browser = 0
+let g:markdown_composer_autostart = 0
+command! Markdown :execute "ComposerStart" | :execute "ComposerOpen"
 
 let g:LanguageClient_serverCommands = {
     \ 'dhall': ['dhall-lsp-server'],
