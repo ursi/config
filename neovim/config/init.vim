@@ -116,7 +116,6 @@ vnoremap q :normal ^@q<CR>
 set complete=.,w,b
 " something to do with PureScript tooling I believe
 set backupcopy=yes
-set directory=.
 set noequalalways
 set foldmethod=indent
 set hidden
