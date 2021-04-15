@@ -1,2 +1,3 @@
-setlocal shiftwidth=2 expandtab
-setlocal wrap
+setlocal expandtab shiftwidth=2
+setlocal cursorcolumn
+inoremap <Tab> <Space><Space>
