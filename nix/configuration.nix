@@ -93,6 +93,7 @@
             nix-remove = "nix-env -e nix";
             nixbuild = "nix build -f .";
             nixshell = "nix develop -f shell.nix";
+            fui = "nix flake lock --update-input ";
           };
 
         nm-applet.enable = true;
