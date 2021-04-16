@@ -56,8 +56,16 @@
           { inherit (localVim) mkOverlayableNeovim;
             inherit (nixpkgs.legacyPackages.${system}) neovim vimPlugins;
           };
+
+      make-app = pkg: exe:
+        { type = "app";
+          program = "${pkg}/bin/${exe}";
+        };
     in
-    { apps.${system}.alacritty = pkgs.alacritty;
+    { apps.${system} =
+        { alacritty = pkgs.alacritty;
+          neovim = make-app neovim "nvim";
+        };
 
       devShell.${system} =
         pkgs.mkShell
