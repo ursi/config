@@ -5,8 +5,7 @@
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-      ssbm.url = "github:ursi/ssbm-nix/service";
-      # ssbm.url = "github:djanatyn/ssbm-nix";
+      ssbm.url = "github:djanatyn/ssbm-nix";
     };
 
   outputs =
