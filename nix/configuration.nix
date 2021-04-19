@@ -174,6 +174,7 @@
                   in
                   [ gnome3.nautilus # for seeing images
                     nodePackages.node2nix
+                    qemu
                     (writeShellScriptBin
                        "snowball"
                        "bash <( curl https://gitlab.com/fresheyeball/snowball/-/raw/master/generator.sh )"
