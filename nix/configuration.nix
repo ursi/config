@@ -173,7 +173,6 @@
                       elm ++ haskell ++ node;
                   in
                   [ gnome3.nautilus # for seeing images
-                    nodePackages.node2nix
                     qemu
                     (writeShellScriptBin
                        "snowball"
