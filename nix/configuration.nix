@@ -28,7 +28,10 @@
         variables = { EDITOR = "nvim"; };
       };
 
-    # links."home/mason/test/links!" = { value = "yeeees"; type = "str"; };
+    links.users.mason.str."/test/test.txt" = null;
+    links.annotated."/home/mason/test/links!" = null;
+    links.json."/home/mason/test/test.ini" = null;
+
     test-option =
       let l = p.lib; t = l.types; in
       l.mkMerge
@@ -78,10 +81,10 @@
         pulseaudio.enable = true;
       };
 
-    # icons.users.mason =
-    #   { cursor = p.icons.breeze.cursors.breeze;
-    #     mutableIcons = false;
-    #   };
+    icons.users.mason =
+      { cursor = p.icons.breeze.cursors.breeze;
+        mutableIcons = false;
+      };
 
     networking =
       { firewall.enable = false;

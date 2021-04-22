@@ -1,14 +1,18 @@
 pkgs:
   let
     b = builtins; l = p.lib; p = pkgs; t = l.types;
-    ini = p.formats.ini {};
-    json = p.formats.json {};
 
+    formats =
+      { ini = p.formats.ini {};
+        json = p.formats.json {};
+        toml = p.formats.toml {};
+        yaml = p.formats.yaml {};
+      };
+
+    # we need to use strings so we can check for equality
     get-type = type-str:
-      if type-str == "ini" then
-        ini.type
-      else if type-str == "json" then
-        json.type
+      if formats?${type-str} then
+        formats.${type-str}.type
       else if t?${type-str} then
         t.${type-str}
       else
