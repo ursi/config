@@ -90,8 +90,10 @@
                  modules =
                    [ ./configuration.nix
                      ssbm.nixosModule
-                     ./icons.nix
-                     ./text-file.nix
+                     # ./icons.nix
+                     # ./text-file.nix
+                     ./test.nix
+                     ./links.nix
                    ]
                    ++ modules;
                }

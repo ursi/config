@@ -141,8 +141,21 @@
         link-options;
   in
   { options.links =
-      { users = user-link-options; }
+      { users =
+          l.mkOption
+            { type = t.attrsOf (t.submodule { options = link-options; });
+              default = {};
+            };
+      }
       // link-options;
+    /*
+    links.users."path to file" =
+      { value = <anything>
+        type = <string or implied>
+        path = ...
+        preserve = ...
+      }
+    */
 
     config =
       let
@@ -209,7 +222,7 @@
                     (link: link // { path = config.users.users.${user}.home + link.path; })
                     links.derivations
                )
-               config.links.users;
+               config.links.users
             )
           ++ config.links.text-files;
           # process-user-links config.links.users
@@ -233,7 +246,7 @@
                       // text-files;
                   }
             )
-            links.users;
+            config.links.users;
       };
   }
       # { derivation-links =

@@ -28,6 +28,13 @@
         variables = { EDITOR = "nvim"; };
       };
 
+    # links."home/mason/test/links!" = { value = "yeeees"; type = "str"; };
+    test-option =
+      let l = p.lib; t = l.types; in
+      l.mkMerge
+        [ { value = "hi"; type = "str"; }
+          # { test = { value = "hi"; type = "str"; }; }
+        ];
     # user-text-files.mason =
     #   [ { text = null;
     #       path = "/test/user-files test.txt";
@@ -71,10 +78,10 @@
         pulseaudio.enable = true;
       };
 
-    icons.users.mason =
-      { cursor = p.icons.breeze.cursors.breeze;
-        mutableIcons = false;
-      };
+    # icons.users.mason =
+    #   { cursor = p.icons.breeze.cursors.breeze;
+    #     mutableIcons = false;
+    #   };
 
     networking =
       { firewall.enable = false;
