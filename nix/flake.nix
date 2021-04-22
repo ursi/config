@@ -91,6 +91,7 @@
                    [ ./configuration.nix
                      ssbm.nixosModule
                      ./icons.nix
+                     ./text-file.nix
                    ]
                    ++ modules;
                }

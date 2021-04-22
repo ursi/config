@@ -28,6 +28,42 @@
         variables = { EDITOR = "nvim"; };
       };
 
+    # user-text-files.mason =
+    #   [ { text = null;
+    #       path = "/test/user-files test.txt";
+    #       overwrite-existing = true;
+    #       remove-if-null = true;
+    #     }
+    #   ]
+
+    # user-text-file-links.mason =
+    #   [ { text = null; #pkgs.jq;
+    #       path = "/test/user-text-links-test.txt";
+    #       preserve = false;
+    #     }
+    #   ];
+
+    # user-derivation-links.mason =
+    #   [ { target = null; #pkgs.jq;
+    #       path = "/test/jq";
+    #       preserve = false;
+    #     }
+    #   ];
+
+    # text-file-links =
+    #   [ { text = null;
+    #       path = "/home/mason/test/text-file-test.txt";
+    #       preserve = false;
+    #     }
+    #   ];
+
+    # derivation-links =
+    #   [ { target = null;
+    #       path = "/home/mason/test/ncdu";
+    #       preserve = false;
+    #     }
+    #   ];
+
     fonts.fonts = [ (p.nerdfonts.override {fonts = [ "Cousine" ]; }) ];
 
     hardware =
@@ -97,6 +133,7 @@
           };
 
         nm-applet.enable = true;
+        steam.enable = true;
       };
 
     services =
@@ -179,18 +216,19 @@
                        "bash <( curl https://gitlab.com/fresheyeball/snowball/-/raw/master/generator.sh )"
                     )
                     slippi-netplay
+                    slippi-playback
                     wally-cli
                   ]
                   ++ communication
                   ++ editor
                   ++ flakePackages;
 
-                password = "";
+                hashedPassword = "$6$9Mu5WTaM2xOgEW$ObihcouXydrwUFAvgz.y.LiHH5rH1GeLhxzqR9aDVasS3w8JX6dH8TnOyYZTiu3088hBSS7tKLYKbGKvMy99u0";
               };
 
             root =
               { extraGroups = [ "root" ];
-                password = "";
+                hashedPassword = "$6$9Mu5WTaM2xOgEW$ObihcouXydrwUFAvgz.y.LiHH5rH1GeLhxzqR9aDVasS3w8JX6dH8TnOyYZTiu3088hBSS7tKLYKbGKvMy99u0";
               };
           };
       };
