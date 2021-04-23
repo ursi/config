@@ -4,6 +4,7 @@
       flake-make.url = "github:ursi/flake-make";
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
+      nixos-links.url = "github:ursi/nixos-links";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
       ssbm.url = "github:djanatyn/ssbm-nix";
     };
@@ -16,6 +17,7 @@
     , flake-make
     , json-format
     , localVim
+    , nixos-links
     , ssbm
     , ...
     }:
@@ -91,6 +93,7 @@
                    [ ./configuration.nix
                      ssbm.nixosModule
                      ./icons.nix
+                     nixos-links.nixosModule
                    ]
                    ++ modules;
                }
