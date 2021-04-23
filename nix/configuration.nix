@@ -35,11 +35,6 @@
         pulseaudio.enable = true;
       };
 
-    icons.users.mason =
-      { cursor = p.icons.breeze.cursors.breeze;
-        mutableIcons = false;
-      };
-
     networking =
       { firewall.enable = false;
         networkmanager.enable = true;
@@ -144,6 +139,7 @@
               { createHome = true;
                 description = "Mason Mackaman";
                 extraGroups = [ "networkmanager" "plugdev" "wheel" ];
+                icons.cursor = p.icons.breeze.cursors.breeze;
                 isNormalUser = true;
 
                 packages = with pkgs;

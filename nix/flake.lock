@@ -254,11 +254,11 @@
     },
     "nixos-links": {
       "locked": {
-        "lastModified": 1619205460,
-        "narHash": "sha256-/cRKM66mVzE+r/TFx+dwddRq2e8TNDfh2XWKT3KjDpw=",
+        "lastModified": 1619211485,
+        "narHash": "sha256-gaDe5QLv5tNQj2Y4CNcWcF7YfVlgbDYayvI1f1nCHJo=",
         "owner": "ursi",
         "repo": "nixos-links",
-        "rev": "2cdc368a3b3797681809510109c622f1026811cc",
+        "rev": "bb709d0f010dd029c25e7274e7a90ff9ac544375",
         "type": "github"
       },
       "original": {
