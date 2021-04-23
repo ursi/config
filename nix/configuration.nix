@@ -183,7 +183,7 @@
                   ]
                   ++ communication
                   ++ editor
-                  ++ flakePackages;
+                  ++ flake-packages;
 
                 password = "";
               };

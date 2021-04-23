@@ -10,15 +10,15 @@
     };
 
   outputs =
-    { nixpkgs
-    , utils
-    , breeze
+    { breeze
     , brightness
     , flake-make
     , json-format
     , localVim
     , nixos-links
+    , nixpkgs
     , ssbm
+    , utils
     , ...
     }:
     let
@@ -43,7 +43,7 @@
 
                     icons = { breeze = breeze.packages.${system}; };
 
-                    flakePackages =
+                    flake-packages =
                       utils.defaultPackages system
                         { inherit brightness flake-make json-format; };
                   }
@@ -91,9 +91,9 @@
                { inherit pkgs system;
                  modules =
                    [ ./configuration.nix
-                     ssbm.nixosModule
                      ./icons.nix
                      nixos-links.nixosModule
+                     ssbm.nixosModule
                    ]
                    ++ modules;
                }
