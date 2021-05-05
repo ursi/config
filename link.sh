@@ -16,10 +16,6 @@ replace-config() {
 # bash
 ln -fs $(realpath bash/.bashrc) ~/
 
-# git
-ln -fs $(realpath git/.gitconfig) ~/
-replace-config git git
-
 # i3
 replace-config i3 i3/i3
 replace-config i3status i3/i3status

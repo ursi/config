@@ -141,6 +141,7 @@
                 extraGroups = [ "networkmanager" "plugdev" "wheel" ];
                 icons.cursor = p.icons.breeze.cursors.breeze;
                 isNormalUser = true;
+                git = import ./git.nix "${p.neovim}/bin/nvim";
 
                 packages = with pkgs;
                   let
