@@ -585,11 +585,11 @@
         "slippi-desktop": "slippi-desktop"
       },
       "locked": {
-        "lastModified": 1618855566,
-        "narHash": "sha256-FGn9Lz5n+45mLq48tB2+TBbSIM9KZFupgHh0rxMeJR0=",
+        "lastModified": 1620015599,
+        "narHash": "sha256-JScjBhqW7p15cyg7h+LUb6UUy2uCX+T3huDewetjo5o=",
         "owner": "djanatyn",
         "repo": "ssbm-nix",
-        "rev": "8107028168777bdf91e13dff31f82cb64095a874",
+        "rev": "e13633fddb0a571fe24a05128bb8f5bd217bba92",
         "type": "github"
       },
       "original": {
