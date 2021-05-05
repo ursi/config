@@ -2,9 +2,9 @@
     { breeze.url = "github:ursi/breeze";
       brightness.url = "github:ursi/brightness";
       flake-make.url = "github:ursi/flake-make";
+      im-home.url ="github:ursi/im-home";
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
-      nixos-links.url = "github:ursi/nixos-links";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
       ssbm.url = "github:djanatyn/ssbm-nix";
     };
@@ -13,9 +13,9 @@
     { breeze
     , brightness
     , flake-make
+    , im-home
     , json-format
     , localVim
-    , nixos-links
     , nixpkgs
     , ssbm
     , utils
@@ -91,10 +91,9 @@
                { inherit pkgs system;
                  modules =
                    [ ./configuration.nix
-                     ./icons.nix
-                     nixos-links.nixosModule
                      ssbm.nixosModule
                    ]
+                   ++ attrValues im-home.nixosModules
                    ++ modules;
                }
           )

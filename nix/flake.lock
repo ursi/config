@@ -181,6 +181,21 @@
         "type": "github"
       }
     },
+    "im-home": {
+      "locked": {
+        "lastModified": 1620194314,
+        "narHash": "sha256-E/oW1QdY27pcNAtKR9ZsZqLNlBFdkdK5k1tyEZKPxWY=",
+        "owner": "ursi",
+        "repo": "im-home",
+        "rev": "b2f131143168ded97a3f1e40da827f5cc088c4a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ursi",
+        "repo": "im-home",
+        "type": "github"
+      }
+    },
     "json-format": {
       "inputs": {
         "flake-utils": "flake-utils_6",
@@ -250,21 +265,6 @@
       "original": {
         "id": "nix",
         "type": "indirect"
-      }
-    },
-    "nixos-links": {
-      "locked": {
-        "lastModified": 1619211485,
-        "narHash": "sha256-gaDe5QLv5tNQj2Y4CNcWcF7YfVlgbDYayvI1f1nCHJo=",
-        "owner": "ursi",
-        "repo": "nixos-links",
-        "rev": "bb709d0f010dd029c25e7274e7a90ff9ac544375",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ursi",
-        "repo": "nixos-links",
-        "type": "github"
       }
     },
     "nixpkgs": {
@@ -554,9 +554,9 @@
         "breeze": "breeze",
         "brightness": "brightness",
         "flake-make": "flake-make",
+        "im-home": "im-home",
         "json-format": "json-format",
         "localVim": "localVim",
-        "nixos-links": "nixos-links",
         "nixpkgs": "nixpkgs_14",
         "ssbm": "ssbm",
         "utils": "utils_6"
