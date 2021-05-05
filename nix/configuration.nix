@@ -25,7 +25,7 @@
             w3m
           ];
 
-        variables = { EDITOR = "nvim"; };
+        variables.EDITOR = "nvim";
       };
 
     fonts.fonts = [ (p.nerdfonts.override {fonts = [ "Cousine" ]; }) ];
