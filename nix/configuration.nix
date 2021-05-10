@@ -87,6 +87,13 @@
           { nix-use = "nix-env -if nix.nix";
             nix-remove = "nix-env -e nix";
             nixbuild = "nix build -f .";
+
+            nixrepl =
+              let
+                file = p.writeText "" "{ p }: { l = p.lib; inherit p; } // builtins";
+              in
+              ''nix repl --arg p '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' ${file}'';
+
             nixshell = "nix develop -f shell.nix";
             fui = "nix flake lock --update-input ";
           };
