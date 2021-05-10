@@ -21,7 +21,9 @@
     , utils
     , ...
     }:
+    with builtins;
     let
+      l = nixpkgs.lib; p = pkgs;
       system = "x86_64-linux";
 
       pkgs =
@@ -64,12 +66,12 @@
         };
     in
     { apps.${system} =
-        { alacritty = pkgs.alacritty;
+        { alacritty = p.alacritty;
           neovim = make-app neovim "nvim";
         };
 
       devShell.${system} =
-        pkgs.mkShell
+        p.mkShell
           { shellHook =
               ''
               nixos-work-test() {
@@ -84,10 +86,10 @@
               '';
           };
 
-    nixosConfigurations = with nixpkgs.lib;
-        mapAttrs
+    nixosConfigurations =
+        l.mapAttrs
           (_: modules:
-             nixosSystem
+             l.nixosSystem
                { inherit pkgs system;
                  modules =
                    [ ./configuration.nix
@@ -102,7 +104,7 @@
           };
 
       packages.${system} =
-        { inherit (pkgs) alacritty;
+        { inherit (p) alacritty;
           inherit neovim;
         };
     };
