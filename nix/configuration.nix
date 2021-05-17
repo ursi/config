@@ -158,23 +158,6 @@
                         signal-desktop
                         zulip
                       ];
-
-                    editor =
-                      let
-                        elm = with elmPackages;
-                          [ elm-language-server
-                            elm-format
-                          ];
-
-                        haskell = with haskellPackages;
-                          [ haskell-language-server ];
-
-                        node = with nodePackages;
-                          [ purty
-                            purescript-language-server
-                          ];
-                      in
-                      elm ++ haskell ++ node;
                   in
                   [ gnome3.nautilus # for seeing images
                     qemu
@@ -186,7 +169,6 @@
                     wally-cli
                   ]
                   ++ communication
-                  ++ editor
                   ++ flake-packages;
 
                 password = "";
