@@ -48,6 +48,8 @@
                     flake-packages =
                       utils.defaultPackages system
                         { inherit brightness flake-make json-format; };
+
+                    neovim = super.neovim.override { withNodeJs = true; };
                   }
                 )
                 ssbm.overlay

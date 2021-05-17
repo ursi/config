@@ -12,7 +12,7 @@
             jq
             ncdu
             neofetch
-            (neovim.override { withNodeJs = true; })
+            neovim
             nix-du
             ntfs3g
             parted
