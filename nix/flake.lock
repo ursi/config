@@ -61,11 +61,11 @@
         "utils": "utils_5"
       },
       "locked": {
-        "lastModified": 1621466398,
-        "narHash": "sha256-UG6paJ9ORSCEtvnBhVJcKwPR01MwKfhUtGHaiblTRaI=",
+        "lastModified": 1621735067,
+        "narHash": "sha256-6KSwKuNVuCIOqi0GhbYrdeSIFtCgyD+UlUhnGOBWxaI=",
         "owner": "ursi",
         "repo": "flake-make",
-        "rev": "44ba4b2394a52ce4ad5261995f75be7311551168",
+        "rev": "b8447bb593d9bea813ee832fb926748db3269c12",
         "type": "github"
       },
       "original": {
@@ -575,11 +575,11 @@
         "slippi-desktop": "slippi-desktop"
       },
       "locked": {
-        "lastModified": 1620015599,
-        "narHash": "sha256-JScjBhqW7p15cyg7h+LUb6UUy2uCX+T3huDewetjo5o=",
+        "lastModified": 1621470735,
+        "narHash": "sha256-E0VwqJ4qzZUBJjYZLF3zzvEo5PYLYJsp3DPjW9sokOE=",
         "owner": "djanatyn",
         "repo": "ssbm-nix",
-        "rev": "e13633fddb0a571fe24a05128bb8f5bd217bba92",
+        "rev": "3896cac81722975dbbc1e6ba0e2904e2fe1b48b4",
         "type": "github"
       },
       "original": {
@@ -668,16 +668,16 @@
         "make-shell": "make-shell_2"
       },
       "locked": {
-        "lastModified": 1619482154,
-        "narHash": "sha256-8H/k4bCq2EMKc4Q1ACDSuaEZs8SNRCjZWD4/wi50v2Y=",
+        "lastModified": 1621733845,
+        "narHash": "sha256-k7SQFZi64rTqNWBkKrGahCtQHBXi8RWlPq3OKRDzano=",
         "owner": "ursi",
         "repo": "flake-utils",
-        "rev": "2493ce466204663f24b3a813d8d5876f4d773fd7",
+        "rev": "d939d2e5d73cd3468a05661e4471838b64547e6b",
         "type": "github"
       },
       "original": {
         "owner": "ursi",
-        "ref": "1",
+        "ref": "2",
         "repo": "flake-utils",
         "type": "github"
       }
