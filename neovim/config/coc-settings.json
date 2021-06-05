@@ -26,11 +26,11 @@
 			"args": ["--stdio"],
 			"filetypes": ["purescript"],
 			"trace.server": "off",
-			"rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"],
+			"rootPatterns": ["bower.json", "psc-package.json", "spago.dhall", "flake.nix"],
 			"settings": {
 				"purescript": {
 					"addSpagoSources": true, // etc
-					"buildCommand": "spago build --purs-args --json-errors",
+					// "buildCommand": "spago build --purs-args --json-errors",
 					"editorMode": true
 				}
 			}
