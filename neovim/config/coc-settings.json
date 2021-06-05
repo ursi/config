@@ -1,6 +1,6 @@
 {
 	//"coc.preferences.formatOnInsertLeave": true,
-	"coc.preferences.formatOnSaveFiletypes": ["elm", "purescript"],
+	"coc.preferences.formatOnSaveFiletypes": ["elm"],
 	"diagnostic.maxWindowHeight": 50,
 	"languageserver": {
 		"elmLS": {
