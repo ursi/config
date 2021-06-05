@@ -175,12 +175,15 @@
                        }
                        ''
                     )
+                    qbittorrent
                     qemu
                     (writeShellScriptBin
                        "snowball"
                        "bash <( curl https://gitlab.com/fresheyeball/snowball/-/raw/master/generator.sh )"
                     )
                     slippi-netplay
+                    torbrowser
+                    vlc
                     wally-cli
                   ]
                   ++ communication
