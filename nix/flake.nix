@@ -5,7 +5,7 @@
       im-home.url ="github:ursi/im-home";
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
-      nixpkgs.url = "github:NixOS/nixpkgs/7836469dbe40783c640e2c0fafd2e55248ffea31";
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
       ssbm.url = "github:djanatyn/ssbm-nix";
     };
 
