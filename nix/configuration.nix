@@ -87,6 +87,7 @@
           { nix-use = "nix-env -if nix.nix";
             nix-remove = "nix-env -e nix";
             nixbuild = "nix build -f .";
+            nixpkgs-unstable = ''echo $(nix eval --impure --raw --expr '(fetchGit { url = "https://github.com/NixOS/nixpkgs"; ref = "nixpkgs-unstable"; }).rev')'';
 
             nixrepl =
               let
