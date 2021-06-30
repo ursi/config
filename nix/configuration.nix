@@ -1,6 +1,8 @@
 { pkgs, ... }:
   let p = pkgs; in
-  { environment =
+  { imports = [ ./git.nix ];
+
+    environment =
       { systemPackages = with pkgs;
           [ alacritty
             brave
@@ -148,7 +150,6 @@
                 extraGroups = [ "networkmanager" "plugdev" "wheel" ];
                 icons.cursor = p.icons.breeze.cursors.breeze;
                 isNormalUser = true;
-                git = import ./git.nix "${p.neovim}/bin/nvim";
 
                 packages = with pkgs;
                   let
