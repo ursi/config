@@ -157,3 +157,18 @@ function! SplitOff(line1, line2)
 endfunction
 
 command! -range SplitOff :call SplitOff(<line1>, <line2>)
+
+function! Indent(count)
+	let top = line("'<")
+	let indentTop = indent(top)
+	let bottom = line("'>")
+	let indentAbove = indent(top - 1)
+
+	for line in range(top, bottom)
+	    if getline(line) != ""
+			execute line . "left " . (indentAbove + a:count + indent(line) - indentTop)
+		endif
+	endfor
+endfunction
+
+vnoremap ; :call Indent(v:count)<CR>
