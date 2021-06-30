@@ -1,7 +1,7 @@
 setlocal expandtab shiftwidth=2
 setlocal cursorcolumn
 setlocal iskeyword+='
-inoremap <Tab> <Space><Space>
+inoremap <buffer> <Tab> <Space><Space>
 
 " let b:ale_fixers = ['purty']
 " let b:ale_linters = 'all'
