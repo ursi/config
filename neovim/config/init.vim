@@ -171,4 +171,4 @@ function! Indent(count)
 	endfor
 endfunction
 
-vnoremap ; :call Indent(v:count)<CR>
+vnoremap . :call Indent(v:count)<CR>
