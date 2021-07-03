@@ -180,11 +180,11 @@
     },
     "im-home": {
       "locked": {
-        "lastModified": 1620194314,
-        "narHash": "sha256-E/oW1QdY27pcNAtKR9ZsZqLNlBFdkdK5k1tyEZKPxWY=",
+        "lastModified": 1625355027,
+        "narHash": "sha256-C+CCoDTElNgEEKiNfuJsf4tHajQQeG26e3RluY0IBus=",
         "owner": "ursi",
         "repo": "im-home",
-        "rev": "b2f131143168ded97a3f1e40da827f5cc088c4a0",
+        "rev": "c5cf20579f027b4de61b872afad2e28e31b59051",
         "type": "github"
       },
       "original": {

@@ -1,3 +1,4 @@
+with builtins;
 { pkgs, ... }:
   let p = pkgs; in
   { imports = [ ./git.nix ];
@@ -148,6 +149,7 @@
               { createHome = true;
                 description = "Mason Mackaman";
                 extraGroups = [ "networkmanager" "plugdev" "wheel" ];
+                i3.extra-config = readFile ../i3/i3/config;
                 icons.cursor = p.icons.breeze.cursors.breeze;
                 isNormalUser = true;
 
