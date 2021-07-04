@@ -164,11 +164,15 @@ function! Indent(count)
 	let top = line("'<")
 	let indentTop = indent(top)
 	let bottom = line("'>")
-	let indentAbove = indent(top - 1)
+	let above = top - 1
+
+	while getline(above) == "" && above > 1
+		let above -= 1
+	endwhile
 
 	for line in range(top, bottom)
 	    if getline(line) != ""
-			execute line . "left " . (indentAbove + a:count + indent(line) - indentTop)
+			execute line . "left " . (indent(above) + a:count + indent(line) - indentTop)
 		endif
 	endfor
 endfunction
