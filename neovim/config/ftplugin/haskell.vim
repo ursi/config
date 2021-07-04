@@ -1,5 +1,6 @@
 setlocal shiftwidth=2 expandtab
 setlocal iskeyword+='
+inoremap <buffer> <Tab> <Space><Space>
 
 nnoremap <buffer> <Leader>t YpA =<Esc>kA ::<Space>
 iabbrev <buffer> unqual import         <Space>
