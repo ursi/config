@@ -16,8 +16,5 @@ replace-config() {
 # bash
 ln -fs $(realpath bash/.bashrc) ~/
 
-# i3
-replace-config i3status i3/i3status
-
 # neovim
 replace-config nvim neovim/config
