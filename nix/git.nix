@@ -1,7 +1,7 @@
 { pkgs, ... }:
   let
     graph-all = "ga";
-    show-stash = "$(git reflog show --format=%H stash)";
+    show-stash = "$(git reflog show --format=%H stash 2> /dev/null)";
   in
   { programs.bash.shellAliases.${graph-all} = "git ${graph-all} ${show-stash}";
 
