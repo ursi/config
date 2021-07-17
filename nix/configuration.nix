@@ -4,7 +4,8 @@ with builtins;
   { imports = [ ./git.nix ./package-alias.nix ];
 
     environment =
-      { systemPackages = with pkgs;
+      { systemPackages =
+          with pkgs;
           [ alacritty
             brave
             gimp
@@ -174,6 +175,7 @@ with builtins;
                       ];
                   in
                   [ gnome3.nautilus # for seeing images
+
                     (writeShellScriptBin
                        "prefetch-nixpkgs"
                        ''
@@ -190,12 +192,15 @@ with builtins;
                        }
                        ''
                     )
+
                     qbittorrent
                     qemu
+
                     (writeShellScriptBin
                        "snowball"
                        "bash <( curl https://gitlab.com/fresheyeball/snowball/-/raw/master/generator.sh )"
                     )
+
                     slippi-netplay
                     torbrowser
                     vlc
