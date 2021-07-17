@@ -1,7 +1,7 @@
 with builtins;
 { pkgs, ... }:
   let p = pkgs; in
-  { imports = [ ./git.nix ];
+  { imports = [ ./git.nix ./package-alias.nix ];
 
     environment =
       { systemPackages = with pkgs;
@@ -26,6 +26,17 @@ with builtins;
             unzip
             xclip
             w3m
+          ];
+
+        pkgs-with-aliases =
+          with pkgs;
+          [ { pkg = nodePackages.http-server;
+              aliases.http-server = "http-server -c-1";
+            }
+
+            { pkg = j;
+              aliases.j = "jconsole";
+            }
           ];
 
         variables.EDITOR = "nvim";
