@@ -21,6 +21,7 @@ with builtins;
             ntfs3g
             parted
             pavucontrol
+            peek
             spectacle
             tmate
             trash-cli
