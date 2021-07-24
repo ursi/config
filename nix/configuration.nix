@@ -114,6 +114,7 @@ with builtins;
             fui = "nix flake lock --update-input ";
           };
 
+        dconf.enable = true;
         nm-applet.enable = true;
       };
 
