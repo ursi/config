@@ -3,7 +3,10 @@
     graph-all = "ga";
     show-stash = "$(git reflog show --format=%H stash 2> /dev/null)";
   in
-  { programs.bash.shellAliases.${graph-all} = "git ${graph-all} ${show-stash}";
+  { programs.bash.shellAliases =
+      { ${graph-all} = "git ${graph-all} ${show-stash}";
+        gs = "git status";
+      };
 
     users.users.mason.git =
       { config =
