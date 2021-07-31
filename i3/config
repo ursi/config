@@ -53,10 +53,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Escape exec --no-startup-id alacritty
 
 # open a browser window
-bindsym $mod+Escape exec brave
+bindsym $mod+Return exec --no-startup-id brave
 
 # kill focused window
 bindsym $mod+$sec+q kill
@@ -146,6 +146,8 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+b workspace back_and_forth
 
 # move focused container to workspace
 bindsym $mod+$sec+1 move container to workspace number $ws1
