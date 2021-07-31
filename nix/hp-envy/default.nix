@@ -1,4 +1,7 @@
-{ imports = [ ./hardware-configuration.nix ];
+{ imports =
+    [ ./hardware-configuration.nix
+      ../hardware/mice/simple-corsair.nix
+    ];
 
   boot.loader =
     { systemd-boot.enable = true;

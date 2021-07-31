@@ -1,6 +1,6 @@
 with builtins;
-{ pkgs, ... }:
-  let p = pkgs; in
+{ lib, pkgs, ... }:
+  let l = lib; p = pkgs; in
   { imports = [ ./git.nix ./package-alias.nix ];
 
     environment =
@@ -133,9 +133,10 @@ with builtins;
               { enable = true;
 
                 mouse =
-                  { accelProfile = "flat";
-                    accelSpeed = "0";
-                  };
+                  l.mkDefault
+                    { accelProfile = "flat";
+                      accelSpeed = "0";
+                    };
               };
 
             windowManager.i3.enable = true;
