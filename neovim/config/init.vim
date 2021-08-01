@@ -171,9 +171,17 @@ function! Indent(count)
 		let above -= 1
 	endwhile
 
+	if strcharpart(getline(above), strlen(getline(above)) - 1) == ")"
+		let regex = '\w\|(\|["$]'
+	else
+		let regex = '\w\|["$]'
+	endif
+
+	let offset = max([ match(trim(getline(above)), regex), 0 ])
+
 	for line in range(top, bottom)
 	    if getline(line) != ""
-			execute line . "left " . (indent(above) + a:count + indent(line) - indentTop)
+			execute line . "left " . (indent(above) + offset + a:count + indent(line) - indentTop)
 		endif
 	endfor
 endfunction
