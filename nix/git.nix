@@ -18,6 +18,7 @@
                 dc = "diff --cached";
                 ${graph-all} = "log --oneline --abbrev=0 --graph --all";
                 graph = "log --oneline --abbrev=0 --graph";
+                lfp = "log --oneline --abbrev=0 --first-parent";
                 wd = "diff --word-diff";
                 wdc = "diff --word-diff --cached";
               };
