@@ -1,3 +1,4 @@
+with builtins;
 { pkgs, ... }:
   let
     graph-all = "ga";
@@ -13,9 +14,15 @@
     users.users.mason.git =
       { config =
           { alias =
+              let
+                make-function = str:
+                  ''"!f() { ${replaceStrings [ "\"" ] [ ''\"'' ] str}; }; f"'';
+              in
               { cloners = "clone --recurse-submodules";
                 co = "checkout";
                 dc = "diff --cached";
+                exp = make-function ''git lfp $1^..$1^2 "''${@:2}"'';
+                expand = make-function ''git log $1^..$1^2 "''${@:2}"'';
                 ${graph-all} = "log --oneline --abbrev=0 --graph --all";
                 graph = "log --oneline --abbrev=0 --graph";
                 lfp = "log --oneline --abbrev=0 --first-parent";
