@@ -187,3 +187,4 @@ function! Indent(count)
 endfunction
 
 vnoremap . :call Indent(v:count)<CR>
+vnoremap , :call Indent(-v:count)<CR>
