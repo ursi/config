@@ -1,1 +1,1 @@
-import ./no-accel.nix { speed = -.8; }
+import ./no-accel.nix { speed = -.75; }
