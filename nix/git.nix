@@ -35,6 +35,9 @@ with builtins;
                 pager = "less -x1,5";
               };
 
+            merge.ff = false;
+            pull.ff = "only";
+
             user =
               { email = "masondeanm@aol.com";
                 name = "Mason Mackaman";
