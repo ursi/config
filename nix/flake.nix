@@ -49,7 +49,7 @@
                       utils.defaultPackages system
                         { inherit brightness flake-make json-format; };
 
-                    neovim = super.neovim.override { withNodeJs = true; };
+                    inherit neovim;
                   }
                 )
                 ssbm.overlay
@@ -57,9 +57,9 @@
           };
 
       neovim =
-        import ./neovim.nix
+        import ./neovim
           { inherit (localVim) mkOverlayableNeovim;
-            inherit (nixpkgs.legacyPackages.${system}) neovim vimPlugins;
+            pkgs = nixpkgs.legacyPackages.${system};
           };
 
       make-app = pkg: exe:
