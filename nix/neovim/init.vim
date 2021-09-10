@@ -51,7 +51,7 @@ endfunction
 "cnoremap <Tab> <Esc>
 
 
-noremap <Leader>b :ls<CR>:b
+noremap <Leader>b :ls<CR>:b 
 noremap <Leader>c :cd %:h<CR>
 noremap <Leader>n :nohlsearch<CR>
 noremap <Leader>s :write<CR>:source %<CR>
