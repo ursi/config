@@ -41,7 +41,7 @@ with builtins;
             }
           ];
 
-        variables.EDITOR = "nvim";
+        variables.VISUAL = "nvim";
       };
 
     fonts.fonts = [ (p.nerdfonts.override {fonts = [ "Cousine" ]; }) ];
