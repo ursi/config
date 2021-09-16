@@ -2,7 +2,7 @@ set -o vi
 
 alias apply=". ~/.bashrc"
 alias ls="ls -A --color=tty --group-directories-first"
-cl () { cd $@; ls; }
+cl () { cd "$@"; ls; }
 
 gh-clone-cd() {
 	git clone git@github.com:$1/$2 && cd $2
