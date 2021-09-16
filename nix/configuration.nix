@@ -33,11 +33,7 @@ with builtins;
         pkgs-with-aliases =
           let hours-alias = "hours -j ~/.hours"; in
           with pkgs;
-          [ { pkg = nodePackages.http-server;
-              aliases.http-server = "http-server -c-1";
-            }
-
-            { pkg = hours;
+          [ { pkg = hours;
 
               aliases =
                 { hours = hours-alias;
@@ -49,6 +45,10 @@ with builtins;
 
             { pkg = j;
               aliases.j = "jconsole";
+            }
+
+            { pkg = nodePackages.http-server;
+              aliases.http-server = "http-server -c-1";
             }
           ];
 
