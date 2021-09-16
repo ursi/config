@@ -2,6 +2,12 @@
     { breeze.url = "github:ursi/breeze";
       brightness.url = "github:ursi/brightness";
       flake-make.url = "github:ursi/flake-make";
+
+      hours =
+        { flake = false;
+          url = "github:Quelklef/hours";
+        };
+
       im-home.url ="github:ursi/im-home";
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
@@ -13,6 +19,7 @@
     { breeze
     , brightness
     , flake-make
+    , hours
     , im-home
     , json-format
     , localVim
@@ -43,6 +50,7 @@
                         fi
                         '';
 
+                    hours = import hours { pkgs = super; inherit system; };
                     icons = { breeze = breeze.packages.${system}; };
 
                     flake-packages =

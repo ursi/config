@@ -178,6 +178,22 @@
         "type": "github"
       }
     },
+    "hours": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1631510147,
+        "narHash": "sha256-14Lxj+EUEgbrNX0d4jLWoNyRp6q8F/nXu18KgnSrOrA=",
+        "owner": "Quelklef",
+        "repo": "hours",
+        "rev": "66ab5cbcdc0fc5e014289cab93cc3b01e58ced6b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Quelklef",
+        "repo": "hours",
+        "type": "github"
+      }
+    },
     "im-home": {
       "locked": {
         "lastModified": 1625357456,
@@ -544,6 +560,7 @@
         "breeze": "breeze",
         "brightness": "brightness",
         "flake-make": "flake-make",
+        "hours": "hours",
         "im-home": "im-home",
         "json-format": "json-format",
         "localVim": "localVim",

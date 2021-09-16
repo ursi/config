@@ -31,9 +31,20 @@ with builtins;
           ];
 
         pkgs-with-aliases =
+          let hours-alias = "hours -j ~/.hours"; in
           with pkgs;
           [ { pkg = nodePackages.http-server;
               aliases.http-server = "http-server -c-1";
+            }
+
+            { pkg = hours;
+
+              aliases =
+                { hours = hours-alias;
+                  hours-stop = "hours session stop; hours show";
+                };
+
+              functions.hours-start = ''${hours-alias} session start -t "$1"; ${hours-alias} show'';
             }
 
             { pkg = j;
