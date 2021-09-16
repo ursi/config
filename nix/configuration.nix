@@ -124,7 +124,7 @@ with builtins;
               ''nix repl --arg p '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' ${file}'';
 
             nixshell = "nix develop -f shell.nix";
-            fui = "nix flake lock --update-input ";
+            fui = "nix flake lock --update-input";
           };
 
         dconf.enable = true;
