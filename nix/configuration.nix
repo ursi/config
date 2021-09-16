@@ -13,7 +13,6 @@ with builtins;
             graphviz
             imagemagick
             ix
-            jq
             ncdu
             neofetch
             neovim
@@ -24,9 +23,7 @@ with builtins;
             peek
             spectacle
             tmate
-            trash-cli
             unzip
-            xclip
             w3m
           ];
 
@@ -47,8 +44,24 @@ with builtins;
               aliases.j = "jconsole";
             }
 
+            { pkg = jq;
+              functions.jql = ''jq -C "$1" "$2" | less -r'';
+            }
+
             { pkg = nodePackages.http-server;
               aliases.http-server = "http-server -c-1";
+            }
+
+            { pkg = trash-cli;
+              aliases.trash = "trash-put";
+            }
+
+            { pkg = xclip;
+
+              aliases =
+                { xclipc = "xclip -selection clipboard";
+                  xclipng = "xclip -t image/png -selection clipboard";
+                };
             }
           ];
 

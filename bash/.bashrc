@@ -12,14 +12,10 @@ git-clone-cd() {
 	git clone $1 && cd $(echo $1 | sed -E 's/^.*\/([^./]+)(.git)?$/\1/')
 }
 
-jql() { jq -C $1 $2 | less -r; }
 alias grep="grep --color=always -n"
 function mcd { mkdir -p $1 && cd $1; }
 alias rm='echo if you really wanna use this, use \\rm'
 alias sus="systemctl suspend"
-alias trash=trash-put
-alias xclipc="xclip -selection clipboard"
-alias xclipng="xclip -t image/png -selection clipboard"
 
 _git-branch() {
 	local -r a=$(git branch --show-current 2> /dev/null)
