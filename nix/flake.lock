@@ -181,11 +181,11 @@
     "hours": {
       "flake": false,
       "locked": {
-        "lastModified": 1631510147,
-        "narHash": "sha256-14Lxj+EUEgbrNX0d4jLWoNyRp6q8F/nXu18KgnSrOrA=",
+        "lastModified": 1632182392,
+        "narHash": "sha256-CDRXd2V4OZjGZzG+7v4wNy9pVhE3G6H8toss1EVrpb4=",
         "owner": "Quelklef",
         "repo": "hours",
-        "rev": "66ab5cbcdc0fc5e014289cab93cc3b01e58ced6b",
+        "rev": "692d5761a4dfdd6450bcee07aa2c2e9a649c842f",
         "type": "github"
       },
       "original": {
