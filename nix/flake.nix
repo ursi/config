@@ -11,9 +11,8 @@
       im-home.url ="github:ursi/im-home";
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
-      nixpkgs.url = "github:NixOS/nixpkgs/9dea98679d45d22c85ff2fc5d190ebbe5b03d6bc";
-      # ^ last commit on nixos-unstable where gruvbox works
-      nixpkgs-discord.url = "github:NixOS/nixpkgs/nixos-unstable";
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+      nixpkgs-neovim.url = "github:NixOS/nixpkgs/9dea98679d45d22c85ff2fc5d190ebbe5b03d6bc";
       ssbm.url = "github:djanatyn/ssbm-nix";
     };
 
@@ -26,7 +25,7 @@
     , json-format
     , localVim
     , nixpkgs
-    , nixpkgs-discord
+    , nixpkgs-neovim
     , ssbm
     , utils
     , ...
@@ -53,7 +52,6 @@
                         fi
                         '';
 
-                    discord = (import nixpkgs-discord { inherit system; config.allowUnfree = true; }).discord;
                     hours = import hours { pkgs = super; inherit system; };
                     icons = { breeze = breeze.packages.${system}; };
 
@@ -71,7 +69,7 @@
       neovim =
         import ./neovim
           { inherit (localVim) mkOverlayableNeovim;
-            pkgs = nixpkgs.legacyPackages.${system};
+            pkgs = nixpkgs-neovim.legacyPackages.${system};
           };
 
       make-app = pkg: exe:
