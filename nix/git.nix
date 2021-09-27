@@ -32,7 +32,7 @@ with builtins;
 
             core =
               { editor = "${pkgs.neovim}/bin/nvim";
-                pager = "less -x1,5";
+                pager = "less -X -x1,5";
               };
 
             merge.ff = false;
