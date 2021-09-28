@@ -15,7 +15,6 @@ git-clone-cd() {
 alias grep="grep --color=always -n"
 function mcd { mkdir -p $1 && cd $1; }
 alias rm='echo if you really wanna use this, use \\rm'
-alias sus="systemctl suspend"
 
 _git-branch() {
 	local -r a=$(git branch --show-current 2> /dev/null)

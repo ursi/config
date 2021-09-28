@@ -211,3 +211,5 @@ bar {
 }
 
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   #aa0000
+
+bindsym $mod+x exec "systemctl suspend"
