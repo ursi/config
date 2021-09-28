@@ -143,6 +143,11 @@ with builtins;
       { bash.promptInit = options.programs.bash.promptInit.default;
         dconf.enable = true;
         nm-applet.enable = true;
+
+        xss-lock =
+          { enable = true;
+            lockerCommand = "${p.i3lock}/bin/i3lock -fc 110000";
+          };
       };
 
     services =
