@@ -65,6 +65,23 @@ with builtins;
             }
           ];
 
+        shellAliases =
+          { cal = "cal -m";
+            nix-use = "nix-env -if nix.nix";
+            nix-remove = "nix-env -e nix";
+            nixbuild = "nix build -f .";
+            nixpkgs-unstable = ''echo $(nix eval --impure --raw --expr '(fetchGit { url = "https://github.com/NixOS/nixpkgs"; ref = "nixpkgs-unstable"; }).rev')'';
+
+            nixrepl =
+              let
+                file = p.writeText "" "{ p }: { l = p.lib; inherit p; } // builtins";
+              in
+              ''nix repl --arg p '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' ${file}'';
+
+            nixshell = "nix develop -f shell.nix";
+            fui = "nix flake lock --update-input";
+          };
+
         variables.VISUAL = "nvim";
       };
 
@@ -123,27 +140,7 @@ with builtins;
       };
 
     programs =
-      { bash =
-          { promptInit = options.programs.bash.promptInit.default;
-
-            shellAliases =
-              { cal = "cal -m";
-                nix-use = "nix-env -if nix.nix";
-                nix-remove = "nix-env -e nix";
-                nixbuild = "nix build -f .";
-                nixpkgs-unstable = ''echo $(nix eval --impure --raw --expr '(fetchGit { url = "https://github.com/NixOS/nixpkgs"; ref = "nixpkgs-unstable"; }).rev')'';
-
-                nixrepl =
-                  let
-                    file = p.writeText "" "{ p }: { l = p.lib; inherit p; } // builtins";
-                  in
-                  ''nix repl --arg p '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' ${file}'';
-
-                nixshell = "nix develop -f shell.nix";
-                fui = "nix flake lock --update-input";
-              };
-          };
-
+      { bash.promptInit = options.programs.bash.promptInit.default;
         dconf.enable = true;
         nm-applet.enable = true;
       };
