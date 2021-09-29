@@ -48,7 +48,8 @@
                         if [[ "$@" = *--config-file* ]]; then
                           ${super.alacritty}/bin/alacritty "$@";
                         else
-                          ${super.alacritty}/bin/alacritty --config-file ${../alacritty.yml} "$@";
+                          ${super.alacritty}/bin/alacritty \
+                            --config-file ${../alacritty.yml} "$@";
                         fi
                         '';
 
@@ -62,6 +63,7 @@
                     inherit neovim;
                   }
                 )
+
                 ssbm.overlay
               ];
           };

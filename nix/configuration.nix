@@ -4,41 +4,20 @@ with builtins;
   { imports = [ ./git.nix ./package-alias.nix ];
 
     environment =
-      { systemPackages =
+      { pkgs-with-aliases =
           with pkgs;
-          [ alacritty
-            brave
-            gimp
-            git
-            graphviz
-            imagemagick
-            ix
-            ncdu
-            neofetch
-            neovim
-            nix-du
-            ntfs3g
-            parted
-            pavucontrol
-            peek
-            spectacle
-            tmate
-            unzip
-            w3m
-          ];
+          [ (let hours-alias = "hours -j ~/.hours"; in
+             { pkg = hours;
 
-        pkgs-with-aliases =
-          let hours-alias = "hours -j ~/.hours"; in
-          with pkgs;
-          [ { pkg = hours;
+               aliases =
+                 { hours = hours-alias;
+                   hours-stop = "hours session stop; hours show";
+                 };
 
-              aliases =
-                { hours = hours-alias;
-                  hours-stop = "hours session stop; hours show";
-                };
-
-              functions.hours-start = ''${hours-alias} session start -t "$1"; ${hours-alias} show'';
-            }
+               functions.hours-start =
+                 ''${hours-alias} session start -t "$1"; ${hours-alias} show'';
+             }
+            )
 
             { pkg = j;
               aliases.j = "jconsole";
@@ -81,6 +60,29 @@ with builtins;
             nixshell = "nix develop -f shell.nix";
             fui = "nix flake lock --update-input";
           };
+
+        systemPackages =
+          with pkgs;
+          [ alacritty
+            brave
+            gimp
+            git
+            graphviz
+            imagemagick
+            ix
+            ncdu
+            neofetch
+            neovim
+            nix-du
+            ntfs3g
+            parted
+            pavucontrol
+            peek
+            spectacle
+            tmate
+            unzip
+            w3m
+          ];
 
         variables.VISUAL = "nvim";
       };
