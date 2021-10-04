@@ -56,7 +56,7 @@ with builtins;
 
               # Misc
               extra-plugins.ftplugin
-              extra-plugins.match
+              # extra-plugins.match
               markdown-preview-nvim
               vim-surround
               vim-commentary

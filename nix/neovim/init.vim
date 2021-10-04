@@ -134,3 +134,11 @@ endfunction
 
 vnoremap . :call Indent(v:count)<CR>
 vnoremap , :call Indent(-v:count)<CR>
+
+inoremap <M-"> ""<Left>
+inoremap <M-'> ''<Left>
+inoremap <M-(> ()<Left>
+inoremap <M-<> <><Left>
+inoremap <M-[> []<Left>
+inoremap <M-`> ``<Left>
+inoremap <M-{> {}<Left>
