@@ -149,7 +149,7 @@ with builtins;
 
         xss-lock =
           { enable = true;
-            lockerCommand = "${p.i3lock}/bin/i3lock -fc 110000";
+            lockerCommand = "${p.i3lock}/bin/i3lock -fc 440000";
           };
       };
 
