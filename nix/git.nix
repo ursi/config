@@ -6,7 +6,8 @@ with builtins;
   in
   { environment.shellAliases =
       let ga-command = "git ${graph-all} ${show-stash}"; in
-      { ${graph-all} = ga-command;
+      { gd = "git diff -w";
+        ${graph-all} = ga-command;
         ${graph-all + "f"} = "${ga-command} --first-parent";
         gs = "git status";
       };
