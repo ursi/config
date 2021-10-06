@@ -4,7 +4,7 @@ with builtins;
     graph-all = "ga";
     show-stash = "$(git reflog show --format=%H stash 2> /dev/null)";
   in
-  { programs.bash.shellAliases =
+  { environment.shellAliases =
       let ga-command = "git ${graph-all} ${show-stash}"; in
       { ${graph-all} = ga-command;
         ${graph-all + "f"} = "${ga-command} --first-parent";
