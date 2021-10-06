@@ -11,11 +11,11 @@ with builtins;
 
                aliases =
                  { hours = hours-alias;
-                   hours-stop = "hours session stop; hours show";
+                   hours-stop = "hours session stop && hours show";
                  };
 
                functions.hours-start =
-                 ''${hours-alias} session start -t "$1"; ${hours-alias} show'';
+                 ''${hours-alias} session start -t "$1" && ${hours-alias} show'';
              }
             )
 
