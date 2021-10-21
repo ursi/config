@@ -12,6 +12,7 @@ with builtins;
                aliases =
                  { hours = hours-alias;
                    hours-stop = "hours session stop && hours show";
+                   hours-undo = "hours eventlog undo && hours show";
                  };
 
                functions.hours-start =
