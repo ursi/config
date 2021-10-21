@@ -65,6 +65,7 @@ with builtins;
         systemPackages =
           with pkgs;
           [ alacritty
+            audacity
             brave
             gimp
             git
