@@ -1,22 +1,28 @@
-{ imports =
-    [ ./hardware-configuration.nix
-      ../hardware/mice/simple-corsair.nix
-    ];
+{ pkgs, ... }:
+  let p = pkgs; in
+  { imports =
+      [ ./hardware-configuration.nix
+        ../hardware/mice/simple-corsair.nix
+      ];
 
-  boot.loader =
-    { systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
+    boot =
+      { kernelPackages = p.linuxKernel.packages.linux_5_13;
 
-  networking =
-    { hostName = "hp-envy";
-      interfaces.enp1s0.useDHCP = true;
-    };
+        loader =
+          { systemd-boot.enable = true;
+            efi.canTouchEfiVariables = true;
+          };
+      };
 
-  nix.buildCores = 7;
-  services.picom.backend = "glx";
-  # don't change - man configuration.nix
-  system.stateVersion = "20.09";
-  users.users.mason.i3status.status-bar = (import ../i3status.nix).no-battery;
-}
+    networking =
+      { hostName = "hp-envy";
+        interfaces.enp1s0.useDHCP = true;
+      };
+
+    nix.buildCores = 7;
+    services.picom.backend = "glx";
+    # don't change - man configuration.nix
+    system.stateVersion = "20.09";
+    users.users.mason.i3status.status-bar = (import ../i3status.nix).no-battery;
+  }
 
