@@ -34,7 +34,7 @@ with builtins;
         programs.bash =
           { shellAliases = foldl' (acc: a: acc // a.aliases) {} cfg;
 
-            promptInit =
+            interactiveShellInit =
               let
                 functions =
                   concatStringsSep "\n"

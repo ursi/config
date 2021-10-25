@@ -144,8 +144,7 @@ with builtins;
       };
 
     programs =
-      { bash.promptInit = options.programs.bash.promptInit.default;
-        dconf.enable = true;
+      { dconf.enable = true;
         nm-applet.enable = true;
         steam.enable = true;
 
