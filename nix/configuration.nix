@@ -152,6 +152,11 @@ with builtins;
           { enable = true;
             lockerCommand = "${p.i3lock}/bin/i3lock -fc 440000";
           };
+
+        z =
+          { enable = true;
+            cmd = "a";
+          };
       };
 
     services =

@@ -46,4 +46,5 @@ _sepColor=$(_make-color 34)
 _nixShellColor=$(_make-color 33)
 _make-title() { echo "\[\e]0;$1\a\]"; }
 _title=$(_make-title "\w")
-PROMPT_COMMAND='export PS1="$_title$_bold$(_downgraded-nix)$(_nix-shell)$_mainColor\w $(_git-branch)$_mainColor\$$_reset "'
+_prompt_command='export PS1="$_title$_bold$(_downgraded-nix)$(_nix-shell)$_mainColor\w $(_git-branch)$_mainColor\$$_reset ";'
+PROMPT_COMMAND="$_prompt_command${PROMPT_COMMAND:+$PROMPT_COMMAND}"

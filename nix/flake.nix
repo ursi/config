@@ -14,6 +14,7 @@
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
       nixpkgs-neovim.url = "github:NixOS/nixpkgs/9dea98679d45d22c85ff2fc5d190ebbe5b03d6bc";
       ssbm.url = "github:djanatyn/ssbm-nix";
+      z.url = "github:ursi/z-nix";
     };
 
   outputs =
@@ -28,6 +29,7 @@
     , nixpkgs-neovim
     , ssbm
     , utils
+    , z
     , ...
     }:
     with builtins;
@@ -65,6 +67,7 @@
                 )
 
                 ssbm.overlay
+                z.overlay
               ];
           };
 
@@ -108,6 +111,7 @@
                  modules =
                    [ ./configuration.nix
                      ssbm.nixosModule
+                     z.nixosModule
                    ]
                    ++ attrValues im-home.nixosModules
                    ++ modules;

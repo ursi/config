@@ -163,6 +163,21 @@
         "type": "github"
       }
     },
+    "flake-utils_7": {
+      "locked": {
+        "lastModified": 1618217525,
+        "narHash": "sha256-WGrhVczjXTiswQaoxQ+0PTfbLNeOQM6M36zvLn78AYg=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c6169a2772643c4a93a0b5ac1c61e296cba68544",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "hours": {
       "flake": false,
       "locked": {
@@ -372,6 +387,22 @@
         "type": "indirect"
       }
     },
+    "nixpkgs_12": {
+      "locked": {
+        "lastModified": 1635336330,
+        "narHash": "sha256-EPrCZTmuOEY1KLjUCu7rXCBxNemggIFJMDdfEqXQKGo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "51acb65b302551ac7993b437cc6863fe9fa8ae50",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1608723372,
@@ -543,7 +574,8 @@
         "nixpkgs": "nixpkgs_8",
         "nixpkgs-neovim": "nixpkgs-neovim",
         "ssbm": "ssbm",
-        "utils": "utils_6"
+        "utils": "utils_6",
+        "z": "z"
       }
     },
     "slippi-desktop": {
@@ -691,6 +723,43 @@
       "original": {
         "id": "utils",
         "type": "indirect"
+      }
+    },
+    "utils_7": {
+      "inputs": {
+        "flake-utils": "flake-utils_7"
+      },
+      "locked": {
+        "lastModified": 1635484168,
+        "narHash": "sha256-g5zeycuFmoPvhcKsBeRZhV0KfZHJJuKU3EbKgeg9iC0=",
+        "owner": "ursi",
+        "repo": "flake-utils",
+        "rev": "f4809af8fcf29b9cd6b861720c9827a4273b4bd3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ursi",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "z": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_12",
+        "utils": "utils_7"
+      },
+      "locked": {
+        "lastModified": 1635484679,
+        "narHash": "sha256-zI+6tgcMEhLb6QIFpFqd5XYhkIb/dWT/8rjMpDK8kws=",
+        "owner": "ursi",
+        "repo": "z-nix",
+        "rev": "0110ea391cce8946d348b64b8686530f6e30508d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ursi",
+        "repo": "z-nix",
+        "type": "github"
       }
     }
   },
