@@ -9,7 +9,7 @@ gh-clone-cd() {
 }
 
 git-clone-cd() {
-	git clone $1 && cd $(echo $1 | sed -E 's/^.*\/([^./]+)(.git)?$/\1/')
+	git clone "$1" && cd $(echo "$1" | sed -E 's/^.*\/([^./]+)(.git)?$/\1/')
 }
 
 alias grep="grep --color=always -n"
