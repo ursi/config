@@ -53,10 +53,11 @@ endfunction
 
 noremap <Leader>b :ls<CR>:b 
 noremap <Leader>c :cd %:h<CR>
-noremap <Leader>n :nohlsearch<CR>
 noremap <Leader>s :write<CR>:source %<CR>
 noremap <C-H> gT
 noremap <C-L> gt
+nnoremap  :noh<CR>
+" ^ ctrl + /
 
 inoremap <C-J> <Right>
 cnoremap <C-J> <Right>
