@@ -109,7 +109,8 @@
              l.nixosSystem
                { inherit pkgs system;
                  modules =
-                   [ ./configuration.nix
+                   [ { _module.args = { inherit nixpkgs; }; }
+                     ./configuration.nix
                      ssbm.nixosModule
                      z.nixosModule
                    ]

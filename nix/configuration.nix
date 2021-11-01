@@ -1,5 +1,5 @@
 with builtins;
-{ lib, pkgs, ... }:
+{ lib, nixpkgs, pkgs, ... }:
   let l = lib; p = pkgs; in
   { imports = [ ./git.nix ./package-alias.nix ];
 
@@ -110,36 +110,7 @@ with builtins;
     nix =
       { extraOptions = "experimental-features = nix-command flakes";
         package = p.nixUnstable;
-
-        registry =
-          { nixpkgs =
-              { from =
-                  { id = "nixpkgs";
-                    type = "indirect";
-                  };
-
-                to =
-                  { owner = "NixOS";
-                    repo = "nixpkgs";
-                    ref = "nixpkgs-unstable";
-                    type = "github";
-                  };
-              };
-
-            utils =
-              { from =
-                  { id = "utils";
-                    type = "indirect";
-                  };
-
-                to =
-                  { owner = "ursi";
-                    repo = "flake-utils";
-                    type = "github";
-                  };
-              };
-          };
-
+        registry.nixpkgs.flake = nixpkgs;
         trustedUsers = [ "mason" "root" ];
       };
 
