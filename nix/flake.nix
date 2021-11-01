@@ -104,7 +104,7 @@
           };
 
     nixosConfigurations =
-        l.mapAttrs
+        mapAttrs
           (_: modules:
              l.nixosSystem
                { inherit pkgs system;
