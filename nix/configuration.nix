@@ -1,5 +1,5 @@
 with builtins;
-{ lib, options, pkgs, ... }:
+{ lib, pkgs, ... }:
   let l = lib; p = pkgs; in
   { imports = [ ./git.nix ./package-alias.nix ];
 
