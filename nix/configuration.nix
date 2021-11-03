@@ -83,6 +83,7 @@ with builtins;
             spectacle
             tmate
             unzip
+            usbutils
             w3m
           ];
 
