@@ -80,6 +80,7 @@ set noequalalways
 set foldmethod=indent
 set hidden
 set ignorecase smartcase
+set mouse=n
 set nofoldenable
 set relativenumber
 set scrolloff=1 sidescrolloff=1
