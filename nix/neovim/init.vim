@@ -54,6 +54,7 @@ endfunction
 noremap <Leader>b :ls<CR>:b 
 noremap <Leader>c :cd %:h<CR>
 noremap <Leader>s :write<CR>:source %<CR>
+exe "noremap <Leader>v :tabe " . expand("<sfile>:p") . "<CR>"
 noremap <C-H> gT
 noremap <C-L> gt
 nnoremap  :noh<CR>
