@@ -26,11 +26,11 @@
         "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1633974159,
-        "narHash": "sha256-M8Eb6vwyoHJoh1QmN6va72JCN8QKUgkvY3GtL3KL86E=",
+        "lastModified": 1636057760,
+        "narHash": "sha256-7Ieymn+WrA7DkNJoT5PWozEXAlWqxTHD1wVg2YBnKys=",
         "owner": "ursi",
         "repo": "brightness",
-        "rev": "c8ff9510ede7376a79da4abe0d0cb3eb78772bb2",
+        "rev": "077e9e8600e31ef89d73c2980cbfbc554c2ac412",
         "type": "github"
       },
       "original": {
