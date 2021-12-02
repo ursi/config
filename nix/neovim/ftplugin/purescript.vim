@@ -1,5 +1,4 @@
 setlocal expandtab shiftwidth=2
-setlocal cursorcolumn
 setlocal iskeyword+='
 inoremap <buffer> <Tab> <Space><Space>
 
