@@ -88,6 +88,7 @@ with builtins;
             unzip
             usbutils
             w3m
+            wxcam
           ];
 
         variables.VISUAL = "nvim";
