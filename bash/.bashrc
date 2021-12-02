@@ -38,13 +38,15 @@ _downgraded-nix() {
 }
 
 _make-color() { echo "\[\e[$1m\]"; }
+_make-8-bit-color() { echo "\[\e[38;5;$1m\]"; }
 _reset=$(_make-color 0)
 _bold=$(_make-color 1)
+_timeColor=$(_make-8-bit-color 88)
 _mainColor=$(_make-color 32)
 _branchColor=$(_make-color 31)
 _sepColor=$(_make-color 34)
 _nixShellColor=$(_make-color 33)
 _make-title() { echo "\[\e]0;$1\a\]"; }
 _title=$(_make-title "\w")
-_prompt_command='export PS1="$_title$_bold$(_downgraded-nix)$(_nix-shell)$_mainColor\w $(_git-branch)$_mainColor\$$_reset ";'
+_prompt_command='export PS1="$_timeColor$(date +%H%M)$_title$_bold$(_downgraded-nix)$(_nix-shell)$_mainColor\w $(_git-branch)$_mainColor\$$_reset ";'
 PROMPT_COMMAND="$_prompt_command $PROMPT_COMMAND"
