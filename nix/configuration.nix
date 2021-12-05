@@ -6,7 +6,11 @@ with builtins;
     environment =
       { pkgs-with-aliases =
           with pkgs;
-          [ (let hours-alias = "hours -j ~/.hours"; in
+          [ { pkg = chez;
+              aliases.scheme = "scheme ${./prelude.ss}";
+            }
+
+            (let hours-alias = "hours -j ~/.hours"; in
              { pkg = hours;
 
                aliases =
