@@ -121,9 +121,9 @@ function! Indent(count)
 	endwhile
 
 	if strcharpart(getline(above), strlen(getline(above)) - 1) == ")"
-		let regex = '\w\|(\|["$]'
+		let regex = '\w\|('
 	else
-		let regex = '\w\|["$]'
+		let regex = '\w'
 	endif
 
 	let offset = max([ match(trim(getline(above)), regex), 0 ])
