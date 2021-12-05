@@ -20,13 +20,13 @@ _git-branch() {
 	local -r a=$(git branch --show-current 2> /dev/null)
 
 	if [[ -n $a ]]; then
-		echo "$_sepColor| $_branchColor$a "
+		echo "$_sepColor|$_branchColor$a"
 	fi
 }
 
 _nix-shell() {
 	if [[ -n $IN_NIX_SHELL ]]; then
-		echo "$_nixShellColor[nix] "
+		echo "$_nixShellColor[nix]"
 	fi
 }
 
@@ -48,5 +48,5 @@ _sepColor=$(_make-color 34)
 _nixShellColor=$(_make-color 33)
 _make-title() { echo "\[\e]0;$1\a\]"; }
 _title=$(_make-title "\w")
-_prompt_command='export PS1="$_timeColor$(date +%H%M)$_title$_bold$(_downgraded-nix)$(_nix-shell)$_mainColor\w $(_git-branch)$_mainColor\$$_reset ";'
+_prompt_command='export PS1="$_timeColor$(date +%H%M)$_title$_bold$(_downgraded-nix)$(_nix-shell)$_mainColor\w$(_git-branch) $_mainColor\$$_reset ";'
 PROMPT_COMMAND="$_prompt_command $PROMPT_COMMAND"
