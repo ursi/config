@@ -118,7 +118,6 @@ with builtins;
 
     nix =
       { extraOptions = "experimental-features = nix-command flakes";
-        package = p.nixUnstable;
         registry.nixpkgs.flake = nixpkgs;
         trustedUsers = [ "mason" "root" ];
       };
