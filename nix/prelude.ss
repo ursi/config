@@ -25,20 +25,7 @@
 
 ; ------------ CHARS -------------
 
-(define-syntax code-point
-  (syntax-rules ()
-    [(_ c)
-     (let ([char (cond
-                   [(symbol? 'c) (-> 'c symbol->string string-car)]
-                   [(number? c) (-> c number->string string-car)]
-                   [(char? c) c]
-                   [else
-                    (error "code-point"
-                      "not a symbol, number, or char"
-                      c)])])
-       ; (number->string (char->integer char) 16))]))
-       (-> char char->integer (flip number->string 16)))]))
-
+(define code-point (.> char->integer (flip number->string 16)))
 
 ; ------------ DEBUGGING ---------
 
