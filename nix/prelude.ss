@@ -69,6 +69,7 @@
      (cond
        [(string? a) (string-append a b)]
        [(list? a) (append a b)]
+       [(symbol? a) (string->symbol (<> (symbol->string a) (symbol->string b)))]
        [else (error "<>" "not a string or a list" a)])))
 
 (define id (X (a) a))
