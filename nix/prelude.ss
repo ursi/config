@@ -64,6 +64,12 @@
 (define-syntax const* (syntax-rules () [(_ a) (X (b) a)]))
 (define flip (X (f a b) (f b a)))
 
+(define fold
+  (X (f list)
+     (if (null? list)
+         '()
+         (fold-left f (car list) (cdr list)))))
+
 ; ------------ LISTS -------------
 
 (define drop (X (n l) (if (= n 0) l (drop (- n 1) (cdr l)))))
