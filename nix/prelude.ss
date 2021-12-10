@@ -23,26 +23,6 @@
                          (lambda (i)
                            (cons (take i args) (drop i args)))))))]))))
 
-; ------------ CHARS -------------
-
-(define code-point (.> char->integer (flip number->string 16)))
-
-; ------------ DEBUGGING ---------
-
-(define debug-log (X (a) (pretty-print a) a))
-
-; ------------ CURRIED FORMS -----
-
-(eval
-  `(begin
-     ,@(map (X (a)
-               `(define ,(car a) (X (a b) (,(cdr a) a b))))
-            '((add . +)
-              (sub . -)
-              (mul . *)
-              (div . /)
-              (^ . expt)))))
-
 ; ------------ FP ----------------
 (define (-> v . fs) ((apply .> fs) v))
 
@@ -69,6 +49,26 @@
      (if (null? list)
          '()
          (fold-left f (car list) (cdr list)))))
+
+; ------------ CHARS -------------
+
+(define code-point (.> char->integer (flip number->string 16)))
+
+; ------------ DEBUGGING ---------
+
+(define debug-log (X (a) (pretty-print a) a))
+
+; ------------ CURRIED FORMS -----
+
+(eval
+  `(begin
+     ,@(map (X (a)
+               `(define ,(car a) (X (a b) (,(cdr a) a b))))
+            '((add . +)
+              (sub . -)
+              (mul . *)
+              (div . /)
+              (^ . expt)))))
 
 ; ------------ LISTS -------------
 
