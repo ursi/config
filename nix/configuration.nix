@@ -86,6 +86,7 @@ with builtins;
             ntfs3g
             parted
             pavucontrol
+            pciutils
             peek
             spectacle
             tmate
