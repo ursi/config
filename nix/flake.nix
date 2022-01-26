@@ -2,6 +2,7 @@
     { breeze.url = "github:ursi/breeze";
       brightness.url = "github:ursi/brightness";
       flake-make.url = "github:ursi/flake-make";
+      agenix.url = "github:ryantm/agenix";
 
       hours =
         { flake = false;
@@ -18,7 +19,8 @@
     };
 
   outputs =
-    { breeze
+    { agenix
+    , breeze
     , brightness
     , flake-make
     , hours
@@ -111,6 +113,8 @@
                  modules =
                    [ { _module.args = { inherit nixpkgs; }; }
                      ./configuration.nix
+                     agenix.nixosModules.age
+                     { environment.systemPackages = [ agenix.defaultPackage.${system} ]; }
                      ssbm.nixosModule
                      z.nixosModule
                    ]
