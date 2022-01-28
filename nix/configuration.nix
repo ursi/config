@@ -96,7 +96,11 @@ with builtins;
             wxcam
           ];
 
-        variables.VISUAL = "nvim";
+        variables =
+          rec
+          { EDITOR = VISUAL;
+            VISUAL = "nvim";
+          };
       };
 
     fonts.fonts = [ (p.nerdfonts.override {fonts = [ "Cousine" ]; }) ];
