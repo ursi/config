@@ -1,5 +1,6 @@
 { inputs =
-    { breeze.url = "github:ursi/breeze";
+    { agenix.url = "github:ryantm/agenix";
+      breeze.url = "github:ursi/breeze";
       brightness.url = "github:ursi/brightness";
       flake-make.url = "github:ursi/flake-make";
 
@@ -18,7 +19,8 @@
     };
 
   outputs =
-    { breeze
+    { agenix
+    , breeze
     , brightness
     , flake-make
     , hours
@@ -60,7 +62,7 @@
 
                     flake-packages =
                       utils.defaultPackages system
-                        { inherit brightness flake-make json-format; };
+                        { inherit agenix brightness flake-make json-format; };
 
                     inherit neovim;
                   }
@@ -111,6 +113,7 @@
                  modules =
                    [ { _module.args = { inherit nixpkgs; }; }
                      ./configuration.nix
+                     agenix.nixosModules.age
                      ssbm.nixosModule
                      z.nixosModule
                    ]
