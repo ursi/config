@@ -71,30 +71,52 @@ with builtins;
 
         systemPackages =
           with pkgs;
-          [ alacritty
-            audacity
-            brave
-            gimp
-            git
-            graphviz
-            imagemagick
-            ix
-            ncdu
-            neofetch
-            neovim
-            nix-du
-            ntfs3g
-            parted
-            pavucontrol
-            pciutils
-            peek
-            spectacle
-            tmate
-            unzip
-            usbutils
-            w3m
-            wxcam
-          ];
+          let
+            no-windows =
+              [ git
+                graphviz
+                imagemagick
+                ix
+                ncdu
+                neofetch
+                neovim
+                nix-du
+                ntfs3g
+                pciutils
+                tmate
+                unzip
+                usbutils
+                wally-cli
+                w3m
+              ];
+
+            windows =
+              [ alacritty
+                audacity
+                brave
+                discord
+                gimp
+                gnome3.nautilus # for seeing images
+                gparted
+                mattermost-desktop
+                pavucontrol
+                peek
+                qbittorrent
+                qemu
+                slippi-netplay
+                signal-desktop
+                spectacle
+                torbrowser
+                vlc
+                wxcam
+                zulip
+              ];
+          in
+          flake-packages
+          ++ no-windows
+          ++ (import ./shell-scripts.nix pkgs)
+          ++ windows;
+
 
         variables =
           rec
@@ -191,51 +213,6 @@ with builtins;
                 i3.extra-config = readFile ../i3/config;
                 icons.cursor = p.icons.breeze.cursors.breeze;
                 isNormalUser = true;
-
-                packages = with pkgs;
-                  let
-                    communication =
-                      [ discord
-                        mattermost-desktop
-                        signal-desktop
-                        zulip
-                      ];
-                  in
-                  [ gnome3.nautilus # for seeing images
-
-                    (writeShellScriptBin
-                       "prefetch-nixpkgs"
-                       ''
-                       url=https://github.com/NixOS/nixpkgs/archive/$1.tar.gz
-                       nix-prefetch-url $url --type sha256 --unpack 2> /dev/null | {
-                         read hash
-
-                         echo "\
-                       (fetchTarball
-                          { url = \"$url\";
-                            sha256 = \"$hash\";
-                          }
-                       )"
-                       }
-                       ''
-                    )
-
-                    qbittorrent
-                    qemu
-
-                    (writeShellScriptBin
-                       "snowball"
-                       "bash <( curl https://gitlab.com/fresheyeball/snowball/-/raw/master/generator.sh )"
-                    )
-
-                    slippi-netplay
-                    torbrowser
-                    vlc
-                    wally-cli
-                  ]
-                  ++ communication
-                  ++ flake-packages;
-
                 password = "";
               };
 
