@@ -89,22 +89,6 @@
           neovim = make-app neovim "nvim";
         };
 
-      devShell.${system} =
-        p.mkShell
-          { shellHook =
-              ''
-              nixos-work-test() {
-                sudo nixos-rebuild test \
-                  && git restore flake.lock
-              }
-
-              nixos-work-switch() {
-                sudo nixos-rebuild switch \
-                  && git restore flake.lock
-              }
-              '';
-          };
-
     nixosConfigurations =
         mapAttrs
           (_: modules:
