@@ -65,11 +65,11 @@
         "utils": "utils_5"
       },
       "locked": {
-        "lastModified": 1643665577,
-        "narHash": "sha256-uGcKkr0uWeUgOWU3GHL5roXd1d+kZ8suNtaWlP19dlc=",
+        "lastModified": 1643942387,
+        "narHash": "sha256-AHPQr6WlMT6AZpTIhnXsxM0yHu4E+uTjpE63im9Z9ZM=",
         "owner": "ursi",
         "repo": "flake-make",
-        "rev": "0caf787b726799f4ea015a47e43d7fbca10a19fd",
+        "rev": "1c4dc6917dff06a838e9c670e6d6488dd1325396",
         "type": "github"
       },
       "original": {
@@ -657,16 +657,16 @@
         "flake-utils": "flake-utils_3"
       },
       "locked": {
-        "lastModified": 1643564115,
-        "narHash": "sha256-l308/Ld1zDspV8Cy6hduu39buzyIMG69mU+iLvFjubc=",
+        "lastModified": 1643926395,
+        "narHash": "sha256-uqdtbSTfaIzpSYE116F4tpfzrfv7xeZJY5U9JAv9xLQ=",
         "owner": "ursi",
         "repo": "flake-utils",
-        "rev": "6d4b0ac1f3ad11aacdf634f4c64b1a2a55c4f386",
+        "rev": "0ee001663b9df3e093f9e43184e0b40a2dc3cb7c",
         "type": "github"
       },
       "original": {
         "owner": "ursi",
-        "ref": "6",
+        "ref": "7",
         "repo": "flake-utils",
         "type": "github"
       }
