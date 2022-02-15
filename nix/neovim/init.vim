@@ -51,7 +51,7 @@ endfunction
 "cnoremap <Tab> <Esc>
 
 
-noremap <Leader>b :ls t<CR>:b 
+noremap <Leader>b :ls t<CR>:b<Space>
 noremap <Leader>c :cd %:h<CR>
 noremap <Leader>s :write<CR>:source %<CR>
 exe "noremap <Leader>v :tabe " . expand("<sfile>:p") . "<CR>"
