@@ -13,6 +13,7 @@
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+      nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-21.11";
       ssbm.url = "github:djanatyn/ssbm-nix";
       z.url = "github:ursi/z-nix";
     };
@@ -27,6 +28,7 @@
     , json-format
     , localVim
     , nixpkgs
+    , nixpkgs-stable
     , ssbm
     , utils
     , z
@@ -67,6 +69,8 @@
                         { inherit (localVim) mkOverlayableNeovim;
                           pkgs = super;
                         };
+
+                    inherit (nixpkgs-stable.legacyPackages.${system}) torbrowser;
                   }
                 )
 
