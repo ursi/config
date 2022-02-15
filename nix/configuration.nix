@@ -73,8 +73,10 @@ with builtins;
           with pkgs;
           let
             no-windows =
-              [ git
+              [ file
+                git
                 graphviz
+                hexedit
                 imagemagick
                 ix
                 ncdu
