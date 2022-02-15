@@ -6,7 +6,7 @@
 
       hours =
         { flake = false;
-          url = "github:Quelklef/hours";
+          url = "github:ursi/hours";
         };
 
       im-home.url = "github:ursi/im-home";

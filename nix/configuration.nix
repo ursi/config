@@ -148,7 +148,7 @@ with builtins;
     nix =
       { extraOptions = "experimental-features = nix-command flakes";
         registry.nixpkgs.flake = nixpkgs;
-        trustedUsers = [ "mason" "root" ];
+        settings.trusted-users = [ "mason" "root" ];
       };
 
     programs =
