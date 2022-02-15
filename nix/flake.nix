@@ -13,7 +13,6 @@
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-      nixpkgs-neovim.url = "github:NixOS/nixpkgs/9dea98679d45d22c85ff2fc5d190ebbe5b03d6bc";
       ssbm.url = "github:djanatyn/ssbm-nix";
       z.url = "github:ursi/z-nix";
     };
@@ -28,7 +27,6 @@
     , json-format
     , localVim
     , nixpkgs
-    , nixpkgs-neovim
     , ssbm
     , utils
     , z
@@ -64,19 +62,17 @@
                       utils.defaultPackages system
                         { inherit agenix brightness flake-make json-format; };
 
-                    inherit neovim;
+                    neovim =
+                      import ./neovim
+                        { inherit (localVim) mkOverlayableNeovim;
+                          pkgs = super;
+                        };
                   }
                 )
 
                 ssbm.overlay
                 z.overlay
               ];
-          };
-
-      neovim =
-        import ./neovim
-          { inherit (localVim) mkOverlayableNeovim;
-            pkgs = nixpkgs-neovim.legacyPackages.${system};
           };
 
       make-app = pkg: exe:
@@ -86,7 +82,7 @@
     in
     { apps.${system} =
         { alacritty = p.alacritty;
-          neovim = make-app neovim "nvim";
+          neovim = make-app p.neovim "nvim";
         };
 
     nixosConfigurations =
