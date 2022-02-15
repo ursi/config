@@ -9,7 +9,7 @@
           url = "github:Quelklef/hours";
         };
 
-      im-home.url ="github:ursi/im-home";
+      im-home.url = "github:ursi/im-home";
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
