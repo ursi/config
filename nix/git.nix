@@ -1,6 +1,7 @@
 with builtins;
 { pkgs, ... }:
   let
+    neovim = "${pkgs.neovim}/bin/nvim";
     graph-all = "ga";
     show-stash = "$(git reflog show --format=%H stash 2> /dev/null)";
   in
@@ -32,11 +33,12 @@ with builtins;
               };
 
             core =
-              { editor = "${pkgs.neovim}/bin/nvim";
+              { editor = neovim;
                 pager = "less -FX -x1,5";
               };
 
             merge.ff = false;
+            pager.blame = "${neovim} -R";
             pull.ff = "only";
 
             user =
