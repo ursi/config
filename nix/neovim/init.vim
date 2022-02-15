@@ -51,6 +51,9 @@ endfunction
 "cnoremap <Tab> <Esc>
 
 
+" neovim maps this to y$ by default
+unmap Y
+
 noremap <Leader>b :ls t<CR>:b<Space>
 noremap <Leader>c :cd %:h<CR>
 noremap <Leader>s :write<CR>:source %<CR>
