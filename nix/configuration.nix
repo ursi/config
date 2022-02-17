@@ -216,6 +216,7 @@ with builtins;
                 icons.cursor = p.icons.breeze.cursors.breeze;
                 isNormalUser = true;
                 password = "";
+                links.path."/.bashrc" = ../.bashrc;
               };
 
             root =
