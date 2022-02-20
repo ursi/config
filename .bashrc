@@ -1,7 +1,7 @@
 set -o vi
 
 alias apply=". ~/.bashrc"
-alias ls="ls -A --color=tty --group-directories-first"
+alias ls="LC_COLLATE=C ls -A --color=tty --group-directories-first"
 cl () { cd "$@"; ls; }
 
 gh-clone-cd() {
