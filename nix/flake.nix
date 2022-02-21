@@ -77,7 +77,7 @@
     in
     { apps.${system}.neovim.neovim = make-app p.neovim "nvim";
 
-    nixosConfigurations =
+      nixosConfigurations =
         mapAttrs
           (_: modules:
              l.nixosSystem
