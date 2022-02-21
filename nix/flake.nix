@@ -46,18 +46,7 @@
 
             overlays =
               [ (_: super:
-                  { alacritty =
-                      super.writeScriptBin "alacritty"
-                        ''
-                        if [[ "$@" = *--config-file* ]]; then
-                          ${super.alacritty}/bin/alacritty "$@";
-                        else
-                          ${super.alacritty}/bin/alacritty \
-                            --config-file ${../alacritty.yml} "$@";
-                        fi
-                        '';
-
-                    hours = import hours { pkgs = super; inherit system; };
+                  { hours = import hours { pkgs = super; inherit system; };
                     icons = { breeze = breeze.packages.${system}; };
 
                     flake-packages =
@@ -70,7 +59,9 @@
                           pkgs = super;
                         };
 
-                    inherit (nixpkgs-stable.legacyPackages.${system}) torbrowser;
+                    inherit (nixpkgs-stable.legacyPackages.${system})
+                      formats
+                      torbrowser;
                   }
                 )
 
@@ -84,10 +75,7 @@
           program = "${pkg}/bin/${exe}";
         };
     in
-    { apps.${system} =
-        { alacritty = p.alacritty;
-          neovim = make-app p.neovim "nvim";
-        };
+    { apps.${system}.neovim.neovim = make-app p.neovim "nvim";
 
     nixosConfigurations =
         mapAttrs

@@ -1,7 +1,7 @@
 with builtins;
 { lib, nixpkgs, pkgs, ... }:
   let l = lib; p = pkgs; in
-  { imports = [ ./git.nix ./package-alias.nix ];
+  { imports = [ ./alacritty.nix ./git.nix ./package-alias.nix ];
 
     environment =
       { pkgs-with-aliases =
@@ -93,8 +93,7 @@ with builtins;
               ];
 
             windows =
-              [ alacritty
-                audacity
+              [ audacity
                 brave
                 discord
                 gimp
@@ -152,7 +151,8 @@ with builtins;
       };
 
     programs =
-      { dconf.enable = true;
+      { alacritty.enable = true;
+        dconf.enable = true;
         nm-applet.enable = true;
         steam.enable = true;
 
