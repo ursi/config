@@ -171,7 +171,9 @@ with builtins;
       };
 
     services =
-      { picom =
+      { openssh.enable = true;
+
+        picom =
           { enable = true;
             vSync = true;
           };
