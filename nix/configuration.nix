@@ -210,7 +210,16 @@ with builtins;
               { createHome = true;
                 description = "Mason Mackaman";
                 extraGroups = [ "networkmanager" "plugdev" "wheel" ];
-                i3.extra-config = readFile ../i3/config;
+
+                i3 =
+                  { font =
+                      { font = "pango:sans";
+                        size = l.mkDefault 17;
+                      };
+
+                    extra-config = readFile ../i3/config;
+                  };
+
                 icons.cursor = p.icons.breeze.cursors.breeze;
                 isNormalUser = true;
                 password = "";
