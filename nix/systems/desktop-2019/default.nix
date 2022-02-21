@@ -1,4 +1,5 @@
 { imports = [ ./hardware-configuration.nix ];
+  agenix.enable = false;
 
   boot.loader.grub =
       { enable = true;

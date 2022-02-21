@@ -1,7 +1,12 @@
 with builtins;
 { lib, nixpkgs, pkgs, ... }:
   let l = lib; p = pkgs; in
-  { imports = [ ./alacritty.nix ./git.nix ./package-alias.nix ];
+  { imports =
+      [ ./alacritty.nix
+        ./git.nix
+        ./package-alias.nix
+        ./secrets/agenix.nix
+      ];
 
     environment =
       { pkgs-with-aliases =

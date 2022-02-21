@@ -3,7 +3,6 @@
   { imports =
       [ ./hardware-configuration.nix
         ../../hardware/mice/simple-corsair.nix
-        ../../secrets/agenix.nix
       ];
 
     boot =
