@@ -104,8 +104,6 @@ with builtins;
                 peek
                 qbittorrent
                 qemu
-                slippi-netplay
-                signal-desktop
                 spectacle
                 torbrowser
                 vlc
@@ -127,6 +125,7 @@ with builtins;
       };
 
     fonts.fonts = [ (p.nerdfonts.override {fonts = [ "Cousine" ]; }) ];
+    gaming.enable = l.mkDefault true;
 
     hardware =
       { keyboard.zsa.enable = true;
@@ -154,7 +153,6 @@ with builtins;
       { alacritty.enable = true;
         dconf.enable = true;
         nm-applet.enable = true;
-        steam.enable = true;
 
         xss-lock =
           { enable = true;

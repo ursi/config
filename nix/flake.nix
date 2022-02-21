@@ -65,7 +65,6 @@
                   }
                 )
 
-                ssbm.overlay
                 z.overlay
               ];
           };
@@ -85,6 +84,7 @@
                  modules =
                    [ { _module.args = { inherit nixpkgs; }; }
                      ./configuration.nix
+                     (import ./gaming.nix { ssbm = ssbm.packages.${system}; })
                      agenix.nixosModules.age
                      ssbm.nixosModule
                      z.nixosModule
