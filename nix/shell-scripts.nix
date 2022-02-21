@@ -16,4 +16,16 @@ pkgs:
        }
        ''
     )
+    (writeShellScriptBin
+       "unsymlink"
+       ''
+       set -e
+       if ! [ -a "_$1" ]; then
+         cp --no-preserve=mode "$1" "_$1"
+         mv "_$1" "$1"
+       else
+         echo "'_$1' exists"
+       fi;
+       ''
+    )
   ]
