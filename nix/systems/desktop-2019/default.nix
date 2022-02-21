@@ -15,6 +15,6 @@
   services.picom.backend = "glx";
   # don't change - man configuration.nix
   system.stateVersion = "20.03";
-  users.users.mason.i3status.status-bar = (import ../i3status.nix).no-battery;
+  users.users.mason.i3status.status-bar = (import ../../i3status.nix).no-battery;
 }
 

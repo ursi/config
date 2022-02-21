@@ -2,8 +2,8 @@
   let p = pkgs; in
   { imports =
       [ ./hardware-configuration.nix
-        ../hardware/mice/simple-corsair.nix
-        ../secrets/agenix.nix
+        ../../hardware/mice/simple-corsair.nix
+        ../../secrets/agenix.nix
       ];
 
     boot =
@@ -28,5 +28,5 @@
     services.picom.backend = "glx";
     # don't change - man configuration.nix
     system.stateVersion = "20.09";
-    users.users.mason.i3status.status-bar = (import ../i3status.nix).no-battery;
+    users.users.mason.i3status.status-bar = (import ../../i3status.nix).no-battery;
   }

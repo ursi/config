@@ -95,9 +95,13 @@
                    ++ modules;
                }
           )
-          { desktop-2019 = [ ./desktop-2019 ];
-            hp-envy = [ ./hp-envy ];
-            surface-go = [ ./surface-go nixos-hardware.nixosModules.microsoft-surface ];
+          { desktop-2019 = [ ./systems/desktop-2019 ];
+            hp-envy = [ ./systems/hp-envy ];
+
+            surface-go =
+              [ ./systems/surface-go
+                nixos-hardware.nixosModules.microsoft-surface
+              ];
           };
 
       packages.${system} =

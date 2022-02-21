@@ -52,6 +52,6 @@ with builtins;
             font.size = 27;
           };
 
-        i3status.status-bar = (import ../i3status.nix).battery;
+        i3status.status-bar = (import ../../i3status.nix).battery;
       };
   }
