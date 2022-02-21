@@ -2,7 +2,6 @@ with builtins;
 { lib, pkgs, ... }:
   let l = lib; p = pkgs; in
   { imports = [ ./hardware-configuration.nix ];
-    agenix.enable = false;
 
     boot.loader =
       { systemd-boot.enable = true;
