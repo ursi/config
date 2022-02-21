@@ -109,6 +109,7 @@ with builtins;
                 peek
                 qbittorrent
                 qemu
+                signal-desktop
                 spectacle
                 torbrowser
                 vlc
