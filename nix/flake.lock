@@ -473,6 +473,22 @@
         "type": "indirect"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1645377794,
+        "narHash": "sha256-310zW8nNEXIqvvaN9RKgBuNYqa+ZFQ9GFJSOvAWGQG8=",
+        "owner": "ursi",
+        "repo": "nixos-hardware",
+        "rev": "b633d393e2097f267e67277eee3ca0f04a94d87a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ursi",
+        "ref": "microsoft-surface-wifi",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1618628710,
@@ -773,6 +789,7 @@
         "im-home": "im-home",
         "json-format": "json-format",
         "localVim": "localVim",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_12",
         "nixpkgs-stable": "nixpkgs-stable",
         "ssbm": "ssbm",

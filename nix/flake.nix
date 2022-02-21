@@ -12,6 +12,7 @@
       im-home.url = "github:ursi/im-home";
       json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
+      nixos-hardware.url = "github:ursi/nixos-hardware/microsoft-surface-wifi";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
       nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-21.11";
       ssbm.url = "github:djanatyn/ssbm-nix";
@@ -27,6 +28,7 @@
     , im-home
     , json-format
     , localVim
+    , nixos-hardware
     , nixpkgs
     , nixpkgs-stable
     , ssbm
@@ -95,6 +97,7 @@
           )
           { desktop-2019 = [ ./desktop-2019 ];
             hp-envy = [ ./hp-envy ];
+            surface-go = [ ./surface-go nixos-hardware.nixosModules.microsoft-surface ];
           };
 
       packages.${system} =
