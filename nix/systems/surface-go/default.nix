@@ -1,7 +1,10 @@
 with builtins;
 { lib, pkgs, ... }:
   let l = lib; p = pkgs; in
-  { imports = [ ./hardware-configuration.nix ];
+  { imports =
+      [ ./hardware-configuration.nix
+        ../../remote-builder.nix
+      ];
 
     boot.loader =
       { systemd-boot.enable = true;
@@ -28,6 +31,11 @@ with builtins;
 
     # required for the wifi driver
     nixpkgs.config.allowUnfree = true;
+
+    remote-builder =
+      { enable = true;
+        user = "mason";
+      };
 
     services =
       { picom.backend = "glx";

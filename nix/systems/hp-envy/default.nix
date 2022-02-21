@@ -1,8 +1,10 @@
+with builtins;
 { pkgs, ... }:
   let p = pkgs; in
   { imports =
       [ ./hardware-configuration.nix
         ../../hardware/mice/simple-corsair.nix
+        ../../remote-builder.nix
       ];
 
     boot =
@@ -25,7 +27,16 @@
 
     nix.settings.cores = 7;
     services.picom.backend = "glx";
+
     # don't change - man configuration.nix
     system.stateVersion = "20.09";
-    users.users.mason.i3status.status-bar = (import ../../i3status.nix).no-battery;
+
+    users.users.mason =
+      { i3status.status-bar = (import ../../i3status.nix).no-battery;
+
+        remote-builder =
+          { enable = true;
+            keys = attrValues (import ../surface-go/ssh-keys.nix);
+          };
+      };
   }
