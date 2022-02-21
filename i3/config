@@ -188,7 +188,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# The right button toggles floating
 bindsym --whole-window $mod+button3 kill
 
 # Start i3bar to display a workspace bar (plus the system information i3status
