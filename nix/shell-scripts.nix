@@ -1,7 +1,6 @@
 pkgs:
   let inherit (pkgs) writeShellScriptBin; in
-  [ (writeShellScriptBin
-       "prefetch-nixpkgs"
+  [ (writeShellScriptBin "prefetch-nixpkgs"
        ''
        url=https://github.com/NixOS/nixpkgs/archive/$1.tar.gz
        nix-prefetch-url $url --type sha256 --unpack 2> /dev/null | {
@@ -16,8 +15,7 @@ pkgs:
        }
        ''
     )
-    (writeShellScriptBin
-       "unsymlink"
+    (writeShellScriptBin "unsymlink"
        ''
        set -e
        if ! [ -a "_$1" ]; then
