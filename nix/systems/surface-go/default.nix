@@ -42,6 +42,7 @@ with builtins;
 
         xserver =
           { dpi = 144; # 1.5x the default
+            libinput.touchpad.accelSpeed = "1"; # guess this is the highest it can be set
           };
       };
 
