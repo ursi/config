@@ -184,13 +184,16 @@ with builtins;
 
             # Disable mouse acceleration
             libinput =
+              let
+                no-accell =
+                  { accelProfile = "flat";
+                    accelSpeed = l.mkDefault "0";
+                  };
+              in
               { enable = true;
 
-                mouse =
-                  l.mkDefault
-                    { accelProfile = "flat";
-                      accelSpeed = "0";
-                    };
+                mouse = no-accell;
+                touchpad = no-accell
               };
 
             windowManager.i3.enable = true;

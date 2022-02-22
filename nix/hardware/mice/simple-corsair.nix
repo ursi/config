@@ -1,1 +1,1 @@
-import ./no-accel.nix { speed = -.75; }
+{ services.xserver.libinput.mouse.accelSpeed = "-.75"; }
