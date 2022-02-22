@@ -35,5 +35,6 @@
 			}
 		}
 	},
+	"rust-analyzer.server.path": "rust-analyzer",
 	"suggest.autoTrigger": "none"
 }
