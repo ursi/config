@@ -66,7 +66,7 @@ with builtins;
                 { key = "C"; mods = "Alt"; action = "Copy"; }
               ];
 
-            mosue_bindings = [ { mouse = "Right"; action = "Copy"; } ];
+            mouse_bindings = [ { mouse = "Right"; action = "Copy"; } ];
           };
       };
   }
