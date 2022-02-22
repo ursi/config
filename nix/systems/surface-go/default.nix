@@ -42,9 +42,6 @@ with builtins;
 
         xserver =
           { dpi = 144; # 1.5x the default
-
-            # doesn't seem to work
-            libinput.touchpad.naturalScrolling = true;
           };
       };
 

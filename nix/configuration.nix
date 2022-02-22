@@ -193,7 +193,10 @@ with builtins;
               { enable = true;
 
                 mouse = no-accell;
-                touchpad = no-accell
+
+                touchpad =
+                  no-accell
+                  // { naturalScrolling = true; };
               };
 
             windowManager.i3.enable = true;
