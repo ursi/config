@@ -172,7 +172,10 @@ with builtins;
       };
 
     services =
-      { openssh.enable = true;
+      { openssh =
+          { enable = true;
+            passwordAuthentication = false;
+          };
 
         picom =
           { enable = true;
