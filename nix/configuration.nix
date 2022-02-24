@@ -172,7 +172,9 @@ with builtins;
       };
 
     services =
-      { openssh =
+      { ntp.enable = true;
+
+        openssh =
           { enable = true;
             passwordAuthentication = false;
           };
