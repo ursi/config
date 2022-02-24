@@ -104,9 +104,6 @@
               ];
           };
 
-      packages.${system} =
-        { inherit (p) alacritty;
-          inherit neovim;
-        };
+      packages.${system} = { inherit (p) neovim; };
     };
 }
