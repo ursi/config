@@ -56,7 +56,7 @@ unmap Y
 
 noremap <Leader>b :ls t<CR>:b<Space>
 noremap <Leader>c :cd %:h<CR>
-noremap <Leader>s :write<CR>:source %<CR>
+noremap <Leader>s :set spell!<CR>
 exe "noremap <Leader>v :tabe " . expand("<sfile>:p") . "<CR>"
 noremap <C-H> gT
 noremap <C-L> gt
