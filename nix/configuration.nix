@@ -187,7 +187,6 @@ with builtins;
         xserver =
           { enable = true;
 
-            # Disable mouse acceleration
             libinput =
               let
                 no-accell =
