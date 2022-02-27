@@ -186,6 +186,8 @@ with builtins;
 
         xserver =
           { enable = true;
+            autoRepeatInterval = 33;
+            autoRepeatDelay = 250;
 
             libinput =
               let
