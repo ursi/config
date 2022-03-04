@@ -41,7 +41,24 @@ with builtins;
             }
 
             { pkg = nix;
-              aliases.nix = "nix -L";
+
+              aliases =
+                { nix = "nix -L";
+
+                  nixrepl =
+                    let
+                      file =
+                        p.writeText ""
+                          "{ p, get-flake }: { l = p.lib; inherit get-flake p; } // builtins";
+                    in
+                    ''
+                    nix repl \
+                      --arg get-flake 'builtins.getFlake "github:ursi/get-flake"' \
+                      --arg p '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' \
+                      ${file}
+                    '';
+                };
+
               functions.shell = "nix shell nixpkgs#$1";
             }
 
@@ -69,12 +86,6 @@ with builtins;
             nix-remove = "nix-env -e nix";
             nixbuild = "nix build -f .";
             nixpkgs-unstable = ''echo $(nix eval --impure --raw --expr '(fetchGit { url = "https://github.com/NixOS/nixpkgs"; ref = "nixpkgs-unstable"; }).rev')'';
-
-            nixrepl =
-              let
-                file = p.writeText "" "{ p }: { l = p.lib; inherit p; } // builtins";
-              in
-              ''nix repl --arg p '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' ${file}'';
 
             nixshell = "nix develop -f shell.nix";
           };
