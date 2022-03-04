@@ -40,7 +40,7 @@ with builtins;
               functions.jql = ''jq -C "$1" "$2" | less -r'';
             }
 
-            { pkg = nix;
+            { pkg = "nix";
 
               aliases =
                 { fui = "nix flake lock --update-input";
