@@ -7,7 +7,7 @@ with builtins;
             t.listOf
               (t.submodule
                  { options =
-                     { pkg = l.mkOption { type = t.package; };
+                     { pkg = l.mkOption { type = t.either t.package t.str; };
 
                        aliases =
                          l.mkOption
@@ -29,7 +29,8 @@ with builtins;
 
     config =
       let cfg = config.environment.pkgs-with-aliases; in
-      { environment.systemPackages = map (a: a.pkg) cfg;
+      { environment.systemPackages =
+          l.pipe cfg [ (filter (a: !isString a.pkg)) (map (a: a.pkg)) ];
 
         programs.bash =
           { shellAliases = foldl' (acc: a: acc // a.aliases) {} cfg;
