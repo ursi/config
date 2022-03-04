@@ -40,6 +40,10 @@ with builtins;
               functions.jql = ''jq -C "$1" "$2" | less -r'';
             }
 
+            { pkg = nix;
+              aliases.nix = "nix -L";
+            }
+
             { pkg = nodePackages.http-server;
               aliases.http-server = "http-server -c-1";
             }
