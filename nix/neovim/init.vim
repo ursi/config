@@ -86,7 +86,7 @@ set ignorecase smartcase
 set mouse=n
 set nofoldenable
 set relativenumber
-set scrolloff=1 sidescrolloff=1
+set sidescrolloff=1
 set shiftwidth=0 tabstop=4
 set splitbelow splitright
 set undofile
