@@ -42,6 +42,7 @@ with builtins;
 
             { pkg = nix;
               aliases.nix = "nix -L";
+              functions.shell = "nix shell nixpkgs#$1";
             }
 
             { pkg = nodePackages.http-server;
