@@ -15,6 +15,7 @@ pkgs:
        }
        ''
     )
+
     (writeShellScriptBin "unsymlink"
        ''
        set -e
