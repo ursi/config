@@ -37,7 +37,7 @@ with builtins;
                 pager = "less -FX -x1,5";
               };
 
-            diff.algorithm = "minimal";
+            diff.algorithm = "histogram";
             merge.ff = false;
             pager.blame = "${neovim} -R";
             pull.ff = "only";
