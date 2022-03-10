@@ -142,7 +142,6 @@ with builtins;
       };
 
     fonts.fonts = [ (p.nerdfonts.override {fonts = [ "Cousine" ]; }) ];
-    gaming.enable = l.mkDefault true;
 
     hardware =
       { keyboard.zsa.enable = true;

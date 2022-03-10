@@ -79,6 +79,7 @@
     { apps.${system}.neovim.neovim = make-app p.neovim "nvim";
 
       nixosConfigurations =
+        let gaming = import ./gaming.nix { ssbm = ssbm.packages.${system}; }; in
         mapAttrs
           (hostName: modules:
              l.nixosSystem
@@ -90,7 +91,6 @@
                      }
 
                      ./configuration.nix
-                     (import ./gaming.nix { ssbm = ssbm.packages.${system}; })
                      agenix.nixosModules.age
                      ssbm.nixosModule
                      z.nixosModule
@@ -99,8 +99,8 @@
                    ++ modules;
                }
           )
-          { desktop-2019 = [];
-            hp-envy = [];
+          { desktop-2019 = [ gaming ];
+            hp-envy = [ gaming ];
             surface-go = [ nixos-hardware.nixosModules.microsoft-surface ];
           };
 
