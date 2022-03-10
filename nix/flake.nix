@@ -86,11 +86,11 @@
                { inherit pkgs system;
                  modules =
                    [ { _module.args = { inherit nixpkgs; };
-                       imports = [ (./systems + "/${hostName}") ];
                        networking = { inherit hostName; };
                      }
 
                      ./configuration.nix
+                     (./systems + "/${hostName}")
                      agenix.nixosModules.age
                      ssbm.nixosModule
                      z.nixosModule
