@@ -80,11 +80,15 @@
 
       nixosConfigurations =
         mapAttrs
-          (_: modules:
+          (hostName: modules:
              l.nixosSystem
                { inherit pkgs system;
                  modules =
-                   [ { _module.args = { inherit nixpkgs; }; }
+                   [ { _module.args = { inherit nixpkgs; };
+                       imports = [ (./systems + "/${hostName}") ];
+                       networking = { inherit hostName; };
+                     }
+
                      ./configuration.nix
                      (import ./gaming.nix { ssbm = ssbm.packages.${system}; })
                      agenix.nixosModules.age
@@ -95,13 +99,9 @@
                    ++ modules;
                }
           )
-          { desktop-2019 = [ ./systems/desktop-2019 ];
-            hp-envy = [ ./systems/hp-envy ];
-
-            surface-go =
-              [ ./systems/surface-go
-                nixos-hardware.nixosModules.microsoft-surface
-              ];
+          { desktop-2019 = [];
+            hp-envy = [];
+            surface-go = [ nixos-hardware.nixosModules.microsoft-surface ];
           };
 
       packages.${system} = { inherit (p) neovim; };

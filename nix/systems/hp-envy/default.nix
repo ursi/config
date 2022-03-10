@@ -20,11 +20,7 @@ with builtins;
           };
       };
 
-    networking =
-      { hostName = "hp-envy";
-        interfaces.enp1s0.useDHCP = true;
-      };
-
+    networking.interfaces.enp1s0.useDHCP = true;
     nix.settings.cores = 7;
     services.picom.backend = "glx";
 

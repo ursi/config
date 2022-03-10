@@ -22,11 +22,7 @@ with builtins;
         video.hidpi.enable = true;
       };
 
-    networking =
-      { hostName = "surface-go";
-        interfaces.wlp1s0.useDHCP = true;
-      };
-
+    networking.interfaces.wlp1s0.useDHCP = true;
     programs.alacritty.config.font.size = 10;
 
     # required for the wifi driver
