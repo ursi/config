@@ -76,7 +76,7 @@
           program = "${pkg}/bin/${exe}";
         };
     in
-    { apps.${system}.neovim.neovim = make-app p.neovim "nvim";
+    { apps.${system}.neovim = make-app p.neovim "nvim";
 
       nixosConfigurations =
         let gaming = import ./gaming.nix { ssbm = ssbm.packages.${system}; }; in
