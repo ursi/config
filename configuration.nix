@@ -247,13 +247,13 @@ with builtins;
                         size = l.mkDefault 17;
                       };
 
-                    extra-config = readFile ../i3/config;
+                    extra-config = readFile ./i3-base-config;
                   };
 
                 icons.cursor = p.icons.breeze.cursors.breeze;
                 isNormalUser = true;
                 password = "";
-                links.path."/.bashrc" = ../.bashrc;
+                links.path."/.bashrc" = ./.bashrc;
               };
 
             root =
