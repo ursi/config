@@ -104,6 +104,7 @@ with builtins;
                 nix-du
                 ntfs3g
                 pciutils
+                sl
                 tmate
                 unzip
                 usbutils
