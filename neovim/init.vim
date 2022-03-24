@@ -9,9 +9,11 @@ let g:dhall_format = 1
 
 let mapleader = "\<Space>"
 
-let gruvbox_invert_tabline = 1
-let gruvbox_invert_selection = 0
-colorscheme gruvbox
+if $TERM != 'linux'
+	let gruvbox_invert_tabline = 1
+	let gruvbox_invert_selection = 0
+	colorscheme gruvbox
+endif
 
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
