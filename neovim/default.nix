@@ -12,6 +12,8 @@ with builtins;
         in
         readFile ./init.vim
         + ''
+          set shell=${p.bashInteractive}/bin/bash
+
           let g:coc_config_home = '${coc-settings}'"
 
           " noremap <Leader>v :tabedit ${toString ./init.vim}<CR>
