@@ -148,3 +148,4 @@ inoremap <M-<> <><Left>
 inoremap <M-[> []<Left>
 inoremap <M-`> ``<Left>
 inoremap <M-{> {}<Left>
+inoremap <M-\|> \|\|<Left>
