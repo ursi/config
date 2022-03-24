@@ -40,6 +40,10 @@ with builtins;
               functions.jql = ''jq -C "$1" "$2" | less -r'';
             }
 
+            { pkg = neovim;
+              functions.note = ''nvim ~/notes/"''${1:-notes}".txt'';
+            }
+
             { pkg = "nix";
 
               aliases =
@@ -97,7 +101,6 @@ with builtins;
                 ix
                 ncdu
                 neofetch
-                neovim
                 nix-du
                 ntfs3g
                 pciutils
