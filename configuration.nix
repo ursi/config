@@ -172,6 +172,7 @@ with builtins;
 
     programs =
       { alacritty.enable = true;
+        bash.shellInit = "shopt -s globstar";
         dconf.enable = true;
         nm-applet.enable = true;
 
