@@ -95,6 +95,7 @@ with builtins;
             no-windows =
               [ file
                 git
+                glow
                 graphviz
                 hexedit
                 imagemagick
