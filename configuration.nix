@@ -107,6 +107,7 @@ with builtins;
                 pciutils
                 sl
                 tmate
+                tmux
                 unzip
                 usbutils
                 wally-cli
