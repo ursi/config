@@ -44,11 +44,11 @@
         "utils": "utils_4"
       },
       "locked": {
-        "lastModified": 1644906765,
-        "narHash": "sha256-90xuTkbFkqlBEeedYPMVp6BmNQQ/f9tJusfToymMcVY=",
+        "lastModified": 1650337070,
+        "narHash": "sha256-rIfP8xgfgz2DPFaY7ZRaZF7ciEdW/ScqMkTPAKVRzXs=",
         "owner": "ursi",
         "repo": "brightness",
-        "rev": "1dc4dcb29e131a04c710972c9779fda3e5f573c1",
+        "rev": "d19d4ef3acd81aa1bc60f6c93dbe61007b270c59",
         "type": "github"
       },
       "original": {
