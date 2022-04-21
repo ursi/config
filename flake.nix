@@ -10,7 +10,6 @@
         };
 
       im-home.url = "github:ursi/im-home";
-      json-format.url = "github:ursi/json-format";
       localVim.url = "github:ursi/nix-local-vim";
       nixos-hardware.url = "github:ursi/nixos-hardware/microsoft-surface-wifi";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -26,7 +25,6 @@
     , flake-make
     , hours
     , im-home
-    , json-format
     , localVim
     , nixos-hardware
     , nixpkgs
@@ -53,7 +51,7 @@
 
                     flake-packages =
                       utils.defaultPackages system
-                        { inherit agenix brightness flake-make json-format; };
+                        { inherit agenix brightness flake-make; };
 
                     neovim =
                       import ./neovim
