@@ -93,7 +93,8 @@ with builtins;
           with pkgs;
           let
             no-windows =
-              [ file
+              [ entr
+                file
                 git
                 glow
                 graphviz
