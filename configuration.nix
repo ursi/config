@@ -87,6 +87,10 @@ with builtins;
                   xclipng = "xclip -t image/png -selection clipboard";
                 };
             }
+
+            { pkg = yt-dlp;
+              aliases.youtube-dl = "yt-dlp";
+            }
           ];
 
         shellAliases =
