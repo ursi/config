@@ -40,6 +40,10 @@ with builtins;
               functions.jql = ''jq -C "$1" "$2" | less -r'';
             }
 
+            { pkg = qrencode;
+              functions.qrcode = ''qrencode -t ANSI "$1"'';
+            }
+
             { pkg = neovim;
               functions.note = ''nvim ~/notes/"''${1:-notes}".txt'';
             }
