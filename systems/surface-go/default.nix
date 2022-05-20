@@ -14,6 +14,7 @@ with builtins;
     environment.systemPackages =
       with p;
       [ brightnessctl
+        onboard
         xorg.xdpyinfo
       ];
 
@@ -52,6 +53,7 @@ with builtins;
       { i3 =
           { backlight-adjust-percent = 5;
             font.size = 27;
+            extra-config = "exec --no-startup-id onboard";
           };
 
         i3status.status-bar = (import ../../i3status.nix).battery;
