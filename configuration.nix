@@ -40,6 +40,10 @@ with builtins;
               functions.jql = ''jq -C "$1" "$2" | less -r'';
             }
 
+            { pkg = qrencode;
+              functions.qrcode = ''qrencode -t ANSI "$1"'';
+            }
+
             { pkg = neovim;
               functions.note = ''nvim ~/notes/"''${1:-notes}".txt'';
             }
@@ -82,6 +86,10 @@ with builtins;
                 { xclipc = "xclip -selection clipboard";
                   xclipng = "xclip -t image/png -selection clipboard";
                 };
+            }
+
+            { pkg = yt-dlp;
+              aliases.youtube-dl = "yt-dlp";
             }
           ];
 
