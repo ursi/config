@@ -54,19 +54,7 @@ with builtins;
                 { fui = "nix flake lock --update-input";
                   nix = "nix -L";
                   nixpkgs-unstable = ''echo $(nix eval --impure --raw --expr '(fetchGit { url = "https://github.com/NixOS/nixpkgs"; ref = "nixpkgs-unstable"; }).rev')'';
-
-                  nixrepl =
-                    let
-                      file =
-                        p.writeText ""
-                          "{ p, get-flake }: { l = p.lib; inherit get-flake p; } // builtins";
-                    in
-                    ''
-                    nix repl \
-                      --arg get-flake 'builtins.getFlake "github:ursi/get-flake"' \
-                      --arg p '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' \
-                      ${file}
-                    '';
+                  repl = ''nix repl --arg pkgs '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' ${./repl.nix}'';
                 };
 
               functions.shell = "nix shell nixpkgs#$1";
