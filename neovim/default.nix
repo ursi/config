@@ -16,8 +16,6 @@ with builtins;
 
           let g:coc_config_home = '${coc-settings}'"
 
-          " noremap <Leader>v :tabedit ${toString ./init.vim}<CR>
-
           function! Init(type)
               let lnum = line(".")
               let lines =readfile(findfile(a:type . ".init", '${./init}'))
