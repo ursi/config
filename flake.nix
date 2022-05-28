@@ -12,7 +12,7 @@
       im-home.url = "github:ursi/im-home";
       localVim.url = "github:ursi/nix-local-vim";
       nixos-hardware.url = "github:ursi/nixos-hardware/microsoft-surface-wifi";
-      nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+      nixpkgs.url = "github:NixOS/nixpkgs/fa76c9801d0ad7b6a8bd0092202e5bfb102b318a";
       nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-21.11";
       ssbm.url = "github:djanatyn/ssbm-nix";
       z.url = "github:ursi/z-nix";
@@ -61,7 +61,8 @@
 
                     inherit (nixpkgs-stable.legacyPackages.${system})
                       formats
-                      torbrowser;
+                      torbrowser
+                      wxcam;
                   }
                 )
 
