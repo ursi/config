@@ -228,11 +228,11 @@
     "hours": {
       "flake": false,
       "locked": {
-        "lastModified": 1644907031,
-        "narHash": "sha256-3EZVedHA6iZjaUzYDSiJI4FtQG+tKtaATeHRY6yXoRk=",
+        "lastModified": 1653944205,
+        "narHash": "sha256-xZkqpLVkANlXAD9DgYWAjJkgDfCxYqikEECWsVbOQMM=",
         "owner": "ursi",
         "repo": "hours",
-        "rev": "b49879ff035b5f11c42a3d3b7326fc9c70daa890",
+        "rev": "4085779fd72760619e2c52d1b2fb191e5a01b76b",
         "type": "github"
       },
       "original": {

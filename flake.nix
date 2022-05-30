@@ -46,7 +46,7 @@
 
             overlays =
               [ (_: super:
-                  { hours = import hours { pkgs = super; inherit system; };
+                  { hours = import hours { inherit system; };
                     icons = { breeze = breeze.packages.${system}; };
 
                     flake-packages =
