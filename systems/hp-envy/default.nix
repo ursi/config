@@ -29,7 +29,7 @@ with builtins;
     system.stateVersion = "20.09";
 
     users.users.mason =
-      { i3status.status-bar = (import ../../i3status.nix).no-battery;
+      { im-home.i3status.status-bar = (import ../../i3status.nix).no-battery;
 
         remote-builder =
           { enable = true;

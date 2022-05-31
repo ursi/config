@@ -13,7 +13,7 @@ with builtins;
         gs = "git status";
       };
 
-    users.users.mason.git =
+    users.users.mason.im-home.git =
       { config =
           { alias =
               let

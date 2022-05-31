@@ -49,7 +49,7 @@ with builtins;
     # this option cause the build to fail
     systemd.services.iptsd = l.mkForce {};
 
-    users.users.mason =
+    users.users.mason.im-home =
       { i3 =
           { backlight-adjust-percent = 5;
             font.size = 27;

@@ -246,19 +246,22 @@ with builtins;
                 description = "Mason Mackaman";
                 extraGroups = [ "networkmanager" "plugdev" "wheel" ];
 
-                i3 =
-                  { font =
-                      { font = "pango:sans";
-                        size = l.mkDefault 17;
+                im-home =
+                  { i3 =
+                      { font =
+                          { font = "pango:sans";
+                            size = l.mkDefault 17;
+                          };
+
+                        extra-config = readFile ./i3-base-config;
                       };
 
-                    extra-config = readFile ./i3-base-config;
+                    icons.cursor = p.icons.breeze.cursors.breeze;
+                    links.path."/.bashrc" = ./.bashrc;
                   };
 
-                icons.cursor = p.icons.breeze.cursors.breeze;
                 isNormalUser = true;
                 password = "";
-                links.path."/.bashrc" = ./.bashrc;
               };
 
             root =
