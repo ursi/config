@@ -258,6 +258,7 @@ with builtins;
 
                     icons.cursor = p.icons.breeze.cursors.breeze;
                     links.path."/.bashrc" = ./.bashrc;
+                    links.path."/.config/nix" = null;
                   };
 
                 isNormalUser = true;
@@ -266,6 +267,7 @@ with builtins;
 
             root =
               { extraGroups = [ "root" ];
+                im-home.links.path."/.config/nix" = null;
                 password = "";
               };
           };
