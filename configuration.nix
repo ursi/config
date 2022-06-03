@@ -112,6 +112,7 @@ with builtins;
       };
 
     hardware.keyboard.zsa.enable = true;
+    im-home.links.path."/etc/tmux.conf" = ./tmux.conf;
 
     networking =
       { firewall.enable = false;
@@ -138,11 +139,6 @@ with builtins;
           Host do-nixos-0
           Hostname ${(import ./systems/do-nixos-0/info.nix).ip}
           '';
-
-        tmux =
-          { enable = true;
-            extraConfig = readFile ./.tmux.conf;
-          };
 
         z =
           { enable = true;
