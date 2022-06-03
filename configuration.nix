@@ -139,6 +139,11 @@ with builtins;
           Hostname ${(import ./systems/do-nixos-0/info.nix).ip}
           '';
 
+        tmux =
+          { enable = true;
+            extraConfig = readFile ./.tmux.conf;
+          };
+
         z =
           { enable = true;
             cmd = "a";

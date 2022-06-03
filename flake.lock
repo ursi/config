@@ -745,6 +745,7 @@
         "nixpkgs": "nixpkgs_11",
         "nixpkgs-stable": "nixpkgs-stable",
         "ssbm": "ssbm",
+        "tmux-nixpkgs": "tmux-nixpkgs",
         "utils": "utils_8",
         "z": "z"
       }
@@ -782,6 +783,22 @@
       "original": {
         "owner": "djanatyn",
         "repo": "ssbm-nix",
+        "type": "github"
+      }
+    },
+    "tmux-nixpkgs": {
+      "locked": {
+        "lastModified": 1654057200,
+        "narHash": "sha256-RuZ5iYRRryeNOIKZCZ2Z37DJRdMI4cpt+KQ6xreWcrk=",
+        "owner": "marsam",
+        "repo": "nixpkgs",
+        "rev": "0a1e023ab65c5955b638327b1d3ca9485f0c6997",
+        "type": "github"
+      },
+      "original": {
+        "owner": "marsam",
+        "ref": "update-tmux",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },

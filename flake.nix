@@ -15,6 +15,7 @@
       nixpkgs.url = "github:NixOS/nixpkgs/fa76c9801d0ad7b6a8bd0092202e5bfb102b318a";
       nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-21.11";
       ssbm.url = "github:djanatyn/ssbm-nix";
+      tmux-nixpkgs.url = "github:marsam/nixpkgs/update-tmux";
       z.url = "github:ursi/z-nix";
     };
 
@@ -30,6 +31,7 @@
     , nixpkgs
     , nixpkgs-stable
     , ssbm
+    , tmux-nixpkgs
     , utils
     , z
     , ...
@@ -67,6 +69,8 @@
                       formats
                       torbrowser
                       wxcam;
+
+                    inherit (tmux-nixpkgs.legacyPackages.${system}) tmux;
                   }
                 )
 
