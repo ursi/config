@@ -133,6 +133,12 @@ with builtins;
     programs =
       { bash.interactiveShellInit = "shopt -s globstar";
 
+        ssh.extraConfig =
+          ''
+          Host do-nixos-0
+          Hostname ${(import ./systems/do-nixos-0/info.nix).ip}
+          '';
+
         z =
           { enable = true;
             cmd = "a";

@@ -33,7 +33,7 @@ with builtins;
 
         remote-builder =
           { enable = true;
-            keys = attrValues (import ../surface-go/ssh-keys.nix);
+            keys = attrValues (import ../surface-go/info.nix).ssh-keys;
           };
       };
   }

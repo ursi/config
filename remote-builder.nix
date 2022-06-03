@@ -31,7 +31,7 @@ with builtins;
 
     config =
       let
-        server-ip = "159.65.254.51";
+        server-ip = (import ./systems/do-nixos-0/info.nix).ip;
         ssh-port = head config.services.openssh.ports;
         special-port = "42069";
         setup-host = "remote-builder-setup";

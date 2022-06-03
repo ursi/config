@@ -102,13 +102,14 @@
                    ++ modules;
                }
           )
-          { desktop-2019 = [ gaming ./gui.nix];
+          { desktop-2019 = [ gaming ./gui.nix ];
+            do-nixos-0 = [];
             hp-envy = [ gaming ./gui.nix ];
 
             surface-go =
-               [ ./gui.nix
-                 nixos-hardware.nixosModules.microsoft-surface
-               ];
+              [ ./gui.nix
+                nixos-hardware.nixosModules.microsoft-surface
+              ];
           };
 
       packages.${system} = { inherit (p) neovim; };
