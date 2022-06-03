@@ -19,12 +19,17 @@ pkgs:
     (writeShellScriptBin "unsymlink"
        ''
        set -e
-       if ! [ -a "_$1" ]; then
-         cp --no-preserve=mode "$1" "_$1"
-         mv "_$1" "$1"
+       tmp=$(mktemp)
+       cp -r "$1" $tmp
+       rm "$1"
+       cp -Lr $tmp "$1"
+       rm $tmp
+
+       if [ -d "$1" ]; then
+         chmod 755 "$1"
        else
-         echo "'_$1' exists"
-       fi;
+         chmod 666 "$1"
+       fi
        ''
     )
   ]
