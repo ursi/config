@@ -51,7 +51,11 @@
 
                     flake-packages =
                       utils.defaultPackages system
-                        { inherit agenix brightness flake-make; };
+                        { inherit agenix flake-make; };
+
+                    flake-packages-gui =
+                      utils.defaultPackages system
+                        { inherit brightness; };
 
                     neovim =
                       import ./neovim
@@ -98,9 +102,13 @@
                    ++ modules;
                }
           )
-          { desktop-2019 = [ gaming ];
-            hp-envy = [ gaming ];
-            surface-go = [ nixos-hardware.nixosModules.microsoft-surface ];
+          { desktop-2019 = [ gaming ./gui.nix];
+            hp-envy = [ gaming ./gui.nix ];
+
+            surface-go =
+               [ ./gui.nix
+                 nixos-hardware.nixosModules.microsoft-surface
+               ];
           };
 
       packages.${system} = { inherit (p) neovim; };

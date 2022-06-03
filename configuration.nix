@@ -2,8 +2,7 @@ with builtins;
 { lib, nixpkgs, pkgs, ... }:
   let l = lib; p = pkgs; in
   { imports =
-      [ ./alacritty.nix
-        ./git.nix
+      [ ./git.nix
         ./package-alias.nix
         ./secrets/agenix.nix
       ];
@@ -69,14 +68,6 @@ with builtins;
               aliases.trash = "trash-put";
             }
 
-            { pkg = xclip;
-
-              aliases =
-                { xclipc = "xclip -selection clipboard";
-                  xclipng = "xclip -t image/png -selection clipboard";
-                };
-            }
-
             { pkg = yt-dlp;
               aliases.youtube-dl = "yt-dlp";
             }
@@ -88,54 +79,29 @@ with builtins;
 
         systemPackages =
           with pkgs;
-          let
-            no-windows =
-              [ entr
-                file
-                git
-                glow
-                graphviz
-                hexedit
-                imagemagick
-                ix
-                ncdu
-                neofetch
-                nix-du
-                ntfs3g
-                pciutils
-                sl
-                tmate
-                tmux
-                unzip
-                usbutils
-                wally-cli
-                w3m
-              ];
-
-            windows =
-              [ audacity
-                brave
-                discord
-                gimp
-                gnome3.nautilus # for seeing images
-                gparted
-                mattermost-desktop
-                pavucontrol
-                peek
-                qbittorrent
-                qemu
-                signal-desktop
-                spectacle
-                torbrowser
-                vlc
-                wxcam
-                zulip
-              ];
-          in
-          flake-packages
-          ++ no-windows
-          ++ (import ./shell-scripts.nix pkgs)
-          ++ windows;
+          [ entr
+            file
+            git
+            glow
+            graphviz
+            hexedit
+            imagemagick
+            ix
+            ncdu
+            neofetch
+            nix-du
+            ntfs3g
+            pciutils
+            sl
+            tmate
+            tmux
+            unzip
+            usbutils
+            wally-cli
+            w3m
+          ]
+          ++ flake-packages
+          ++ (import ./shell-scripts.nix pkgs);
 
 
         variables =
@@ -145,12 +111,7 @@ with builtins;
           };
       };
 
-    fonts.fonts = [ (p.nerdfonts.override {fonts = [ "Cousine" ]; }) ];
-
-    hardware =
-      { keyboard.zsa.enable = true;
-        pulseaudio.enable = true;
-      };
+    hardware.keyboard.zsa.enable = true;
 
     networking =
       { firewall.enable = false;
@@ -170,15 +131,7 @@ with builtins;
       };
 
     programs =
-      { alacritty.enable = true;
-        bash.interactiveShellInit = "shopt -s globstar";
-        dconf.enable = true;
-        nm-applet.enable = true;
-
-        xss-lock =
-          { enable = true;
-            lockerCommand = "${p.i3lock}/bin/i3lock -fc 440000";
-          };
+      { bash.interactiveShellInit = "shopt -s globstar";
 
         z =
           { enable = true;
@@ -192,46 +145,6 @@ with builtins;
         openssh =
           { enable = true;
             passwordAuthentication = false;
-          };
-
-        picom =
-          { enable = true;
-            vSync = true;
-          };
-
-        xserver =
-          { enable = true;
-            autoRepeatInterval = 33;
-            autoRepeatDelay = 250;
-
-            libinput =
-              let
-                no-accell =
-                  { accelProfile = "flat";
-                    accelSpeed = l.mkDefault "0";
-                  };
-              in
-              { enable = true;
-
-                mouse = no-accell;
-
-                touchpad =
-                  no-accell
-                  // { naturalScrolling = true; };
-              };
-
-            windowManager.i3.enable = true;
-          };
-      };
-
-    sound.enable = true;
-
-    ssbm =
-      { cache.enable = true;
-
-        gcc =
-          { oc-kmod.enable = true;
-            rules.enable = true;
           };
       };
 
@@ -247,17 +160,7 @@ with builtins;
                 extraGroups = [ "networkmanager" "plugdev" "wheel" ];
 
                 im-home =
-                  { i3 =
-                      { font =
-                          { font = "pango:sans";
-                            size = l.mkDefault 17;
-                          };
-
-                        extra-config = readFile ./i3-base-config;
-                      };
-
-                    icons.cursor = p.icons.breeze.cursors.breeze;
-                    links.path."/.bashrc" = ./.bashrc;
+                  { links.path."/.bashrc" = ./.bashrc;
                     links.path."/.config/nix" = null;
                   };
 
