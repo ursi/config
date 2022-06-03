@@ -89,7 +89,10 @@
             ).outPath;
         };
     in
-    { apps.${system}.neovim = make-app p.neovim "nvim";
+    { apps.${system} =
+        { neovim = make-app p.neovim "nvim";
+          tmux = make-app p.tmux "tmux -f ${./tmux.conf}";
+        };
 
       nixosConfigurations =
         let gaming = import ./gaming.nix { ssbm = ssbm.packages.${system}; }; in
