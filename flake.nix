@@ -78,9 +78,15 @@
               ];
           };
 
-      make-app = pkg: exe:
+      make-app = pkg: bin-and-flags:
         { type = "app";
-          program = "${pkg}/bin/${exe}";
+
+          program =
+            (p.writeScript "wrapped-tmux"
+               ''
+               ${pkg}/bin/${bin-and-flags} "$@";
+               ''
+            ).outPath;
         };
     in
     { apps.${system}.neovim = make-app p.neovim "nvim";
