@@ -87,6 +87,7 @@ with builtins;
             hexedit
             imagemagick
             ix
+            mosh
             ncdu
             neofetch
             nix-du
