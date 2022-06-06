@@ -22,6 +22,7 @@ with builtins;
               in
               { cloners = "clone --recurse-submodules";
                 co = "checkout";
+                cp = "cherry-pick";
                 dc = "diff --cached";
                 exp = make-function ''git lfp $1^..$1^2 "''${@:2}"'';
                 expand = make-function ''git log $1^..$1^2 "''${@:2}"'';
