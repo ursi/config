@@ -9,7 +9,15 @@ let g:dhall_format = 1
 
 let mapleader = "\<Space>"
 
-if $TERM != 'linux'
+if $E_INK
+	highlight CursorColumn guibg=#cccccc
+	highlight Pmenu guifg=white guibg=black
+	highlight Search guifg=white guibg=black
+	highlight Visual guifg=white guibg=black
+	set background=light
+	set termguicolors
+	syntax off
+elseif $TERM != 'linux'
 	let gruvbox_invert_tabline = 1
 	let gruvbox_invert_selection = 0
 	colorscheme gruvbox

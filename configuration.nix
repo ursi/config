@@ -69,6 +69,10 @@ with builtins;
               aliases.http-server = "http-server -c-1";
             }
 
+            { pkg = tmux;
+              aliases.e-ink = "E_INK=1 tmux";
+            }
+
             { pkg = trash-cli;
               aliases.trash = "trash-put";
             }
@@ -99,7 +103,6 @@ with builtins;
             pciutils
             sl
             tmate
-            tmux
             unzip
             usbutils
             wally-cli
