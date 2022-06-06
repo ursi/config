@@ -43,6 +43,11 @@ with builtins;
               functions.qrcode = ''qrencode -t ANSI "$1"'';
             }
 
+            { pkg = mosh;
+              aliases.mosh = "mosh -a";
+              env.MOSH_ESCAPE_KEY = "~";
+            }
+
             { pkg = neovim;
               functions.note = ''nvim ~/notes/"''${1:-notes}".txt'';
             }
@@ -87,7 +92,6 @@ with builtins;
             hexedit
             imagemagick
             ix
-            mosh
             ncdu
             neofetch
             nix-du
