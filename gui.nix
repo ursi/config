@@ -4,7 +4,7 @@ with builtins;
   { imports = [ ./alacritty.nix ];
 
     environment =
-      { pkgs-with-aliases =
+      { packages-extra =
           with pkgs;
           [ { pkg = xclip;
 

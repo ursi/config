@@ -3,12 +3,12 @@ with builtins;
   let l = lib; p = pkgs; in
   { imports =
       [ ./git.nix
-        ./package-alias.nix
+        ./packages-extra.nix
         ./secrets/agenix.nix
       ];
 
     environment =
-      { pkgs-with-aliases =
+      { packages-extra =
           with pkgs;
           [ { pkg = chez;
               aliases.scheme = "scheme ${./prelude.ss}";

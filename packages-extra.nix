@@ -1,7 +1,7 @@
 with builtins;
 { config, lib, pkgs, ... }:
   let l = lib; p = pkgs; t = lib.types; in
-  { options.environment.pkgs-with-aliases =
+  { options.environment.packages-extra =
       l.mkOption
         { type =
             t.listOf
@@ -10,6 +10,12 @@ with builtins;
                      { pkg = l.mkOption { type = t.either t.package t.str; };
 
                        aliases =
+                         l.mkOption
+                           { type = t.attrsOf t.str;
+                             default = {};
+                           };
+
+                       env =
                          l.mkOption
                            { type = t.attrsOf t.str;
                              default = {};
@@ -28,9 +34,13 @@ with builtins;
         };
 
     config =
-      let cfg = config.environment.pkgs-with-aliases; in
-      { environment.systemPackages =
-          l.pipe cfg [ (filter (a: !isString a.pkg)) (map (a: a.pkg)) ];
+      let cfg = config.environment.packages-extra; in
+      { environment =
+          { systemPackages =
+              l.pipe cfg [ (filter (a: !isString a.pkg)) (map (a: a.pkg)) ];
+
+            variables = foldl' (acc: { env, ... }: acc // env) {} cfg;
+          };
 
         programs.bash =
           { shellAliases = foldl' (acc: a: acc // a.aliases) {} cfg;
