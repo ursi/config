@@ -179,6 +179,7 @@ with builtins;
                   };
 
                 isNormalUser = true;
+                openssh.authorizedKeys.keys = import ./all-ssh-keys.nix;
                 password = "";
               };
 
