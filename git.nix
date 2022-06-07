@@ -59,7 +59,6 @@ with builtins;
         ignore =
           ''
           *.swp
-          *.vim
           result
           '';
       };
