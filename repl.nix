@@ -19,5 +19,7 @@ with builtins;
          in
          a: f (get-flake a);
 
-       inherit l p;
+       inherit l p pkgs;
+       inherit (p) lib;
+       system = "x86_64-linux";
      }
