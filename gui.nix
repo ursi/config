@@ -31,7 +31,7 @@ with builtins;
             qemu
             signal-desktop
             spectacle
-            torbrowser
+            tor-browser-bundle-bin
             vlc
             wxcam
             zulip
@@ -89,10 +89,10 @@ with builtins;
     ssbm =
       { cache.enable = true;
 
-        gcc =
-          { oc-kmod.enable = true;
-            rules.enable = true;
-          };
+        # gcc =
+        #   { oc-kmod.enable = true;
+        #     rules.enable = true;
+        #   };
       };
 
     users.users.mason =

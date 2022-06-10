@@ -12,10 +12,10 @@
       im-home.url = "github:ursi/im-home";
       localVim.url = "github:ursi/nix-local-vim";
       nixos-hardware.url = "github:ursi/nixos-hardware/microsoft-surface-wifi";
-      nixpkgs.url = "github:NixOS/nixpkgs/fa76c9801d0ad7b6a8bd0092202e5bfb102b318a";
-      nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-21.11";
+      nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
+      nixpkgs-neovim.url = "github:NixOS/nixpkgs/fa76c9801d0ad7b6a8bd0092202e5bfb102b318a";
       ssbm.url = "github:djanatyn/ssbm-nix";
-      tmux-nixpkgs.url = "github:marsam/nixpkgs/update-tmux";
       z.url = "github:ursi/z-nix";
     };
 
@@ -28,10 +28,10 @@
     , im-home
     , localVim
     , nixos-hardware
+    , nixos-unstable
     , nixpkgs
-    , nixpkgs-stable
+    , nixpkgs-neovim
     , ssbm
-    , tmux-nixpkgs
     , utils
     , z
     , ...
@@ -44,10 +44,10 @@
       pkgs =
         import nixpkgs
           { inherit system;
-            config = { allowUnfree = true; };
+            config.allowUnfree = true;
 
             overlays =
-              [ (_: super:
+              [ (_: _:
                   { hours = import hours { inherit system; };
                     icons = { breeze = breeze.packages.${system}; };
 
@@ -59,19 +59,28 @@
                       utils.defaultPackages system
                         { inherit brightness; };
 
-                    neovim =
+                    inherit
+                      (import nixos-unstable
+                         { inherit system; config.allowUnfree = true; }
+                      )
+                      brave
+                      discord
+                      nix
+                      tmux
+                      wxcam
+                      zulip;
+
+                    inherit (nixpkgs-neovim.legacyPackages.${system}) neovim vimPlugins;
+                  }
+                )
+
+                (_: prev:
+                   { neovim =
                       import ./neovim
                         { inherit (localVim) mkOverlayableNeovim;
-                          pkgs = super;
+                          pkgs = prev;
                         };
-
-                    inherit (nixpkgs-stable.legacyPackages.${system})
-                      formats
-                      torbrowser
-                      wxcam;
-
-                    inherit (tmux-nixpkgs.legacyPackages.${system}) tmux;
-                  }
+                   }
                 )
 
                 z.overlay
