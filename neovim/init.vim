@@ -13,6 +13,7 @@ if $E_INK
 	highlight CursorColumn guibg=#cccccc
 	highlight Pmenu guifg=white guibg=black
 	highlight Search guifg=white guibg=black
+	highlight TabLine gui=NONE guifg=white guibg=black
 	highlight Visual guifg=white guibg=black
 	set background=light
 	set termguicolors
