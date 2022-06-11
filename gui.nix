@@ -39,7 +39,6 @@ with builtins;
           ++ flake-packages-gui;
       };
 
-    fonts.fonts = [ (p.nerdfonts.override {fonts = [ "Cousine" ]; }) ];
     hardware.pulseaudio.enable = true;
 
     programs =
