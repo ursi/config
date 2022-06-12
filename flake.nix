@@ -1,39 +1,17 @@
 { inputs =
-    { agenix.url = "github:ryantm/agenix";
-      breeze.url = "github:ursi/breeze";
-      brightness.url = "github:ursi/brightness";
-      flake-make.url = "github:ursi/flake-make";
-
-      hours =
+    { hours =
         { flake = false;
-          url = "github:ursi/hours";
+          url = "github:Quelklef/hours";
         };
 
-      im-home.url = "github:ursi/im-home";
-      localVim.url = "github:ursi/nix-local-vim";
-      nixos-hardware.url = "github:ursi/nixos-hardware/microsoft-surface-wifi";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
-      nixpkgs-neovim.url = "github:NixOS/nixpkgs/fa76c9801d0ad7b6a8bd0092202e5bfb102b318a";
-      ssbm.url = "github:djanatyn/ssbm-nix";
-      z.url = "github:ursi/z-nix";
     };
 
   outputs =
-    { agenix
-    , breeze
-    , brightness
-    , flake-make
-    , hours
-    , im-home
-    , localVim
-    , nixos-hardware
+    { hours
     , nixos-unstable
     , nixpkgs
-    , nixpkgs-neovim
-    , ssbm
-    , utils
-    , z
     , ...
     }:
     with builtins;
@@ -49,62 +27,16 @@
             overlays =
               [ (_: _:
                   { hours = import hours { inherit system; };
-                    icons = { breeze = breeze.packages.${system}; };
 
-                    flake-packages =
-                      utils.defaultPackages system
-                        { inherit agenix flake-make; };
-
-                    flake-packages-gui =
-                      utils.defaultPackages system
-                        { inherit brightness; };
-
-                    inherit
-                      (import nixos-unstable
-                         { inherit system; config.allowUnfree = true; }
-                      )
-                      brave
-                      discord
+                    inherit (nixos-unstable.legacyPackages.${system})
                       nix
-                      tmux
-                      wxcam
-                      zulip;
-
-                    inherit (nixpkgs-neovim.legacyPackages.${system}) neovim vimPlugins;
+                      tmux;
                   }
                 )
-
-                (_: prev:
-                   { neovim =
-                      import ./neovim
-                        { inherit (localVim) mkOverlayableNeovim;
-                          pkgs = prev;
-                        };
-                   }
-                )
-
-                z.overlay
               ];
           };
-
-      make-app = pkg: bin-and-flags:
-        { type = "app";
-
-          program =
-            (p.writeScript "wrapped-tmux"
-               ''
-               ${pkg}/bin/${bin-and-flags} "$@";
-               ''
-            ).outPath;
-        };
     in
-    { apps.${system} =
-        { neovim = make-app p.neovim "nvim";
-          tmux = make-app p.tmux "tmux -f ${./tmux.conf}";
-        };
-
-      nixosConfigurations =
-        let gaming = import ./gaming.nix { ssbm = ssbm.packages.${system}; }; in
+    { nixosConfigurations =
         mapAttrs
           (hostName: modules:
              l.nixosSystem
@@ -116,24 +48,10 @@
 
                      ./configuration.nix
                      (./systems + "/${hostName}")
-                     agenix.nixosModules.age
-                     ssbm.nixosModule
-                     z.nixosModule
                    ]
-                   ++ attrValues im-home.nixosModules
                    ++ modules;
                }
           )
-          { desktop-2019 = [ gaming ./gui.nix ];
-            do-nixos-0 = [];
-            hp-envy = [ gaming ./gui.nix ];
-
-            surface-go =
-              [ ./gui.nix
-                nixos-hardware.nixosModules.microsoft-surface
-              ];
-          };
-
-      packages.${system} = { inherit (p) neovim; };
+          { do-nixos-0 = []; };
     };
 }

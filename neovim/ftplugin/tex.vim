@@ -1,2 +1,0 @@
-setlocal linebreak
-setlocal spell
