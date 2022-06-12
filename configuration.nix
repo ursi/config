@@ -142,10 +142,21 @@ with builtins;
       { bash.interactiveShellInit = "shopt -s globstar";
 
         ssh.extraConfig =
-          ''
-          Host do-nixos-0
-          Hostname ${(import ./systems/do-nixos-0/info.nix).ip}
-          '';
+          foldl'
+            (acc: system:
+               let info = (import (./systems + "/${system}/info.nix")); in
+               if info?ip then
+                 ''
+                 ${acc}
+
+                 Host ${system}
+                 Hostname ${info.ip}
+                 ''
+               else
+                 acc
+            )
+            ""
+            (attrNames (readDir ./systems));
 
         z =
           { enable = true;
