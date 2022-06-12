@@ -70,7 +70,7 @@ with builtins;
             }
 
             { pkg = tmux;
-              aliases.e-ink = "E_INK=1 tmux";
+              aliases.e-ink = "E_INK=1 tmux -L e-ink";
             }
 
             { pkg = trash-cli;
