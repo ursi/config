@@ -19,8 +19,7 @@ if $E_INK
 	highlight Visual guifg=white guibg=black
 	set background=light
 	set termguicolors
-	set cursorline
-	set cursorlineopt=number
+	set cursorline cursorlineopt=number
 	syntax off
 elseif $TERM != 'linux'
 	let gruvbox_invert_tabline = 1
