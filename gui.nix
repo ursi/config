@@ -39,7 +39,6 @@ with builtins;
           ++ flake-packages-gui;
       };
 
-    fonts.fonts = [ (p.nerdfonts.override {fonts = [ "Cousine" ]; }) ];
     hardware.pulseaudio.enable = true;
 
     programs =
@@ -85,15 +84,6 @@ with builtins;
       };
 
     sound.enable = true;
-
-    ssbm =
-      { cache.enable = true;
-
-        # gcc =
-        #   { oc-kmod.enable = true;
-        #     rules.enable = true;
-        #   };
-      };
 
     users.users.mason =
       { im-home =
