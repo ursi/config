@@ -70,7 +70,17 @@ with builtins;
             }
 
             { pkg = tmux;
-              aliases.e-ink = "E_INK=1 tmux -L e-ink";
+              aliases.e-ink =
+                let
+                  gitconfig =
+                    toFile "e-ink-gitconfig"
+                      ''
+                      [color "diff"]
+                        old = ul
+                        new = bold
+                      '';
+                in
+                "E_INK=1 GIT_CONFIG_SYSTEM=${gitconfig} tmux -L e-ink";
             }
 
             { pkg = trash-cli;
