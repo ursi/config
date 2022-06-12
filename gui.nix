@@ -85,15 +85,6 @@ with builtins;
 
     sound.enable = true;
 
-    ssbm =
-      { cache.enable = true;
-
-        # gcc =
-        #   { oc-kmod.enable = true;
-        #     rules.enable = true;
-        #   };
-      };
-
     users.users.mason =
       { im-home =
           { i3 =
