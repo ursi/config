@@ -11,12 +11,16 @@ let mapleader = "\<Space>"
 
 if $E_INK
 	highlight CursorColumn guibg=#cccccc
+	highlight CursorLineNr gui=NONE guifg=black guibg=#b0b0b0
+	highlight LineNr guifg=black guibg=#dddddd
 	highlight Pmenu guifg=white guibg=black
 	highlight Search guifg=white guibg=black
 	highlight TabLine gui=NONE guifg=white guibg=black
 	highlight Visual guifg=white guibg=black
 	set background=light
 	set termguicolors
+	set cursorline
+	set cursorlineopt=number
 	syntax off
 elseif $TERM != 'linux'
 	let gruvbox_invert_tabline = 1
