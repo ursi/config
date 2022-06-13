@@ -25,6 +25,7 @@ elseif $TERM != 'linux'
 	let gruvbox_invert_tabline = 1
 	let gruvbox_invert_selection = 0
 	colorscheme gruvbox
+	set mouse=n
 endif
 
 let g:ale_linters_explicit = 1
@@ -97,7 +98,6 @@ set noequalalways
 set foldmethod=indent
 set hidden
 set ignorecase smartcase
-set mouse=n
 set nofoldenable
 set relativenumber
 set sidescrolloff=1
