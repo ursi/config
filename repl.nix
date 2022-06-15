@@ -21,5 +21,19 @@ with builtins;
 
        inherit l p pkgs;
        inherit (p) lib;
+
+       search = text: attrset:
+         let
+           change-case = f:
+             let chars = l.stringToCharacters text; in
+             l.concatStrings ([ (f (head chars)) ] ++ tail chars);
+         in
+         filter
+           (a:
+              l.hasInfix (change-case l.toLower) a
+              || l.hasInfix (change-case l.toUpper) a
+           )
+           (attrNames attrset);
+
        system = "x86_64-linux";
      }
