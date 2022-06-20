@@ -16,9 +16,9 @@ if $E_INK
 	highlight MoreMsg guifg=NONE
 	highlight Pmenu guifg=white guibg=black
 	highlight Question guifg=NONE
-	highlight Search guifg=white guibg=black
-	highlight TabLine gui=NONE guifg=white guibg=black
-	highlight Visual guifg=white guibg=black
+	highlight Search gui=reverse guifg=NONE guibg=NONE
+	highlight TabLine gui=reverse guifg=NONE guibg=NONE
+	highlight Visual gui=reverse guifg=NONE guibg=NONE
 	set background=light
 	set termguicolors
 	set cursorline cursorlineopt=number
