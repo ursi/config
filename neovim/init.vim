@@ -13,7 +13,9 @@ if $E_INK
 	highlight CursorColumn guibg=#cccccc
 	highlight CursorLineNr gui=NONE guifg=black guibg=#b0b0b0
 	highlight LineNr guifg=black guibg=#dddddd
+	highlight MoreMsg guifg=NONE
 	highlight Pmenu guifg=white guibg=black
+	highlight Question guifg=NONE
 	highlight Search guifg=white guibg=black
 	highlight TabLine gui=NONE guifg=white guibg=black
 	highlight Visual guifg=white guibg=black
