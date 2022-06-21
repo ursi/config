@@ -69,8 +69,8 @@ with builtins;
               aliases.http-server = "http-server -c-1";
             }
 
-            { pkg = tmux;
-              aliases.e-ink =
+            (let
+               e-ink =
                 let
                   gitconfig =
                     toFile "e-ink-gitconfig"
@@ -81,7 +81,16 @@ with builtins;
                       '';
                 in
                 "E_INK=1 GIT_CONFIG_SYSTEM=${gitconfig} tmux -L e-ink";
-            }
+             in
+             { pkg = tmux;
+              aliases = { inherit e-ink; };
+
+              functions =
+                { e-inkn = ''${e-ink} new -n "$1" -s "$1"'';
+                  tmuxn = ''tmux new -n "$1" -s "$1"'';
+                };
+             }
+            )
 
             { pkg = trash-cli;
               aliases.trash = "trash-put";
