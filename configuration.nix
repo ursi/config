@@ -149,7 +149,11 @@ with builtins;
       };
 
     programs =
-      { bash.interactiveShellInit = "shopt -s globstar";
+      { bash.interactiveShellInit =
+          ''
+          set -o vi
+          shopt -s globstar
+          '';
 
         ssh.extraConfig =
           foldl'
