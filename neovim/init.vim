@@ -10,9 +10,9 @@ let g:dhall_format = 1
 let mapleader = "\<Space>"
 
 if $E_INK
-	highlight CursorColumn guibg=#cccccc
-	highlight CursorLineNr gui=NONE guifg=black guibg=#b0b0b0
-	highlight LineNr guifg=black guibg=#dddddd
+	highlight CursorColumn guibg=#e0e0e0
+	highlight CursorLineNr gui=NONE guifg=black guibg=#bbbbbb
+	highlight LineNr guifg=black guibg=#eeeeee
 	highlight MoreMsg guifg=NONE
 	highlight Pmenu guifg=white guibg=black
 	highlight Question guifg=NONE
