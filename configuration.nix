@@ -113,6 +113,7 @@ with builtins;
             pciutils
             sl
             tmate
+            tree
             unzip
             usbutils
             wally-cli
