@@ -14,7 +14,6 @@
       nixos-hardware.url = "github:ursi/nixos-hardware/microsoft-surface-wifi";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
-      nixpkgs-neovim.url = "github:NixOS/nixpkgs/fa76c9801d0ad7b6a8bd0092202e5bfb102b318a";
       ssbm.url = "github:djanatyn/ssbm-nix";
       z.url = "github:ursi/z-nix";
     };
@@ -30,7 +29,6 @@
     , nixos-hardware
     , nixos-unstable
     , nixpkgs
-    , nixpkgs-neovim
     , ssbm
     , utils
     , z
@@ -65,12 +63,12 @@
                       )
                       brave
                       discord
+                      neovim
                       nix
                       tmux
+                      vimPlugins
                       wxcam
                       zulip;
-
-                    inherit (nixpkgs-neovim.legacyPackages.${system}) neovim vimPlugins;
                   }
                 )
 
