@@ -109,6 +109,7 @@ with builtins;
           with pkgs;
           [ entr
             file
+            fx
             git
             glow
             graphviz
