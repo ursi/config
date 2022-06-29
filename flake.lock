@@ -107,11 +107,11 @@
         "utils": "utils_7"
       },
       "locked": {
-        "lastModified": 1644906681,
-        "narHash": "sha256-I0n1q0Ozf7o9698Fi24IhTs1RTP8nPEFtKNQsX/hpRo=",
+        "lastModified": 1656454309,
+        "narHash": "sha256-a8m6it/PpwjczzxxRJh0jR1DJ7kLRZ6ka4Ljkfx6qGQ=",
         "owner": "ursi",
         "repo": "flake-make",
-        "rev": "73cd6608062f91a3feae441e837edac3ca02ccfb",
+        "rev": "2049a2a55339e7f585a9e283f5a5dd99de139046",
         "type": "github"
       },
       "original": {
