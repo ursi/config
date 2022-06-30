@@ -22,7 +22,8 @@ with builtins;
             brave
             discord
             gimp
-            gnome3.nautilus # for seeing images
+            gnome.cheese
+            gnome.nautilus # for seeing images
             gparted
             mattermost-desktop
             pavucontrol
@@ -33,7 +34,6 @@ with builtins;
             spectacle
             tor-browser-bundle-bin
             vlc
-            wxcam
             zulip
           ]
           ++ flake-packages-gui;

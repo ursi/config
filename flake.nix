@@ -67,7 +67,6 @@
                       nix
                       tmux
                       vimPlugins
-                      wxcam
                       zulip;
                   }
                 )
