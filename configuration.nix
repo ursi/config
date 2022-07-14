@@ -10,7 +10,9 @@ with builtins;
 
         systemPackages =
           with pkgs;
-          [ git ];
+          [ chromium
+            git
+          ];
       };
 
     networking =
@@ -34,6 +36,11 @@ with builtins;
       { openssh =
           { enable = true;
             # passwordAuthentication = false;
+          };
+
+        xserver =
+          { enable = true;
+            windowManager.i3.enable = true;
           };
       };
 
