@@ -65,6 +65,7 @@
                       discord
                       neovim
                       nix
+                      nix-du
                       tmux
                       vimPlugins
                       zulip;
