@@ -10,7 +10,11 @@ with builtins;
     environment =
       { packages-extra =
           with pkgs;
-          [ { pkg = chez;
+          [ { pkg = "bash";
+              env.HISTCONTROL = "ignoredups";
+            }
+
+            { pkg = chez;
               aliases.scheme = "scheme ${./prelude.ss}";
             }
 
