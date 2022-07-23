@@ -3,12 +3,7 @@
       breeze.url = "github:ursi/breeze";
       brightness.url = "github:ursi/brightness";
       flake-make.url = "github:ursi/flake-make";
-
-      hours =
-        { flake = false;
-          url = "github:ursi/hours";
-        };
-
+      hours.url = "github:ursi/hours";
       im-home.url = "github:ursi/im-home";
       localVim.url = "github:ursi/nix-local-vim";
       nixos-hardware.url = "github:ursi/nixos-hardware/microsoft-surface-wifi";
@@ -46,7 +41,7 @@
 
             overlays =
               [ (_: _:
-                  { hours = import hours { inherit system; };
+                  { hours = hours.packages.${system}.default;
                     icons = { breeze = breeze.packages.${system}; };
 
                     flake-packages =
