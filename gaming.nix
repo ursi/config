@@ -5,10 +5,10 @@
     ssbm =
       { cache.enable = true;
 
-        # gcc =
-        #   { oc-kmod.enable = true;
-        #     rules.enable = true;
-        #   };
+        gcc =
+          { oc-kmod.enable = true;
+            rules.enable = true;
+          };
       };
 
   }
