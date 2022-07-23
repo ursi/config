@@ -1,6 +1,5 @@
 with builtins;
 { mkOverlayableNeovim, pkgs }:
-# { neovim, mkOverlayableNeovim, vimPlugins, vimUtils }:
   let l = p.lib; p = pkgs; in
   mkOverlayableNeovim
     (p.neovim.override { withNodeJs = true; })
