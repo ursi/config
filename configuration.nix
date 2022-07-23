@@ -1,6 +1,5 @@
 with builtins;
-{ lib, nixpkgs, pkgs, ... }:
-  let l = lib; p = pkgs; in
+{ nixpkgs, pkgs, ... }:
   { imports =
       [ ./git.nix
         ./packages-extra.nix
@@ -175,7 +174,7 @@ with builtins;
         ssh.extraConfig =
           foldl'
             (acc: system:
-               let info = (import (./systems + "/${system}/info.nix")); in
+               let info = import (./systems + "/${system}/info.nix"); in
                if info?ip then
                  ''
                  ${acc}

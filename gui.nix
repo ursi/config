@@ -1,5 +1,5 @@
 with builtins;
-{ lib, nixpkgs, pkgs, ... }:
+{ lib, pkgs, ... }:
   let l = lib; p = pkgs; in
   { imports = [ ./alacritty.nix ];
 

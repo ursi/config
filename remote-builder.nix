@@ -5,22 +5,21 @@ with builtins;
       { users.users =
           l.mkOption
             { type =
-              let global-cfg = config; in
-              t.attrsOf
-                (t.submodule
-                   ({ config, ... }:
-                      { options.remote-builder =
-                          { enable = l.mkEnableOption "Become a remote builder";
-                            keys = l.mkOption { type = t.listOf t.str; default = []; };
-                          };
+                t.attrsOf
+                  (t.submodule
+                     ({ config, ... }:
+                        { options.remote-builder =
+                            { enable = l.mkEnableOption "Become a remote builder";
+                              keys = l.mkOption { type = t.listOf t.str; default = []; };
+                            };
 
-                        config =
-                          let cfg = config.remote-builder; in
-                          l.mkIf cfg.enable
-                            { openssh.authorizedKeys = { inherit (cfg) keys; }; };
-                      }
-                   )
-                );
+                          config =
+                            let cfg = config.remote-builder; in
+                            l.mkIf cfg.enable
+                              { openssh.authorizedKeys = { inherit (cfg) keys; }; };
+                        }
+                     )
+                  );
             };
 
         remote-builder =
@@ -53,7 +52,7 @@ with builtins;
              }
           )
 
-          (l.mkIf (config.remote-builder.enable)
+          (l.mkIf config.remote-builder.enable
              { programs.ssh.extraConfig =
                  ''
                  Host ${setup-host}

@@ -1,7 +1,6 @@
 with builtins;
 p:
   let
-    l = p.lib;
     inherit (p.vimUtils) buildVimPlugin;
 
     build = name: url: rev:

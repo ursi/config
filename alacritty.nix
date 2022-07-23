@@ -1,7 +1,7 @@
 with builtins;
 { config, lib, pkgs, ... }:
   let
-    l = lib; p = pkgs; t = l.types;
+    l = lib; p = pkgs;
     yaml = p.formats.yaml {};
   in
   { options.programs.alacritty =
@@ -9,7 +9,7 @@ with builtins;
 
         config =
           l.mkOption
-            { type = yaml.type;
+            { inherit (yaml) type;
               default = {};
             };
       };

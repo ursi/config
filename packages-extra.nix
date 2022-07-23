@@ -1,6 +1,6 @@
 with builtins;
-{ config, lib, pkgs, ... }:
-  let l = lib; p = pkgs; t = lib.types; in
+{ config, lib, ... }:
+  let l = lib; t = lib.types; in
   { options.environment.packages-extra =
       l.mkOption
         { type =

@@ -9,12 +9,9 @@ with builtins;
            f =
              mapAttrs
                (_: v:
-                  if isAttrs v then
-                    if v?${currentSystem}
-                    then v.${currentSystem}
-                    else f v
-                  else
-                    v
+                  if isAttrs v
+                  then v.${currentSystem} or (f v)
+                  else v
                );
          in
          a: f (get-flake a);

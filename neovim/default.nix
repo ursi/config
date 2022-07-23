@@ -1,6 +1,6 @@
 with builtins;
 { mkOverlayableNeovim, pkgs }:
-  let l = p.lib; p = pkgs; in
+  let  p = pkgs; in
   mkOverlayableNeovim
     (p.neovim.override { withNodeJs = true; })
     { customRC =
