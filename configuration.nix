@@ -111,7 +111,8 @@ with builtins;
 
         systemPackages =
           with pkgs;
-          [ entr
+          [ deadnix
+            entr
             file
             fx
             git
@@ -126,6 +127,7 @@ with builtins;
             ntfs3g
             pciutils
             sl
+            statix
             tmate
             tree
             unzip

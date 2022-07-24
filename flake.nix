@@ -57,10 +57,12 @@
                          { inherit system; config.allowUnfree = true; }
                       )
                       brave
+                      deadnix
                       discord
                       neovim
                       nix
                       nix-du
+                      statix
                       tmux
                       vimPlugins
                       zulip;
