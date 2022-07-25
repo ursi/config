@@ -61,7 +61,7 @@ with builtins;
                 { fui = "nix flake lock --update-input";
                   nix = "nix -L --allow-import-from-derivation";
                   nixpkgs-unstable = ''echo $(nix eval --impure --raw --expr '(fetchGit { url = "https://github.com/NixOS/nixpkgs"; ref = "nixpkgs-unstable"; }).rev')'';
-                  rebuild = "nixos-rebuild --use-remote-sudo";
+                  rebuild = "nixos-rebuild -L --use-remote-sudo";
                   repl = ''nix repl --arg pkgs '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' ${./repl.nix}'';
                 };
 
