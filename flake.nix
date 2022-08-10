@@ -6,7 +6,7 @@
       hours.url = "github:ursi/hours";
       im-home.url = "github:ursi/im-home";
       localVim.url = "github:ursi/nix-local-vim";
-      nixos-hardware.url = "github:ursi/nixos-hardware/microsoft-surface-wifi";
+      nixos-hardware.url = "github:nixos/nixos-hardware";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
       ssbm.url = "github:djanatyn/ssbm-nix";
