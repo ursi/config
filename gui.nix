@@ -62,6 +62,7 @@ with builtins;
           { enable = true;
             autoRepeatInterval = 33;
             autoRepeatDelay = 250;
+            exportConfiguration = true;
 
             libinput =
               let
