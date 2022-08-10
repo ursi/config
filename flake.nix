@@ -64,6 +64,7 @@
                       nix-du
                       statix
                       tmux
+                      tor-browser-bundle-bin
                       vimPlugins
                       zulip;
                   }
