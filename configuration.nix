@@ -7,7 +7,9 @@ with builtins;
       ];
 
     environment =
-      { packages-extra =
+      { etc."tmux.conf".source = ./tmux.conf;
+
+        packages-extra =
           with pkgs;
           [ { pkg = "bash";
               env.HISTCONTROL = "ignoredups";
@@ -146,7 +148,6 @@ with builtins;
       };
 
     hardware.keyboard.zsa.enable = true;
-    im-home.links.path."/etc/tmux.conf" = ./tmux.conf;
 
     networking =
       { firewall.enable = false;
