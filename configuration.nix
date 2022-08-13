@@ -117,6 +117,7 @@ with builtins;
             file
             fx
             git
+            git-lfs
             glow
             graphviz
             hexedit
