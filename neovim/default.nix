@@ -33,7 +33,7 @@ with builtins;
             with p.vimPlugins;
             [ # CoC
               coc-nvim
-              coc-rust-analyzer
+              # coc-rust-analyzer
 
               # Dhall
               LanguageClient-neovim
