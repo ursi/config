@@ -6,7 +6,14 @@ with builtins;
     environment =
       { packages-extra =
           with pkgs;
-          [ { pkg = xclip;
+          [ { pkg = v4l-utils;
+
+              functions.white-balance =
+                "v4l2-ctl -c white_balance_automatic=0,white_balance_temperature=$1
+";
+            }
+
+            { pkg = xclip;
 
               aliases =
                 { xclipc = "xclip -selection clipboard";
