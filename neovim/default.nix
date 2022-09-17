@@ -56,13 +56,11 @@ with builtins;
 
               # Misc
               extra-plugins.ftplugin
+              gruvbox
               # extra-plugins.match
               markdown-preview-nvim
               vim-surround
               vim-commentary
             ];
         };
-
-      # for some reason when this is used here, it fixes an issue with trailing whitespace highlighting
-      plug.plugins = [ p.vimPlugins.gruvbox ];
     }
