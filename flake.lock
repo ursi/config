@@ -972,16 +972,16 @@
     },
     "nixpkgs_23": {
       "locked": {
-        "lastModified": 1611413872,
-        "narHash": "sha256-nD9e3f9P+YQ1qDSHdRXIAor40eqANBv1o03zGvpJsnM=",
+        "lastModified": 1654847188,
+        "narHash": "sha256-MC+eP7XOGE1LAswOPqdcGoUqY9mEQ3ZaaxamVTbc0hM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fe08be60cb84148a3dba29cfdb090fa185cacdaa",
+        "rev": "8b66e3f2ebcc644b78cec9d6f152192f4e7d322f",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-20.09",
+        "ref": "nixos-22.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -1297,11 +1297,11 @@
         "slippi-desktop": "slippi-desktop"
       },
       "locked": {
-        "lastModified": 1640232377,
-        "narHash": "sha256-x+mzh/WM9leSslf9rpxqYUZEtM5ZaASSPd7IWDvb7nQ=",
+        "lastModified": 1663264968,
+        "narHash": "sha256-2R2CuXytxM7zrdbEp2NlOggpJrHQootwWU6enh56beE=",
         "owner": "djanatyn",
         "repo": "ssbm-nix",
-        "rev": "60564975255b2de0211d69fa5e7149eb557ada69",
+        "rev": "74c0c466435f9e134e6f4e22e6c5a26d80e7fa53",
         "type": "github"
       },
       "original": {
