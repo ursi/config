@@ -23,6 +23,7 @@ with builtins;
 
     networking.interfaces.enp1s0.useDHCP = true;
     nix.settings.cores = 7;
+    programs.mosh.enable = true;
     services.picom.backend = "glx";
 
     # don't change - man configuration.nix
