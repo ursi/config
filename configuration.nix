@@ -74,6 +74,24 @@ with builtins;
               aliases.http-server = "http-server -c-1";
             }
 
+            { pkg = "tar";
+
+              functions =
+                { targz =
+                    ''
+                    local dir=$(basename "$1")
+                    tar -czf "$dir".tar.gz "$dir"
+                    '';
+
+                  untargz =
+                    ''
+                    set -e
+                    tar -xzf "$1"
+                    trash "$1"
+                    '';
+               };
+            }
+
             (let
                e-ink =
                 let
