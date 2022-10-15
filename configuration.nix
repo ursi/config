@@ -6,6 +6,8 @@ with builtins;
         ./secrets/agenix.nix
       ];
 
+    documentation.nixos.enable = false;
+
     environment =
       { etc."tmux.conf".source = ./tmux.conf;
 
