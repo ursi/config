@@ -1,5 +1,5 @@
 { inputs =
-    { agenix.url = "github:ryantm/agenix";
+    { agenix.url = "github:montchr/agenix/flake-outputs-current";
       breeze.url = "github:ursi/breeze";
       brightness.url = "github:ursi/brightness";
       flake-make.url = "github:ursi/flake-make";
@@ -25,7 +25,6 @@
     , nixos-unstable
     , nixpkgs
     , ssbm
-    , utils
     , z
     , ...
     }:
@@ -35,6 +34,7 @@
       system = "x86_64-linux";
 
       pkgs =
+        let default-packages = l.mapAttrsToList (_: v: v.packages.${system}.default); in
         import nixpkgs
           { inherit system;
             config.allowUnfree = true;
@@ -45,11 +45,11 @@
                     icons = { breeze = breeze.packages.${system}; };
 
                     flake-packages =
-                      utils.defaultPackages system
+                      default-packages
                         { inherit agenix flake-make; };
 
                     flake-packages-gui =
-                      utils.defaultPackages system
+                      default-packages
                         { inherit brightness; };
 
                     inherit
