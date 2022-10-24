@@ -9,6 +9,7 @@
       nixos-hardware.url = "github:nixos/nixos-hardware";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
+      smos.url = "github:locallycompact/smos/horizon";
       ssbm.url = "github:djanatyn/ssbm-nix";
       z.url = "github:ursi/z-nix";
     };
@@ -24,6 +25,7 @@
     , nixos-hardware
     , nixos-unstable
     , nixpkgs
+    , smos
     , ssbm
     , z
     , ...
@@ -46,7 +48,7 @@
 
                     flake-packages =
                       default-packages
-                        { inherit agenix flake-make; };
+                        { inherit agenix smos flake-make; };
 
                     flake-packages-gui =
                       default-packages
