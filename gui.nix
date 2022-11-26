@@ -25,6 +25,7 @@ with builtins;
             gnome.cheese
             gnome.nautilus # for seeing images
             gparted
+            hexgui
             mattermost-desktop
             pavucontrol
             peek

@@ -61,6 +61,7 @@
                       brave
                       deadnix
                       discord
+                      hexgui
                       neovim
                       nix
                       nix-du
