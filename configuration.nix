@@ -146,6 +146,7 @@ with builtins;
             ncdu
             neofetch
             nix-du
+            nix-tree
             ntfs3g
             pciutils
             sl
