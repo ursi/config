@@ -184,7 +184,13 @@ with builtins;
     nix =
       { extraOptions = "experimental-features = nix-command flakes";
         registry.nixpkgs.flake = nixpkgs;
-        settings.trusted-users = [ "mason" "root" ];
+
+        settings =
+          { connect-timeout = 5;
+            keep-outputs = true;
+            trusted-users = [ "mason" "root" ];
+            warn-dirty = false;
+          };
       };
 
     programs =
