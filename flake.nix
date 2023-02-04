@@ -8,7 +8,7 @@
       localVim.url = "github:ursi/nix-local-vim";
       nixos-hardware.url = "github:nixos/nixos-hardware";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-      nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
       smos.url = "github:locallycompact/smos/horizon";
       ssbm.url = "github:djanatyn/ssbm-nix";
       z.url = "github:ursi/z-nix";
@@ -64,12 +64,12 @@
                       hexgui
                       neovim
                       nix
-                      nix-du
+                      # nix-du
                       statix
                       tmux
                       tor-browser-bundle-bin
-                      vimPlugins
-                      zulip;
+                      vimPlugins;
+                      # zulip;
                   }
                 )
 
