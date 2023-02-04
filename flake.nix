@@ -60,7 +60,6 @@
                       )
                       brave
                       deadnix
-                      discord
                       hexgui
                       neovim
                       nix
@@ -69,7 +68,6 @@
                       tmux
                       tor-browser-bundle-bin
                       vimPlugins;
-                      # zulip;
                   }
                 )
 
