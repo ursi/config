@@ -64,6 +64,7 @@
                       neovim
                       nix
                       # nix-du
+                      signal-desktop
                       statix
                       tmux
                       tor-browser-bundle-bin
