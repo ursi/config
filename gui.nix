@@ -15,12 +15,12 @@ with builtins;
             }
           ];
 
-
         systemPackages =
           with pkgs;
           [ audacity
             brave
             discord
+            feh
             gimp
             gnome.cheese
             gnome.nautilus # for seeing images
