@@ -7,6 +7,8 @@ with builtins;
         ../../remote-builder.nix
       ];
 
+    hardware.opengl.extraPackages = [ p.intel-ocl ];
+
     boot =
       # 5.13 didn't fix the issue with my usb wifi, and the built in wifi crashes my system
       # 5.14 had the neovim glich with cursorcolumn
