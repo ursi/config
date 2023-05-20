@@ -63,7 +63,7 @@
                       hexgui
                       neovim
                       nix
-                      # nix-du
+                      nix-du
                       signal-desktop
                       statix
                       tmux
