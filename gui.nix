@@ -33,6 +33,7 @@ with builtins;
             qemu
             signal-desktop
             spectacle
+            tdesktop
             tor-browser-bundle-bin
             vlc
             zulip
