@@ -37,6 +37,7 @@ with builtins;
             tor-browser-bundle-bin
             vlc
             zulip
+            xorg.xev
           ]
           ++ flake-packages-gui;
       };
