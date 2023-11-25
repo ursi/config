@@ -128,7 +128,7 @@
 
             surface-go =
               [ ./gui.nix
-                nixos-hardware.nixosModules.microsoft-surface
+                nixos-hardware.nixosModules.microsoft-surface-go
               ];
           };
 

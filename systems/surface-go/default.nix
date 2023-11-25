@@ -18,14 +18,9 @@ with builtins;
         xorg.xdpyinfo
       ];
 
-    hardware =
-      { microsoft-surface.firmware.surface-go-ath10k.replace = true;
-        video.hidpi.enable = true;
-      };
-
+    hardware.microsoft-surface.firmware.surface-go-ath10k.replace = true;
     networking.interfaces.wlp1s0.useDHCP = true;
     programs.alacritty.config.font.size = 10;
-    nix.settings.auto-optimize-store = true;
 
     # required for the wifi driver
     nixpkgs.config.allowUnfree = true;
