@@ -4,16 +4,11 @@ with builtins;
   mkOverlayableNeovim
     (p.neovim.override { withNodeJs = true; })
     { customRC =
-        let
-          coc-settings =
-            p.runCommand "coc-settings" {}
-            "mkdir $out; ln -s ${./coc-settings.json} $out/coc-settings.json";
-        in
         readFile ./init.vim
         + ''
           set shell=${p.bashInteractive}/bin/bash
 
-          let g:coc_config_home = '${coc-settings}'"
+          let g:coc_config_home = '${./.}'
 
           function! Init(type)
               let lnum = line(".")
