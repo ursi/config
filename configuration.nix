@@ -108,12 +108,12 @@ with builtins;
                 "E_INK=1 GIT_CONFIG_SYSTEM=${gitconfig} tmux -L e-ink";
              in
              { pkg = tmux;
-              aliases = { inherit e-ink; };
+               aliases = { inherit e-ink; };
 
-              functions =
-                { e-inkn = ''${e-ink} new -n "$1" -s "$1"'';
-                  tmuxn = ''tmux new -n "$1" -s "$1"'';
-                };
+               functions =
+                 { e-inkn = ''${e-ink} new -n "$1" -s "$1"'';
+                   tmuxn = ''tmux new -n "$1" -s "$1"'';
+                 };
              }
             )
 
