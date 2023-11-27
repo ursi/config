@@ -254,8 +254,7 @@ with builtins;
               };
 
             root =
-              { extraGroups = [ "root" ];
-                im-home.links.path."/.config/nix" = null;
+              { im-home.links.path."/.config/nix" = null;
                 password = "";
               };
           };
