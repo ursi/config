@@ -38,6 +38,7 @@ with builtins;
                 pager = "less -FX -x1,5";
               };
 
+            commit.verbose = 2;
             diff.algorithm = "histogram";
             merge.ff = false;
             pager.blame = "${neovim} -R";
