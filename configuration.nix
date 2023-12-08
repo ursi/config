@@ -56,6 +56,7 @@ with builtins;
             }
 
             { pkg = neovim;
+              aliases.":e" = "nvim";
               functions.note = ''nvim ~/notes/"''${1:-notes}".txt'';
             }
 
