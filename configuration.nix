@@ -199,6 +199,7 @@ with builtins;
           ''
           set -o vi
           shopt -s globstar
+          stty -ixon
           '';
 
         ssh.extraConfig =
