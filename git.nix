@@ -40,6 +40,7 @@ with builtins;
 
             commit.verbose = 2;
             diff.algorithm = "histogram";
+            grep.lineNumber = true;
             merge.ff = false;
             pager.blame = "${neovim} -R";
             pull.ff = "only";
