@@ -15,7 +15,7 @@ p:
 
           src =
             p.runCommand "ftplugin-src" {}
-              "mkdir $out; ln -s ${./ftplugin} $out/ftplugin";
+              "mkdir -p $out/after; ln -s ${./ftplugin} \${_}/ftplugin";
         };
 
     match =
