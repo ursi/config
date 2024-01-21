@@ -56,6 +56,7 @@ with builtins;
               markdown-preview-nvim
               vim-surround
               vim-commentary
+              vim-eunuch
             ];
         };
     }
