@@ -19,14 +19,12 @@ with builtins;
           with pkgs;
           [ audacity
             brave
-            discord
             feh
             gimp
             gnome.cheese
             gnome.nautilus # for seeing images
             gparted
             hexgui
-            mattermost-desktop
             nix-du
             pavucontrol
             peek
@@ -37,7 +35,6 @@ with builtins;
             tdesktop
             tor-browser-bundle-bin
             vlc
-            zulip
             xorg.xev
           ]
           ++ flake-packages-gui;
