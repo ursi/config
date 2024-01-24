@@ -27,6 +27,7 @@ with builtins;
             gparted
             hexgui
             mattermost-desktop
+            nix-du
             pavucontrol
             peek
             qbittorrent

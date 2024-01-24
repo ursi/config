@@ -146,7 +146,6 @@ with builtins;
             ix
             ncdu
             neofetch
-            nix-du
             nix-tree
             ntfs3g
             pciutils
