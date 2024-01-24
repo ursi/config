@@ -38,9 +38,9 @@ with builtins;
              }
             )
 
-            { pkg = j;
-              aliases.j = "jconsole";
-            }
+            # { pkg = j;
+            #   aliases.j = "jconsole";
+            # }
 
             { pkg = jq;
               functions.jql = ''jq -C "$1" "$2" | less -r'';
