@@ -1,6 +1,17 @@
 with builtins;
 { mkOverlayableNeovim, pkgs }:
-  let  p = pkgs; in
+  let
+    p = pkgs;
+
+    remove-indent = plugin:
+      p.runCommand plugin.name {}
+        ''
+        mkdir $out; cd $_
+        cp -r ${plugin}/. .
+        chmod -R +w .
+        rm indent -rf
+        '';
+  in
   mkOverlayableNeovim
     (p.neovim.override { withNodeJs = true; })
     { customRC =
@@ -22,41 +33,41 @@ with builtins;
 
       packages.myPlugins =
         { start =
-            let
-              extra-plugins = import ./extra-plugins.nix p;
-            in
-            with p.vimPlugins;
-            [ # CoC
-              coc-nvim
-              # coc-rust-analyzer
+            let extra-plugins = import ./extra-plugins.nix p; in
+            map remove-indent
+              (with p.vimPlugins;
+               [ # CoC
+                 coc-nvim
+                 # coc-rust-analyzer
 
-              # Dhall
-              LanguageClient-neovim
-              dhall-vim
+                 # Dhall
+                 LanguageClient-neovim
+                 dhall-vim
 
-              # Elm
-              vim-elm-syntax
+                 # Elm
+                 vim-elm-syntax
 
-              # JavaScript
-              vim-javascript
+                 # JavaScript
+                 vim-javascript
 
-              # Pug
-              vim-pug
+                 # Pug
+                 vim-pug
 
-              # PureScript
-              purescript-vim
+                 # PureScript
+                 purescript-vim
 
-              # Nix
-              vim-nix
+                 # Nix
+                 vim-nix
 
-              # Misc
-              extra-plugins.ftplugin
-              gruvbox
-              # extra-plugins.match
-              markdown-preview-nvim
-              vim-surround
-              vim-commentary
-              vim-eunuch
-            ];
+                 # Misc
+                 extra-plugins.ftplugin
+                 gruvbox
+                 # extra-plugins.match
+                 markdown-preview-nvim
+                 vim-surround
+                 vim-commentary
+                 vim-eunuch
+               ]
+              );
         };
     }
