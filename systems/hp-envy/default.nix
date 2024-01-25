@@ -3,7 +3,6 @@ with builtins;
   let p = pkgs; in
   { imports =
       [ ./hardware-configuration.nix
-        ../../hardware/mice/simple-corsair.nix
         ../../remote-builder.nix
       ];
 
