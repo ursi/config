@@ -211,6 +211,10 @@ with builtins;
 
                  Host ${system}
                  Hostname ${info.ip}
+                 ${if length (attrNames info.ssh-keys or {}) == 1
+                   then "User ${head (attrNames info.ssh-keys)}"
+                   else ""
+                 }
                  ''
                else
                  acc
