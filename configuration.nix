@@ -244,8 +244,7 @@ with builtins;
 
         users =
           { mason =
-              { createHome = true;
-                description = "Mason Mackaman";
+              { description = "Mason Mackaman";
                 extraGroups = [ "networkmanager" "plugdev" "wheel" ];
 
                 im-home =
