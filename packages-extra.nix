@@ -1,5 +1,5 @@
 with builtins;
-{ config, lib, ... }:
+{ config, lib, options, ... }:
   let l = lib; t = lib.types; in
   { options.environment.packages-extra =
       l.mkOption
@@ -17,7 +17,7 @@ with builtins;
 
                        env =
                          l.mkOption
-                           { type = t.attrsOf t.str;
+                           { type = options.environment.variables.type;
                              default = {};
                            };
 
