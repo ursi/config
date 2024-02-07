@@ -14,23 +14,7 @@
       z.url = "github:ursi/z-nix";
     };
 
-  outputs =
-    { agenix
-    , breeze
-    , brightness
-    , flake-make
-    , hours
-    , im-home
-    , localVim
-    , nixos-hardware
-    , nixos-unstable
-    , nixpkgs
-    , smos
-    , ssbm
-    , z
-    , ...
-    }:
-    with builtins;
+  outputs = { nixpkgs, ssbm, z, ... }@inputs: with builtins;
     let
       l = nixpkgs.lib; p = pkgs;
       system = "x86_64-linux";
@@ -43,19 +27,19 @@
 
             overlays =
               [ (_: _:
-                  { hours = hours.packages.${system}.default;
-                    icons = { breeze = breeze.packages.${system}; };
+                  { hours = inputs.hours.packages.${system}.default;
+                    icons = { breeze = inputs.breeze.packages.${system}; };
 
                     flake-packages =
                       default-packages
-                        { inherit agenix smos flake-make; };
+                        { inherit (inputs) agenix smos flake-make; };
 
                     flake-packages-gui =
                       default-packages
-                        { inherit brightness; };
+                        { inherit (inputs) brightness; };
 
                     inherit
-                      (import nixos-unstable
+                      (import inputs.nixos-unstable
                          { inherit system; config.allowUnfree = true; }
                       )
                       brave
@@ -75,7 +59,7 @@
                 (_: prev:
                    { neovim =
                       import ./neovim
-                        { inherit (localVim) mkOverlayableNeovim;
+                        { inherit (inputs.localVim) mkOverlayableNeovim;
                           pkgs = prev;
                         };
                    }
@@ -114,11 +98,11 @@
 
                      ./configuration.nix
                      (./systems + "/${hostName}")
-                     agenix.nixosModules.age
+                     inputs.agenix.nixosModules.age
                      ssbm.nixosModule
                      z.nixosModule
                    ]
-                   ++ attrValues im-home.nixosModules
+                   ++ attrValues inputs.im-home.nixosModules
                    ++ modules;
                }
           )
@@ -128,7 +112,7 @@
 
             surface-go =
               [ ./gui.nix
-                nixos-hardware.nixosModules.microsoft-surface-go
+                inputs.nixos-hardware.nixosModules.microsoft-surface-go
               ];
           };
 
