@@ -22,9 +22,6 @@ with builtins;
     networking.interfaces.wlp1s0.useDHCP = true;
     programs.alacritty.config.font.size = 10;
 
-    # required for the wifi driver
-    nixpkgs.config.allowUnfree = true;
-
     remote-builder =
       { enable = true;
         user = "mason";
