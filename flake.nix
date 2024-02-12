@@ -4,7 +4,10 @@
       brightness.url = "github:ursi/brightness";
       flake-make.url = "github:ursi/flake-make";
       hours.url = "github:ursi/hours";
-      im-home.url = "github:ursi/im-home";
+      home-manager =
+        { url = "github:nix-community/home-manager/release-23.11";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
       localVim.url = "github:ursi/nix-local-vim";
       nixos-hardware.url = "github:nixos/nixos-hardware";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -96,14 +99,22 @@
                        networking = { inherit hostName; };
                      }
 
+                     inputs.home-manager.nixosModules.home-manager
+                     { home-manager =
+                         { useGlobalPkgs = true;
+                           useUserPackages = true;
+                         };
+                     }
+
                      ./configuration.nix
                      (./systems + "/${hostName}")
                      inputs.agenix.nixosModules.age
                      ssbm.nixosModule
                      z.nixosModule
                    ]
-                   ++ attrValues inputs.im-home.nixosModules
                    ++ modules;
+
+                 specialArgs.mmm = import ./mmm.nix l;
                }
           )
           { desktop-2019 = [ gaming ./gui.nix ];

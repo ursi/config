@@ -1,5 +1,5 @@
 with builtins;
-{ nixpkgs, pkgs, ... }:
+{ nixpkgs, pkgs, mmm, ... }: mmm
   { imports =
       [ ./git.nix
         ./packages-extra.nix
@@ -13,11 +13,7 @@ with builtins;
 
         packages-extra =
           with pkgs;
-          [ { pkg = "bash";
-              env.HISTCONTROL = "ignoredups";
-            }
-
-            { pkg = chez;
+          [ { pkg = chez;
               aliases.scheme = "scheme ${./prelude.ss}";
             }
 
@@ -171,6 +167,17 @@ with builtins;
 
     hardware.keyboard.zsa.enable = true;
 
+    my-modules.hm =
+      { home.stateVersion = "23.11";
+        programs =
+          { bash =
+              { enable = true;
+                bashrcExtra = readFile ./.bashrc;
+                historyControl = [ "erasedups" "ignoredups" ];
+              };
+          };
+      };
+
     networking =
       { firewall.enable = false;
         networkmanager.enable = true;
@@ -197,7 +204,6 @@ with builtins;
       { bash.interactiveShellInit =
           ''
           set -o vi
-          shopt -s globstar
           stty -ixon
           '';
 
@@ -246,20 +252,15 @@ with builtins;
           { mason =
               { description = "Mason Mackaman";
                 extraGroups = [ "networkmanager" "plugdev" "wheel" ];
-
-                im-home =
-                  { links.path."/.bashrc" = ./.bashrc;
-                    links.path."/.config/nix" = null;
-                  };
-
+                # im-home.links.path."/.config/nix" = null;
                 isNormalUser = true;
                 openssh.authorizedKeys.keys = import ./all-ssh-keys.nix;
                 password = "";
               };
 
             root =
-              { im-home.links.path."/.config/nix" = null;
-                password = "";
+              { password = "";
+                # im-home.links.path."/.config/nix" = null;
               };
           };
       };

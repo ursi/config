@@ -1,7 +1,11 @@
 with builtins;
-{ lib, pkgs, ... }:
-  let l = lib; p = pkgs; in
-  { imports = [ ./alacritty.nix ];
+{ lib, mmm, pkgs, ... }:
+  let l = lib; p = pkgs; in mmm
+  { imports =
+      [ ./alacritty.nix
+        ./i3.nix
+        ./i3status.nix
+      ];
 
     environment =
       { packages-extra =
@@ -49,6 +53,41 @@ with builtins;
 
     hardware.pulseaudio.enable = true;
 
+    my-modules =
+      { hm.home.pointerCursor =
+          let
+            cursor =
+              p.runCommand "Breeze" {}
+              ''
+               mkdir -p $out/share/icons/Breeze
+               cp -r ${p.icons.breeze.cursors.breeze}/. $_
+              '';
+          in
+          { name = cursor.name;
+            package = cursor;
+
+            # the size seems to increment in large jumps
+            # this is the biggest number before the next jump
+            size = 30;
+          };
+
+        i3.hm =
+          { enable = true;
+            config =
+              { fonts =
+                  { names = [ "sans" ];
+                    size = l.mkDefault 12.75;
+                  };
+
+                keybindings = {};
+                modes = {};
+                bars = [];
+              };
+
+            extraConfig = readFile ./i3-base-config;
+          };
+      };
+
     programs =
       { alacritty.enable = true;
         dconf.enable = true;
@@ -93,20 +132,4 @@ with builtins;
       };
 
     sound.enable = true;
-
-    users.users.mason =
-      { im-home =
-          { i3 =
-              { font =
-                  { font = "pango:sans";
-                    size = l.mkDefault 17;
-                  };
-
-                extra-config = readFile ./i3-base-config;
-              };
-
-            icons.cursor = p.icons.breeze.cursors.breeze;
-          };
-      };
   }
-

@@ -1,6 +1,6 @@
 with builtins;
-{ lib, pkgs, ... }:
-  let l = lib; p = pkgs; in
+{ lib, mmm, pkgs, ... }:
+  let l = lib; p = pkgs; in mmm
   { imports =
       [ ./hardware-configuration.nix
         ../../remote-builder.nix
@@ -19,6 +19,24 @@ with builtins;
       ];
 
     hardware.microsoft-surface.firmware.surface-go-ath10k.replace = true;
+
+    my-modules =
+      { i3 =
+          { backlight-adjust-percent = 5;
+
+            hm =
+              { config.fonts =
+                  { names = [ "sans" ];
+                    size = 20.25;
+                  };
+
+                extraConfig = "exec --no-startup-id onboard";
+              };
+          };
+
+        i3status.battery = true;
+      };
+
     networking.interfaces.wlp1s0.useDHCP = true;
     programs.alacritty.config.font.size = 10;
 
@@ -41,14 +59,4 @@ with builtins;
 
     # this option cause the build to fail
     systemd.services.iptsd = l.mkForce {};
-
-    users.users.mason.im-home =
-      { i3 =
-          { backlight-adjust-percent = 5;
-            font.size = 27;
-            extra-config = "exec --no-startup-id onboard";
-          };
-
-        i3status.status-bar = (import ../../i3status.nix).battery;
-      };
   }

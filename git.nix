@@ -1,10 +1,10 @@
 with builtins;
-{ pkgs, ... }:
+{ mmm, pkgs, ... }:
   let
     neovim = "${pkgs.neovim}/bin/nvim";
     graph-all = "ga";
     show-stash = "$(git reflog show --format=%H stash 2> /dev/null)";
-  in
+  in mmm
   { environment.shellAliases =
       let ga-command = "git ${graph-all} ${show-stash}"; in
       { gd = "git diff -w";
@@ -13,8 +13,9 @@ with builtins;
         gs = "git status";
       };
 
-    users.users.mason.im-home.git =
-      { config =
+    my-modules.hm.programs.git =
+      { enable = true;
+        extraConfig =
           { alias =
               let
                 make-function = str:
@@ -58,10 +59,9 @@ with builtins;
               };
           };
 
-        ignore =
-          ''
-          *.swp
-          result
-          '';
+        ignores =
+          [ "*.swp"
+            "result"
+          ];
       };
   }

@@ -43,14 +43,7 @@ with builtins;
     system.stateVersion = "20.09";
 
     users.users.mason =
-      { im-home.i3status.status-bar =
-          [ { name = "cpu_usage";
-              config.format = "🖥️ %usage";
-            }
-          ]
-          ++ (import ../../i3status.nix).no-battery;
-
-        remote-builder =
+      { remote-builder =
           { enable = true;
             keys = attrValues (import ../surface-go/info.nix).ssh-keys;
           };

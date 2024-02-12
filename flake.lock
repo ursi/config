@@ -492,6 +492,27 @@
         "type": "github"
       }
     },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1706981411,
+        "narHash": "sha256-cLbLPTL1CDmETVh4p0nQtvoF+FSEjsnJTFpTxhXywhQ=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "652fda4ca6dafeb090943422c34ae9145787af37",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-23.11",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "horizon-platform": {
       "inputs": {
         "flake-utils": "flake-utils_9",
@@ -529,21 +550,6 @@
       "original": {
         "owner": "ursi",
         "repo": "hours",
-        "type": "github"
-      }
-    },
-    "im-home": {
-      "locked": {
-        "lastModified": 1654020614,
-        "narHash": "sha256-EETbDqR4CPOMcPzbieE1KC1lE5AyplH5Rd0Oc+JGh9Q=",
-        "owner": "ursi",
-        "repo": "im-home",
-        "rev": "94935871518f5683849460cf79881cb3b9461fe2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ursi",
-        "repo": "im-home",
         "type": "github"
       }
     },
@@ -1392,8 +1398,8 @@
         "breeze": "breeze",
         "brightness": "brightness",
         "flake-make": "flake-make",
+        "home-manager": "home-manager",
         "hours": "hours",
-        "im-home": "im-home",
         "localVim": "localVim",
         "nixos-hardware": "nixos-hardware",
         "nixos-unstable": "nixos-unstable",
