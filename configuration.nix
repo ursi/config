@@ -141,6 +141,7 @@ with builtins;
             hexedit
             imagemagick
             ix
+            killall
             ncdu
             neofetch
             nix-tree
