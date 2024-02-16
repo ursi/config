@@ -1,5 +1,6 @@
 with builtins;
-{ nixpkgs, pkgs, mmm, ... }: mmm
+{ inputs, nixpkgs, pkgs, mmm, ... }:
+  let p = pkgs; in mmm
   { imports =
       [ ./git.nix
         ./packages-extra.nix
@@ -12,7 +13,7 @@ with builtins;
       { etc."tmux.conf".source = ./tmux.conf;
 
         packages-extra =
-          with pkgs;
+          with p;
           [ { pkg = chez;
               aliases.scheme = "scheme ${./prelude.ss}";
             }
@@ -128,7 +129,7 @@ with builtins;
           };
 
         systemPackages =
-          with pkgs;
+          with p;
           [ deadnix
             entr
             file
@@ -155,7 +156,7 @@ with builtins;
             w3m
           ]
           ++ flake-packages
-          ++ (import ./shell-scripts.nix pkgs);
+          ++ (import ./shell-scripts.nix p);
 
 
         variables =

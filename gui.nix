@@ -9,7 +9,7 @@ with builtins;
 
     environment =
       { packages-extra =
-          with pkgs;
+          with p;
           [ { pkg = v4l-utils;
 
               functions.white-balance =
@@ -27,7 +27,7 @@ with builtins;
           ];
 
         systemPackages =
-          with pkgs;
+          with p;
           [ audacity
             brave
             feh
