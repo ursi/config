@@ -114,7 +114,7 @@
                    ]
                    ++ modules;
 
-                 specialArgs.mmm = import ./mmm.nix l;
+                 specialArgs.mmm = import ./my-modules/mmm.nix l;
                }
           )
           { desktop-2019 = [ gaming ./gui.nix ];
