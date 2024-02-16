@@ -3,8 +3,8 @@ with builtins;
   let l = lib; p = pkgs; in mmm
   { imports =
       [ ./alacritty.nix
-        ./i3.nix
-        ./i3status.nix
+        ./my-modules/i3.nix
+        ./my-modules/i3status.nix
       ];
 
     environment.systemPackages =
