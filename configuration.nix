@@ -3,7 +3,7 @@ with builtins;
   let p = pkgs; in mmm
   { imports =
       [ ./git.nix
-        ./packages-extra.nix
+        ./my-modules/packages-extra.nix
         ./secrets/agenix.nix
       ];
 
@@ -11,6 +11,63 @@ with builtins;
 
     environment =
       { etc."tmux.conf".source = ./tmux.conf;
+
+        shellAliases =
+          { cal = "cal -m";
+          };
+
+        systemPackages =
+          with p;
+          [ deadnix
+            entr
+            file
+            fx
+            git
+            git-lfs
+            glow
+            graphviz
+            hexedit
+            imagemagick
+            ix
+            killall
+            ncdu
+            neofetch
+            nix-tree
+            ntfs3g
+            pciutils
+            sl
+            statix
+            tmate
+            tree
+            unzip
+            usbutils
+            wally-cli
+            w3m
+          ]
+          ++ flake-packages
+          ++ (import ./shell-scripts.nix p);
+
+
+        variables =
+          rec
+          { EDITOR = VISUAL;
+            VISUAL = "nvim";
+          };
+      };
+
+    hardware.keyboard.zsa.enable = true;
+
+    my-modules =
+      { hm =
+          { home.stateVersion = "23.11";
+            programs =
+              { bash =
+                  { enable = true;
+                    bashrcExtra = readFile ./.bashrc;
+                    historyControl = [ "erasedups" "ignoredups" ];
+                  };
+              };
+          };
 
         packages-extra =
           with p;
@@ -123,61 +180,6 @@ with builtins;
               aliases.youtube-dl = "yt-dlp";
             }
           ];
-
-        shellAliases =
-          { cal = "cal -m";
-          };
-
-        systemPackages =
-          with p;
-          [ deadnix
-            entr
-            file
-            fx
-            git
-            git-lfs
-            glow
-            graphviz
-            hexedit
-            imagemagick
-            ix
-            killall
-            ncdu
-            neofetch
-            nix-tree
-            ntfs3g
-            pciutils
-            sl
-            statix
-            tmate
-            tree
-            unzip
-            usbutils
-            wally-cli
-            w3m
-          ]
-          ++ flake-packages
-          ++ (import ./shell-scripts.nix p);
-
-
-        variables =
-          rec
-          { EDITOR = VISUAL;
-            VISUAL = "nvim";
-          };
-      };
-
-    hardware.keyboard.zsa.enable = true;
-
-    my-modules.hm =
-      { home.stateVersion = "23.11";
-        programs =
-          { bash =
-              { enable = true;
-                bashrcExtra = readFile ./.bashrc;
-                historyControl = [ "erasedups" "ignoredups" ];
-              };
-          };
       };
 
     networking =

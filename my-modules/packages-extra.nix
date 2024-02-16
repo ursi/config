@@ -1,7 +1,7 @@
 with builtins;
 { config, lib, options, ... }:
   let l = lib; t = lib.types; in
-  { options.environment.packages-extra =
+  { options.my-modules.packages-extra =
       l.mkOption
         { type =
             t.listOf
@@ -34,7 +34,7 @@ with builtins;
         };
 
     config =
-      let cfg = config.environment.packages-extra; in
+      let cfg = config.my-modules.packages-extra; in
       { environment =
           { systemPackages =
               l.pipe cfg [ (filter (a: !isString a.pkg)) (map (a: a.pkg)) ];

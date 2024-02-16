@@ -7,49 +7,29 @@ with builtins;
         ./i3status.nix
       ];
 
-    environment =
-      { packages-extra =
-          with p;
-          [ { pkg = v4l-utils;
-
-              functions.white-balance =
-                "v4l2-ctl -c white_balance_automatic=0,white_balance_temperature=$1
-";
-            }
-
-            { pkg = xclip;
-
-              aliases =
-                { xclipc = "xclip -selection clipboard";
-                  xclipng = "xclip -t image/png -selection clipboard";
-                };
-            }
-          ];
-
-        systemPackages =
-          with p;
-          [ audacity
-            brave
-            feh
-            gimp
-            gnome.cheese
-            gnome.nautilus # for seeing images
-            gparted
-            hexgui
-            nix-du
-            pavucontrol
-            peek
-            qbittorrent
-            qemu
-            signal-desktop
-            spectacle
-            tdesktop
-            tor-browser-bundle-bin
-            vlc
-            xorg.xev
-          ]
-          ++ flake-packages-gui;
-      };
+    environment.systemPackages =
+      with p;
+      [ audacity
+        brave
+        feh
+        gimp
+        gnome.cheese
+        gnome.nautilus # for seeing images
+        gparted
+        hexgui
+        nix-du
+        pavucontrol
+        peek
+        qbittorrent
+        qemu
+        signal-desktop
+        spectacle
+        tdesktop
+        tor-browser-bundle-bin
+        vlc
+        xorg.xev
+      ]
+      ++ flake-packages-gui;
 
     hardware.pulseaudio.enable = true;
 
@@ -86,6 +66,24 @@ with builtins;
 
             extraConfig = readFile ./i3-base-config;
           };
+
+        packages-extra =
+          with p;
+          [ { pkg = v4l-utils;
+
+              functions.white-balance =
+                "v4l2-ctl -c white_balance_automatic=0,white_balance_temperature=$1
+";
+            }
+
+            { pkg = xclip;
+
+              aliases =
+                { xclipc = "xclip -selection clipboard";
+                  xclipng = "xclip -t image/png -selection clipboard";
+                };
+            }
+          ];
       };
 
     programs =
