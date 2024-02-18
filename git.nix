@@ -17,10 +17,7 @@ with builtins;
       { enable = true;
         extraConfig =
           { alias =
-              let
-                make-function = str:
-                  ''"!f() { ${replaceStrings [ "\"" ] [ ''\"'' ] str}; }; f"'';
-              in
+              let make-function = str: "!f() { ${str}; }; f"; in
               { cloners = "clone --recurse-submodules";
                 co = "checkout";
                 cp = "cherry-pick";
