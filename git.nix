@@ -22,6 +22,8 @@ with builtins;
                 co = "checkout";
                 cp = "cherry-pick";
                 dc = "diff --cached";
+                delete-branch =
+                  make-function ''git push -d "$1" "$2"; git branch -D "$2"'';
                 exp = make-function ''git lfp $1^..$1^2 "''${@:2}"'';
                 expand = make-function ''git log $1^..$1^2 "''${@:2}"'';
                 ${graph-all} = "log --oneline --abbrev=0 --graph --all";
