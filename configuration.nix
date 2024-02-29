@@ -22,8 +22,10 @@ with builtins;
             entr
             file
             fx
+            gh
             git
             git-lfs
+            glab
             glow
             graphviz
             hexedit
