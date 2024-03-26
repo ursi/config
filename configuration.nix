@@ -61,12 +61,21 @@ with builtins;
 
     my-modules =
       { hm =
-          { home.stateVersion = "23.11";
+          { imports = [ inputs.bevel.homeManagerModules.${p.system}.default ];
+            home.stateVersion = "23.11";
             programs =
               { bash =
                   { enable = true;
                     bashrcExtra = readFile ./.bashrc;
                     historyControl = [ "erasedups" "ignoredups" ];
+                  };
+
+                bevel =
+                  { enable = true;
+                    harness.bash =
+                      { enable = true;
+                        bindings = true;
+                      };
                   };
               };
           };
@@ -233,11 +242,6 @@ with builtins;
             )
             ""
             (attrNames (readDir ./systems));
-
-        z =
-          { enable = true;
-            cmd = "a";
-          };
       };
 
     services =

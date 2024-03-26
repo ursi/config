@@ -1,5 +1,10 @@
 { inputs =
     { agenix.url = "github:montchr/agenix/flake-outputs-current";
+      bevel = { url = "github:NorfairKing/bevel";
+                inputs = { home-manager.follows = "home-manager";
+                           nixpkgs.follows = "nixpkgs";
+                         };
+              };
       breeze.url = "github:ursi/breeze";
       brightness.url = "github:ursi/brightness";
       flake-make.url = "github:ursi/flake-make";
@@ -95,7 +100,8 @@
              l.nixosSystem
                { inherit pkgs system;
                  modules =
-                   [ { _module.args = { inherit nixpkgs; };
+                   [ { _module.args =
+                        { inherit inputs nixpkgs; };
                        networking = { inherit hostName; };
                      }
 
