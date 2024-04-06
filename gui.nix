@@ -18,6 +18,8 @@ with builtins;
         gparted
         hexgui
         nix-du
+        obs-studio
+        openshot-qt
         pavucontrol
         peek
         qbittorrent
