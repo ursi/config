@@ -12,6 +12,7 @@ with builtins;
       [ audacity
         brave
         feh
+        firefox
         gimp
         gnome.cheese
         gnome.nautilus # for seeing images
@@ -28,6 +29,7 @@ with builtins;
         spectacle
         tdesktop
         tor-browser-bundle-bin
+        ungoogled-chromium
         vlc
         xorg.xev
       ]
