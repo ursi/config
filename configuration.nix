@@ -136,7 +136,10 @@ with builtins;
                   repl = ''nix repl --arg pkgs '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' ${./repl.nix}'';
                 };
 
-              functions.shell = "nix shell nixpkgs#$1";
+              functions =
+                { run = ''nix run ".#\"$1\"" -- "''${@:2}"'';
+                  shell = "nix shell nixpkgs#$1";
+                };
             }
 
             { pkg = nodePackages.http-server;
