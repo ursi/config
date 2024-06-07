@@ -102,7 +102,21 @@ with builtins;
       };
 
     services =
-      { picom =
+      { libinput =
+          let
+            no-accell =
+              { accelProfile = "flat";
+                 accelSpeed = l.mkDefault "0";
+              };
+          in
+          { enable = true;
+            mouse = no-accell;
+            touchpad =
+              no-accell
+              // { naturalScrolling = true; };
+          };
+
+        picom =
           { enable = true;
             vSync = true;
           };
@@ -112,23 +126,6 @@ with builtins;
             autoRepeatInterval = 33;
             autoRepeatDelay = 250;
             exportConfiguration = true;
-
-            libinput =
-              let
-                no-accell =
-                  { accelProfile = "flat";
-                    accelSpeed = l.mkDefault "0";
-                  };
-              in
-              { enable = true;
-
-                mouse = no-accell;
-
-                touchpad =
-                  no-accell
-                  // { naturalScrolling = true; };
-              };
-
             windowManager.i3.enable = true;
           };
       };

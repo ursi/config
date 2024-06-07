@@ -2,14 +2,14 @@ with builtins;
 { config, lib, pkgs, ... }:
   let
     l = lib; p = pkgs;
-    yaml = p.formats.yaml {};
+    toml = p.formats.toml {};
   in
   { options.programs.alacritty =
       { enable = l.mkEnableOption "Enable alacritty";
 
         config =
           l.mkOption
-            { inherit (yaml) type;
+            { inherit (toml) type;
               default = {};
             };
       };
@@ -18,7 +18,7 @@ with builtins;
       { environment.systemPackages =
           let
             cfg = config.programs.alacritty;
-            config-file = yaml.generate "alacritty.yaml" cfg.config;
+            config-file = toml.generate "alacritty.toml" cfg.config;
           in
           l.mkIf cfg.enable
             [ (p.writeScriptBin "alacritty"
@@ -54,7 +54,7 @@ with builtins;
 
             font.size = l.mkDefault 12;
 
-            key_bindings =
+            keyboard.bindings =
               [ { key = "PageUp"; action = "ScrollPageUp"; }
                 { key = "PageDown"; action = "ScrollPageDown"; }
                 { key = "Home"; mods = "Control"; action = "ScrollToTop"; }
@@ -66,7 +66,7 @@ with builtins;
                 { key = "C"; mods = "Alt"; action = "Copy"; }
               ];
 
-            mouse_bindings = [ { mouse = "Right"; action = "Copy"; } ];
+            mouse.bindings = [ { mouse = "Right"; action = "Copy"; } ];
           };
       };
   }

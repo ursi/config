@@ -1,6 +1,6 @@
 { inputs =
     { agenix.url = "github:montchr/agenix/flake-outputs-current";
-      bevel = { url = "github:NorfairKing/bevel";
+      bevel = { url = "github:NorfairKing/bevel/development";
                 inputs = { home-manager.follows = "home-manager";
                            nixpkgs.follows = "nixpkgs";
                          };
@@ -9,14 +9,13 @@
       brightness.url = "github:ursi/brightness";
       flake-make.url = "github:ursi/flake-make";
       hours.url = "github:ursi/hours";
-      home-manager =
-        { url = "github:nix-community/home-manager/release-23.11";
-          inputs.nixpkgs.follows = "nixpkgs";
-        };
+      home-manager = { url = "github:nix-community/home-manager/release-24.05";
+                       inputs.nixpkgs.follows = "nixpkgs";
+                     };
       localVim.url = "github:ursi/nix-local-vim";
       nixos-hardware.url = "github:nixos/nixos-hardware";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-      nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
       ssbm.url = "github:djanatyn/ssbm-nix";
       z.url = "github:ursi/z-nix";
     };

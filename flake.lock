@@ -67,18 +67,20 @@
         "pre-commit-hooks": "pre-commit-hooks",
         "safe-coloured-text": "safe-coloured-text",
         "sydtest": "sydtest",
-        "validity": "validity"
+        "validity": "validity",
+        "weeder-nix": "weeder-nix"
       },
       "locked": {
-        "lastModified": 1709242428,
-        "narHash": "sha256-WfC0Vov87LPBsgd0tqggE+n1JDChzaQGIq+L8XXuRSI=",
+        "lastModified": 1717717172,
+        "narHash": "sha256-0Kwo2Yq4BmyfmLyv50gIMusyNL6m6qtTzyv5P0j2PvU=",
         "owner": "NorfairKing",
         "repo": "bevel",
-        "rev": "7897a9a056192308fae7a725043b47243811a4a1",
+        "rev": "f75684371bb3455c447e79bcdebfb8ba0e333720",
         "type": "github"
       },
       "original": {
         "owner": "NorfairKing",
+        "ref": "development",
         "repo": "bevel",
         "type": "github"
       }
@@ -591,16 +593,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1706981411,
-        "narHash": "sha256-cLbLPTL1CDmETVh4p0nQtvoF+FSEjsnJTFpTxhXywhQ=",
+        "lastModified": 1717527182,
+        "narHash": "sha256-vWSkg6AMok1UUQiSYVdGMOXKD2cDFnajITiSi0Zjd1A=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "652fda4ca6dafeb090943422c34ae9145787af37",
+        "rev": "845a5c4c073f74105022533907703441e0464bc3",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "release-23.11",
+        "ref": "release-24.05",
         "repo": "home-manager",
         "type": "github"
       }
@@ -1156,16 +1158,16 @@
     },
     "nixpkgs_22": {
       "locked": {
-        "lastModified": 1707238373,
-        "narHash": "sha256-WKxT0yLzWbFZwYi92lI0yWJpYtRaFSWHGX8QXzejapw=",
+        "lastModified": 1717555607,
+        "narHash": "sha256-WZ1s48OODmRJ3DHC+I/DtM3tDRuRJlNqMvxvAPTD7ec=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fb0c047e30b69696acc42e669d02452ca1b55755",
+        "rev": "0b8e7a1ae5a94da2e1ee3f3030a32020f6254105",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-23.11",
+        "ref": "nixos-24.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -1839,6 +1841,22 @@
       "original": {
         "owner": "NorfairKing",
         "repo": "validity",
+        "type": "github"
+      }
+    },
+    "weeder-nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1712652513,
+        "narHash": "sha256-etbllbKKJNVHogT89VkgevuaSLa0SA24OGpSDKTrGX0=",
+        "owner": "NorfairKing",
+        "repo": "weeder-nix",
+        "rev": "d49eebf716fd512d5e521bfed49c3281ca12dc1c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NorfairKing",
+        "repo": "weeder-nix",
         "type": "github"
       }
     },

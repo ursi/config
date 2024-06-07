@@ -46,12 +46,9 @@ with builtins;
       };
 
     services =
-      { picom.backend = "glx";
-
-        xserver =
-          { dpi = 144; # 1.5x the default
-            libinput.touchpad.accelSpeed = "1"; # guess this is the highest it can be set
-          };
+      { libinput.touchpad.accelSpeed = "1"; # guess this is the highest it can be set
+        picom.backend = "glx";
+        xserver.dpi = 144; # 1.5x the default
       };
 
     # don't change - man configuration.nix
