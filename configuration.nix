@@ -32,6 +32,7 @@ with builtins;
             imagemagick
             ix
             killall
+            moreutils
             ncdu
             neofetch
             nix-tree
