@@ -61,7 +61,7 @@ with builtins;
 
                  # Misc
                  extra-plugins.ftplugin
-                 gruvbox
+                 gruvbox-community
                  # extra-plugins.match
                  markdown-preview-nvim
                  vim-surround
