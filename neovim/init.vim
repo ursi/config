@@ -73,6 +73,8 @@ unmap Y
 
 noremap <Leader>b :ls t<CR>:b<Space>
 noremap <Leader>c :cd %:h<CR>
+" reset wrongly absolute buffer names
+noremap <Leader>r :exe "cd " getcwd()<CR>
 noremap <Leader>s :set spell!<CR>
 execute "noremap <Leader>v :tabe " . expand("<script>:p") . "<CR>"
 noremap <C-H> gT
