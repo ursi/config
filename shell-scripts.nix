@@ -1,6 +1,15 @@
-pkgs:
-  let inherit (pkgs) writeShellScriptBin; in
-  [ (writeShellScriptBin "prefetch-nixpkgs"
+p:
+  let
+    inherit (p.lib) getExe;
+    inherit (p) writeShellScriptBin;
+  in
+  [ (writeShellScriptBin "bevel-delete"
+       ''
+       ${getExe p.sqlite} ~/.local/share/bevel/history.sqlite3 "DELETE FROM command WHERE text='$1'"
+       ${getExe p.sqlite} ~/.local/share/bevel/history.sqlite3 "DELETE FROM command WHERE text like 'bevel-delete%'"
+       '')
+
+    (writeShellScriptBin "prefetch-nixpkgs"
        ''
        url=https://github.com/NixOS/nixpkgs/archive/$1.tar.gz
        nix-prefetch-url $url --type sha256 --unpack 2> /dev/null | {
