@@ -5,7 +5,7 @@ p:
   in
   [ (writeShellScriptBin "bevel-delete"
        ''
-       ${getExe p.sqlite} ~/.local/share/bevel/history.sqlite3 "DELETE FROM command WHERE text='$1'"
+       ${getExe p.sqlite} ~/.local/share/bevel/history.sqlite3 "DELETE FROM command WHERE text LIKE '$1'"
        ${getExe p.sqlite} ~/.local/share/bevel/history.sqlite3 "DELETE FROM command WHERE text LIKE 'bevel-delete%'"
        '')
 
