@@ -1,14 +1,17 @@
 with builtins;
-{ pkgs, ... }:
-  let p = pkgs; in
+{ mmm, pkgs, ... }:
+  let p = pkgs; in mmm
   { imports =
       [ ./hardware-configuration.nix
         ../../remote-builder.nix
       ];
 
-    hardware.opengl =
-      { enable = true;
-        extraPackages = [ p.intel-ocl ];
+    hardware =
+      { bluetooth.enable = true;
+        opengl =
+          { enable = true;
+            extraPackages = [ p.intel-ocl ];
+          };
       };
 
     boot =
@@ -25,12 +28,14 @@ with builtins;
           };
       };
 
+    my-modules.i3.hm.extraConfig = "exec --no-startup-id blueman-applet";
     networking.interfaces.enp1s0.useDHCP = true;
     nix.settings.cores = 7;
     programs.mosh.enable = true;
 
     services =
-      { borgbackup.jobs.backup-1 =
+      { blueman.enable = true;
+        borgbackup.jobs.backup-1 =
           { encryption.mode = "none";
             paths = "/home/mason/misc";
             persistentTimer = true;
