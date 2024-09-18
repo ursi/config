@@ -6,7 +6,10 @@ with builtins;
         ../../remote-builder.nix
       ];
 
-    hardware.opengl.extraPackages = [ p.intel-ocl ];
+    hardware.opengl =
+      { enable = true;
+        extraPackages = [ p.intel-ocl ];
+      };
 
     boot =
       # 5.13 didn't fix the issue with my usb wifi, and the built in wifi crashes my system
