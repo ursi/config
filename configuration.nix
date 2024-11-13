@@ -10,7 +10,10 @@ with builtins;
     documentation.nixos.enable = false;
 
     environment =
-      { etc."tmux.conf".source = ./tmux.conf;
+      { etc =
+          { "tmux.conf".source = ./tmux.conf;
+            "postgresql/psqlrc".text = ''\x auto'';
+          };
 
         shellAliases =
           { cal = "cal -m";
