@@ -21,7 +21,8 @@ with builtins;
 
         systemPackages =
           with p;
-          [ deadnix
+          [ btop
+            deadnix
             entr
             file
             fx
