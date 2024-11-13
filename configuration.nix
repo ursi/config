@@ -150,6 +150,10 @@ with builtins;
               aliases.http-server = "http-server -c-1";
             }
 
+            { pkg = sssnake;
+              aliases.snake = "sssnake -x 32 -y 32 -s 16 -l full -z";
+            }
+
             { pkg = "tar";
 
               functions =
