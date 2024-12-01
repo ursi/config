@@ -137,7 +137,7 @@ with builtins;
                   nix = "nix -L --allow-import-from-derivation --ignore-try";
                   nixpkgs-unstable = ''echo $(nix eval --impure --raw --expr '(fetchGit { url = "https://github.com/NixOS/nixpkgs"; ref = "nixpkgs-unstable"; }).rev')'';
                   rebuild = "nixos-rebuild -L --use-remote-sudo";
-                  repl = ''nix repl --arg pkgs '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' ${./repl.nix}'';
+                  repl = ''nix repl --arg pkgs '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' --file ${./repl.nix}'';
                 };
 
               functions =
