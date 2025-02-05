@@ -16,11 +16,10 @@
       nixos-hardware.url = "github:nixos/nixos-hardware";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-      ssbm.url = "github:djanatyn/ssbm-nix";
       z.url = "github:ursi/z-nix";
     };
 
-  outputs = { nixpkgs, ssbm, z, ... }@inputs: with builtins;
+  outputs = { nixpkgs, z, ... }@inputs: with builtins;
     let
       l = nixpkgs.lib; p = pkgs;
       system = "x86_64-linux";
@@ -92,7 +91,7 @@
         };
 
       nixosConfigurations =
-        let gaming = import ./gaming.nix { ssbm = ssbm.packages.${system}; }; in
+        let gaming = import ./gaming.nix { ssbm = null; }; in
         mapAttrs
           (hostName: modules:
              l.nixosSystem
@@ -113,7 +112,6 @@
                      ./configuration.nix
                      (./systems + "/${hostName}")
                      inputs.agenix.nixosModules.age
-                     ssbm.nixosModule
                      z.nixosModule
                    ]
                    ++ modules;
