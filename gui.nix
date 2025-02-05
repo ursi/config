@@ -14,8 +14,8 @@ with builtins;
         feh
         firefox
         gimp
-        gnome.cheese
-        gnome.nautilus # for seeing images
+        cheese
+        nautilus # for seeing images
         gparted
         hexgui
         nix-du
@@ -34,8 +34,6 @@ with builtins;
         xorg.xev
       ]
       ++ flake-packages-gui;
-
-    hardware.pulseaudio.enable = true;
 
     my-modules =
       { hm.home.pointerCursor =
@@ -129,6 +127,4 @@ with builtins;
             windowManager.i3.enable = true;
           };
       };
-
-    sound.enable = true;
   }

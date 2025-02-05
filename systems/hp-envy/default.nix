@@ -8,7 +8,7 @@ with builtins;
 
     hardware =
       { bluetooth.enable = true;
-        opengl =
+        graphics =
           { enable = true;
             extraPackages = [ p.intel-ocl ];
           };

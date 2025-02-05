@@ -9,13 +9,13 @@
       brightness.url = "github:ursi/brightness";
       flake-make.url = "github:ursi/flake-make";
       hours.url = "github:ursi/hours";
-      home-manager = { url = "github:nix-community/home-manager/release-24.05";
+      home-manager = { url = "github:nix-community/home-manager/release-24.11";
                        inputs.nixpkgs.follows = "nixpkgs";
                      };
       localVim.url = "github:ursi/nix-local-vim";
       nixos-hardware.url = "github:nixos/nixos-hardware";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-      nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
       ssbm.url = "github:djanatyn/ssbm-nix";
       z.url = "github:ursi/z-nix";
     };
