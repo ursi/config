@@ -16,6 +16,11 @@
       nixos-hardware.url = "github:nixos/nixos-hardware";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+      slippi-nix = { url = "github:lytedev/slippi-nix";
+                     inputs = { home-manager.follows = "home-manager";
+                                nixpkgs.follows = "nixpkgs";
+                              };
+                   };
       z.url = "github:ursi/z-nix";
     };
 
@@ -91,7 +96,7 @@
         };
 
       nixosConfigurations =
-        let gaming = import ./gaming.nix { ssbm = null; }; in
+        let gaming = import ./gaming.nix { ssbm = inputs.slippi-nix; }; in
         mapAttrs
           (hostName: modules:
              l.nixosSystem
