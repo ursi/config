@@ -9,7 +9,8 @@ with builtins;
 
     environment.systemPackages =
       with p;
-      [ audacity
+      [ anki
+        audacity
         brave
         feh
         firefox
