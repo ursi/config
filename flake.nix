@@ -57,6 +57,7 @@
                       signal-desktop
                       tmux
                       tor-browser-bundle-bin
+                      uiua-unstable
                       vimPlugins;
                   }
                 )

@@ -46,6 +46,7 @@ with builtins;
             statix
             tmate
             tree
+            uiua-unstable
             unzip
             usbutils
             wally-cli
