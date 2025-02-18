@@ -50,16 +50,11 @@
 
                     inherit
                       (import inputs.nixos-unstable
-                         { inherit system; config.allowUnfree = true; }
-                      )
+                         { inherit system; config.allowUnfree = true; })
                       brave
-                      deadnix
                       hexgui
                       neovim
-                      nix
-                      nix-du
                       signal-desktop
-                      statix
                       tmux
                       tor-browser-bundle-bin
                       vimPlugins;
