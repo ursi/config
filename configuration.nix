@@ -134,7 +134,8 @@ with builtins;
             { pkg = "nix";
 
               aliases =
-                { fui = "nix flake lock --update-input";
+                { check = "nix flake check";
+                  fui = "nix flake lock --update-input";
                   nix = "nix -L --allow-import-from-derivation --ignore-try";
                   nixpkgs-unstable = ''echo $(nix eval --impure --raw --expr '(fetchGit { url = "https://github.com/NixOS/nixpkgs"; ref = "nixpkgs-unstable"; }).rev')'';
                   rebuild = "nixos-rebuild -L --use-remote-sudo";
