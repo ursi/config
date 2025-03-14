@@ -689,25 +689,6 @@
         "type": "github"
       }
     },
-    "kolide": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_23"
-      },
-      "locked": {
-        "lastModified": 1727884248,
-        "narHash": "sha256-2BNKYcgwvf8Y82COp5hKA29GqEgNEkebxeiqNWzMx28=",
-        "owner": "kolide",
-        "repo": "nix-agent",
-        "rev": "3eefae85fad746c7da3cc9e250fc320b15e0c722",
-        "type": "github"
-      },
-      "original": {
-        "owner": "kolide",
-        "ref": "main",
-        "repo": "nix-agent",
-        "type": "github"
-      }
-    },
     "localVim": {
       "inputs": {
         "nixpkgs": "nixpkgs_21"
@@ -820,18 +801,6 @@
         "ref": "1",
         "repo": "nix-make-shell",
         "type": "github"
-      }
-    },
-    "mercury": {
-      "locked": {
-        "lastModified": 1728315763,
-        "narHash": "sha256-1dz8jSgGCMWISa4bVu05L+qmDBSLYR7K54npU+dCqHo=",
-        "path": "/home/mason/work/platonic/mercury/nixos-configuration",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/mason/work/platonic/mercury/nixos-configuration",
-        "type": "path"
       }
     },
     "mozillapkgs": {
@@ -1249,22 +1218,6 @@
     },
     "nixpkgs_23": {
       "locked": {
-        "lastModified": 1706098335,
-        "narHash": "sha256-r3dWjT8P9/Ah5m5ul4WqIWD8muj5F+/gbCdjiNVBKmU=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "a77ab169a83a4175169d78684ddd2e54486ac651",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-23.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_24": {
-      "locked": {
         "lastModified": 1635336330,
         "narHash": "sha256-EPrCZTmuOEY1KLjUCu7rXCBxNemggIFJMDdfEqXQKGo=",
         "owner": "NixOS",
@@ -1379,18 +1332,6 @@
       "original": {
         "id": "nixpkgs",
         "type": "indirect"
-      }
-    },
-    "platonic": {
-      "locked": {
-        "lastModified": 1711499972,
-        "narHash": "sha256-jaz5nMohfuKPHpAh/i5KaDyJDrvc8EZkRTST5wzNCMM=",
-        "path": "/home/mason/work/platonic/nixos-module",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/mason/work/platonic/nixos-module",
-        "type": "path"
       }
     },
     "pre-commit-hooks": {
@@ -1517,7 +1458,6 @@
         "nixos-unstable": "nixos-unstable",
         "nixpkgs": "nixpkgs_22",
         "slippi-nix": "slippi-nix",
-        "work": "work",
         "z": "z"
       }
     },
@@ -1921,26 +1861,9 @@
         "type": "github"
       }
     },
-    "work": {
-      "inputs": {
-        "kolide": "kolide",
-        "mercury": "mercury",
-        "platonic": "platonic"
-      },
-      "locked": {
-        "lastModified": 1728315783,
-        "narHash": "sha256-RNGAeIPrCmdT0p0WHi+L2g1Iys1ucjzWCVB8OlbeWO0=",
-        "path": "/home/mason/config/work",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/mason/config/work",
-        "type": "path"
-      }
-    },
     "z": {
       "inputs": {
-        "nixpkgs": "nixpkgs_24",
+        "nixpkgs": "nixpkgs_23",
         "utils": "utils_13"
       },
       "locked": {
