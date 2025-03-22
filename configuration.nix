@@ -75,6 +75,11 @@ with builtins;
                   { enable = true;
                     bashrcExtra = readFile ./.bashrc;
                     historyControl = [ "erasedups" "ignoredups" ];
+                    shellOptions =
+                      [ "dotglob"
+                        "extglob"
+                        "globstar"
+                      ];
                   };
 
                 bevel =
