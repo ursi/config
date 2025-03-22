@@ -46,7 +46,6 @@ with builtins;
             statix
             tmate
             tree
-            uiua-unstable
             unzip
             usbutils
             wally-cli
@@ -199,6 +198,10 @@ with builtins;
 
             { pkg = trash-cli;
               aliases.trash = "trash-put";
+            }
+
+            { pkg = uiua-unstable;
+              aliases.ur = "uiua repl";
             }
 
             { pkg = yt-dlp;
