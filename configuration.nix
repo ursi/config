@@ -37,6 +37,7 @@ with builtins;
             ix
             killall
             lolcat
+            lsof
             moreutils
             ncdu
             neofetch
