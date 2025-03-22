@@ -61,6 +61,7 @@ with builtins;
 
                  # Misc
                  extra-plugins.ftplugin
+                 extra-plugins.uiua
                  gruvbox-community
                  # extra-plugins.match
                  markdown-preview-nvim
