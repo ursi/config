@@ -36,6 +36,7 @@ with builtins;
             imagemagick
             ix
             killall
+            lolcat
             moreutils
             ncdu
             neofetch
