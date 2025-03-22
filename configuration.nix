@@ -231,11 +231,11 @@ with builtins;
       };
 
     nix =
-      { extraOptions = "experimental-features = nix-command flakes";
-        registry.nixpkgs.flake = nixpkgs;
+      { registry.nixpkgs.flake = nixpkgs;
 
         settings =
           { connect-timeout = 5;
+            experimental-features = "nix-command flakes";
             keep-outputs = true;
             trusted-users = [ "mason" "root" ];
             warn-dirty = false;
