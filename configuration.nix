@@ -234,7 +234,8 @@ with builtins;
       { registry.nixpkgs.flake = nixpkgs;
 
         settings =
-          { connect-timeout = 5;
+          { auto-optimise-store = true;
+            connect-timeout = 5;
             experimental-features = "nix-command flakes";
             keep-outputs = true;
             trusted-users = [ "mason" "root" ];
