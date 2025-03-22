@@ -84,6 +84,9 @@ with builtins;
 
                 bevel =
                   { enable = true;
+                    # this needs to be enabled to run `bevel sync`
+                    # which is required one time to initialize the database
+                    # sync.enable = true;
                     harness.bash =
                       { enable = true;
                         bindings = true;
