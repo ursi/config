@@ -51,6 +51,7 @@
                     inherit
                       (import inputs.nixos-unstable
                          { inherit system; config.allowUnfree = true; })
+                      anki-bin
                       brave
                       hexgui
                       neovim
