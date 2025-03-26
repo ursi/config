@@ -80,10 +80,8 @@
         { type = "app";
 
           program =
-            (p.writeScript "wrapped-tmux"
-               ''
-               ${pkg}/bin/${bin-and-flags} "$@";
-               ''
+            (p.writeShellScript (pkg.name + "-mason")
+               ''${pkg}/bin/${bin-and-flags} "$@"''
             ).outPath;
         };
     in
