@@ -79,6 +79,7 @@ with builtins;
                       [ "dotglob"
                         "extglob"
                         "globstar"
+                        "nullglob"
                       ];
                   };
 
