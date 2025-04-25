@@ -14,6 +14,7 @@ if $E_INK
 	highlight CursorLineNr gui=NONE guifg=black guibg=#bbbbbb
 	highlight LineNr guifg=black guibg=#eeeeee
 	highlight MoreMsg guifg=NONE
+	highlight Normal guibg=white guifg=black
 	highlight Pmenu guifg=white guibg=black
 	highlight Question guifg=NONE
 	highlight Search gui=reverse guifg=NONE guibg=NONE
