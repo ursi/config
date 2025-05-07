@@ -27,6 +27,7 @@ with builtins;
     my-modules.i3.hm.extraConfig = "exec --no-startup-id blueman-applet";
     networking.interfaces.enp1s0.useDHCP = true;
     nix.settings.cores = 7;
+    powerManagement.cpuFreqGovernor = "performance";
     programs.mosh.enable = true;
 
     services =
