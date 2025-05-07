@@ -55,13 +55,6 @@ with builtins;
               { email = "masondeanm@aol.com";
                 name = "Mason Mackaman";
               };
-
-            "filter \"lfs\"" =
-              { clean = "git-lfs clean -- %f";
-                smudge = "git-lfs smudge -- %f";
-                process = "git-lfs filter-process";
-                required = "true";
-              };
           };
 
         ignores =
@@ -72,5 +65,6 @@ with builtins;
 
     programs.git =
       { enable = true;
+        lfs.enable = true;
       };
   }
