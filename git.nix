@@ -5,13 +5,17 @@ with builtins;
     graph-all = "ga";
     show-stash = "$(git reflog show --format=%H stash 2> /dev/null)";
   in mmm
-  { environment.shellAliases =
-      let ga-command = "git ${graph-all} ${show-stash}"; in
-      { gd = "git diff -w";
-        gg = "git grep";
-        ${graph-all} = ga-command;
-        ${graph-all + "f"} = "${ga-command} --first-parent";
-        gs = "git status";
+  { environment =
+      { shellAliases =
+          let ga-command = "git ${graph-all} ${show-stash}"; in
+          { gd = "git diff -w";
+            gg = "git grep";
+            ${graph-all} = ga-command;
+            ${graph-all + "f"} = "${ga-command} --first-parent";
+            gs = "git status";
+          };
+
+        systemPackages = [ pkgs.git-filter-repo ];
       };
 
     my-modules.hm.programs.git =
