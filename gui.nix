@@ -33,6 +33,7 @@ with builtins;
         ungoogled-chromium
         vlc
         xorg.xev
+        xorg.xkill
       ]
       ++ flake-packages-gui;
 
