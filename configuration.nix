@@ -27,7 +27,6 @@ with builtins;
             file
             fx
             gh
-            git
             git-lfs
             glab
             glow

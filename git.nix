@@ -69,4 +69,8 @@ with builtins;
             "result"
           ];
       };
+
+    programs.git =
+      { enable = true;
+      };
   }
