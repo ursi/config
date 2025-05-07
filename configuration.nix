@@ -233,6 +233,7 @@ with builtins;
 
     nix =
       { channel.enable = false;
+        package = inputs.nixos-unstable.legacyPackages.${p.system}.nix;
         registry.nixpkgs.flake = nixpkgs;
 
         settings =
