@@ -34,6 +34,8 @@ with builtins;
                 wdc = "diff --cached --color-words";
               };
 
+            clean.requireForce = false;
+
             core =
               { editor = neovim;
                 pager = "less -FX -x1,5";
