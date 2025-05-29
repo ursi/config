@@ -27,7 +27,6 @@ with builtins;
         qbittorrent
         qemu
         signal-desktop
-        spectacle
         tdesktop
         tor-browser-bundle-bin
         ungoogled-chromium
@@ -38,21 +37,32 @@ with builtins;
       ++ flake-packages-gui;
 
     my-modules =
-      { hm.home.pointerCursor =
-          let
-            cursor =
-              p.runCommand "Breeze" {}
-              ''
-               mkdir -p $out/share/icons/Breeze
-               cp -r ${p.icons.breeze.cursors.breeze}/. $_
-              '';
-          in
-          { name = cursor.name;
-            package = cursor;
+      { hm =
+          { home.pointerCursor =
+              let
+                cursor =
+                  p.runCommand "Breeze" {}
+                  ''
+                   mkdir -p $out/share/icons/Breeze
+                   cp -r ${p.icons.breeze.cursors.breeze}/. $_
+                  '';
+              in
+              { name = cursor.name;
+                package = cursor;
 
-            # the size seems to increment in large jumps
-            # this is the biggest number before the next jump
-            size = 30;
+                # the size seems to increment in large jumps
+                # this is the biggest number before the next jump
+                size = 30;
+              };
+
+            services.flameshot =
+              { enable = true;
+
+                settings.General =
+                  { buttons = ''@Variant(\0\0\0\x7f\0\0\0\vQList<int>\0\0\0\0\x12\0\0\0\0\0\0\0\x1\0\0\0\x2\0\0\0\x3\0\0\0\x4\0\0\0\x5\0\0\0\x6\0\0\0\x12\0\0\0\xf\0\0\0\x13\0\0\0\b\0\0\0\t\0\0\0\x10\0\0\0\n\0\0\0\v\0\0\0\x17\0\0\0\f\0\0\0\x11)'';
+                    showStartupLaunchMessage = false;
+                  };
+              };
           };
 
         i3.hm =
@@ -93,6 +103,7 @@ with builtins;
     programs =
       { alacritty.enable = true;
         dconf.enable = true;
+        i3lock.enable = true;
         nm-applet.enable = true;
 
         xss-lock =

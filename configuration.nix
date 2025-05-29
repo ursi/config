@@ -32,7 +32,6 @@ with builtins;
             graphviz
             hexedit
             imagemagick
-            ix
             killall
             lolcat
             lsof
@@ -231,7 +230,6 @@ with builtins;
 
     nix =
       { channel.enable = false;
-        package = inputs.nixos-unstable.legacyPackages.${p.system}.nix;
         registry.nixpkgs.flake = nixpkgs;
 
         settings =
