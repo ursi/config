@@ -289,7 +289,6 @@ with builtins;
           { mason =
               { description = "Mason Mackaman";
                 extraGroups = [ "networkmanager" "plugdev" "wheel" ];
-                # im-home.links.path."/.config/nix" = null;
                 isNormalUser = true;
                 openssh.authorizedKeys.keys = import ./all-ssh-keys.nix;
                 password = "";
@@ -297,7 +296,6 @@ with builtins;
 
             root =
               { password = "";
-                # im-home.links.path."/.config/nix" = null;
               };
           };
       };
