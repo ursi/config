@@ -12,13 +12,13 @@ with builtins;
       [ anki-bin
         audacity
         brave
+        cheese
         feh
         firefox
         gimp
-        cheese
-        nautilus # for seeing images
         gparted
         hexgui
+        nautilus # for seeing images
         nix-du
         obs-studio
         openshot-qt
@@ -117,7 +117,7 @@ with builtins;
           let
             no-accell =
               { accelProfile = "flat";
-                 accelSpeed = l.mkDefault "0";
+                accelSpeed = l.mkDefault "0";
               };
           in
           { enable = true;
