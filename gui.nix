@@ -108,7 +108,7 @@ with builtins;
 
         xss-lock =
           { enable = true;
-            lockerCommand = "${p.i3lock}/bin/i3lock -fc 440000";
+            lockerCommand = "${l.getExe p.i3lock} -fc 440000";
           };
       };
 
