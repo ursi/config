@@ -1,6 +1,6 @@
 { inputs =
     { agenix.url = "github:montchr/agenix/flake-outputs-current";
-      bevel = { url = "github:NorfairKing/bevel/development";
+      bevel = { url = "github:NorfairKing/bevel";
                 inputs = { home-manager.follows = "home-manager";
                            nixpkgs.follows = "nixpkgs";
                          };
