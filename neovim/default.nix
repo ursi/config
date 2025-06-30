@@ -41,7 +41,7 @@ with builtins;
                  # coc-rust-analyzer
 
                  # Dhall
-                 LanguageClient-neovim
+                 # LanguageClient-neovim
                  dhall-vim
 
                  # Elm
