@@ -28,6 +28,7 @@ with builtins;
         qemu
         signal-desktop
         tdesktop
+        texliveMedium
         tor-browser-bundle-bin
         ungoogled-chromium
         vlc
