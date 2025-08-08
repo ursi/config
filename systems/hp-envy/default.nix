@@ -44,8 +44,7 @@ with builtins;
         picom.backend = "glx";
       };
 
-    # don't change - man configuration.nix
-    system.stateVersion = "20.09";
+    system.stateVersion = "25.05";
 
     users.users.mason =
       { remote-builder =
