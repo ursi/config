@@ -62,8 +62,8 @@ with builtins;
                  # Misc
                  extra-plugins.ftplugin
                  extra-plugins.uiua
-                 gruvbox-community
                  # extra-plugins.match
+                 gruvbox-community
                  markdown-preview-nvim
                  vim-surround
                  vim-commentary
