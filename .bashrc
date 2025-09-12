@@ -1,5 +1,5 @@
 alias apply=". ~/.bashrc"
-alias ls="LC_COLLATE=C ls -A --color=tty --group-directories-first"
+alias ls="LC_COLLATE=C ls -A --color=auto --group-directories-first"
 cl () { cd "$@"; ls; }
 
 gh-clone-cd() {
