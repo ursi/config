@@ -69,7 +69,7 @@ endfunction
 "cnoremap <Tab> <Esc>
 
 
-" neovim maps this to y$ by default
+" restore default vim behavior
 unmap Y
 
 noremap <Leader>b :ls t<CR>:b<Space>
