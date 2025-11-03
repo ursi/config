@@ -66,6 +66,7 @@ with builtins;
                  gruvbox-community
                  markdown-preview-nvim
                  vim-surround
+                 # still used for gcu
                  vim-commentary
                  vim-eunuch
                ]
