@@ -57,7 +57,7 @@
                       neovim
                       signal-desktop
                       tmux
-                      tor-browser-bundle-bin
+                      tor-browser
                       uiua-unstable
                       vimPlugins;
                   }
