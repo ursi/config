@@ -50,6 +50,7 @@ with builtins;
             usbutils
             wally-cli
             w3m
+            zip
           ]
           ++ flake-packages
           ++ (import ./shell-scripts.nix p);
