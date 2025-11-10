@@ -18,16 +18,16 @@ with builtins;
         xorg.xdpyinfo
       ];
 
-    hardware.microsoft-surface.firmware.surface-go-ath10k.replace = true;
-
     my-modules =
-      { i3 =
+      { hm.home.pointerCursor.size = 31;
+
+        i3 =
           { backlight-adjust-percent = 5;
 
             hm =
               { config.fonts =
                   { names = [ "sans" ];
-                    size = 20.25;
+                    size = 14.0;
                   };
 
                 extraConfig = "exec --no-startup-id onboard";
