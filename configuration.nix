@@ -22,6 +22,7 @@ with builtins;
         systemPackages =
           with p;
           [ btop
+            (writeShellScriptBin "bye" "systemctl hibernate")
             deadnix
             entr
             file

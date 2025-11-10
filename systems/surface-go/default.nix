@@ -6,9 +6,11 @@ with builtins;
         ../../remote-builder.nix
       ];
 
-    boot.loader =
-      { systemd-boot.enable = true;
-        efi.canTouchEfiVariables = true;
+    boot =
+      { loader =
+          { systemd-boot.enable = true;
+            efi.canTouchEfiVariables = true;
+          };
       };
 
     environment.systemPackages =
