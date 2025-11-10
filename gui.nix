@@ -53,7 +53,7 @@ with builtins;
 
                 # the size seems to increment in large jumps
                 # this is the biggest number before the next jump
-                size = 30;
+                size = l.mkDefault 30;
               };
 
             services.flameshot =
