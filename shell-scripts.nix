@@ -7,6 +7,20 @@ p.lib.mapAttrsToList p.writeShellScriptBin
       ${getExe p.sqlite} ~/.local/share/bevel/history.sqlite3 "DELETE FROM command WHERE text LIKE 'bevel-delete%'"
       '';
 
+    hc =
+      let
+        character-references =
+          p.fetchurl
+            { url = "https://html.spec.whatwg.org/entities.json";
+              hash = "sha256-10HYd6x3xBlMStUmtbShmu+N/kEauECkZokc27nzYuY=";
+            };
+      in
+      ''
+      ${getExe p.jq} -r '."&'$1';".characters' ${character-references} |
+        tr -d '\n' |
+        ${getExe p.xclip} -selection clipboard
+      '';
+
     prefetch-nixpkgs =
       ''
       url=https://github.com/NixOS/nixpkgs/archive/$1.tar.gz
