@@ -39,6 +39,5 @@ set:
                   ([ "my-modules" ] ++ l.splitString "." nv.name ++ [ "hm" ])
                   (map (path: path ++ l.splitString "." nv.value) hm-paths)))
       (ms: ms ++ [ (moveAttr [ "my-modules" "hm" ] hm-paths) ])
-      (foldl' (acc: f: set: acc (f set)) l.id)
-      (f: f set)
+      (foldl' (acc: f: f acc) set)
     ]
