@@ -67,10 +67,7 @@ with builtins;
           [ "*.swp"
             "result"
           ];
-      };
 
-    programs.git =
-      { enable = true;
         lfs.enable = true;
       };
   }
