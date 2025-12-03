@@ -24,6 +24,7 @@ with builtins;
       };
 
     environment.systemPackages = [ p.quickemu ];
+    fileSystems."/backup/1".options = [ "nofail" ];
     my-modules.i3.hm.extraConfig = "exec --no-startup-id blueman-applet";
     networking.interfaces.enp1s0.useDHCP = true;
     nix.settings.cores = 7;

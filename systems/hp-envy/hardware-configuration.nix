@@ -26,7 +26,6 @@
   fileSystems."/backup/1" =
     { device = "/dev/disk/by-uuid/4b2d0dfc-9775-4e72-8b51-14cc8b3a2222";
       fsType = "ext4";
-      options = [ "nofail" ];
     };
 
   swapDevices =
