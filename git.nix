@@ -20,7 +20,7 @@ with builtins;
 
     my-modules.hm.programs.git =
       { enable = true;
-        extraConfig =
+        settings =
           { alias =
               let make-function = str: "!f() { ${str}; }; f"; in
               { cloners = "clone --recurse-submodules";

@@ -67,7 +67,7 @@ with builtins;
 
     my-modules =
       { hm =
-          { imports = [ inputs.bevel.homeManagerModules.${p.system}.default ];
+          { imports = [ inputs.bevel.homeManagerModules.${p.stdenv.hostPlatform.system}.default ];
             home.stateVersion = "23.11";
             programs =
               { bash =
@@ -148,7 +148,7 @@ with builtins;
                   nd = "nix develop";
                   nix = "nix -L --allow-import-from-derivation --ignore-try";
                   nixpkgs-unstable = ''echo $(nix eval --impure --raw --expr '(fetchGit { url = "https://github.com/NixOS/nixpkgs"; ref = "nixpkgs-unstable"; }).rev')'';
-                  rebuild = "nixos-rebuild -L --use-remote-sudo";
+                  rebuild = "nixos-rebuild -L --sudo";
                   repl = ''nix repl --arg pkgs '(builtins.getFlake "${./.}").inputs.nixpkgs.legacyPackages.x86_64-linux' --file ${./repl.nix}'';
                 };
 

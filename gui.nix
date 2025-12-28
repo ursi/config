@@ -21,15 +21,14 @@ with builtins;
         nautilus # for seeing images
         nix-du
         obs-studio
-        openshot-qt
         pavucontrol
         peek
         qbittorrent
         qemu
         signal-desktop
-        tdesktop
+        telegram-desktop
         texliveMedium
-        tor-browser-bundle-bin
+        tor-browser
         ungoogled-chromium
         vlc
         xorg.xev
