@@ -1,7 +1,7 @@
 { ssbm }:
 { mmm, ... }:
   with builtins; mmm
-  { imports = [ ssbm.nixosModules.default ];
+  { /*imports = [ ssbm.nixosModules.default ];
 
     my-modules.hm =
       { imports = [ ssbm.homeManagerModules.default ];
@@ -10,7 +10,7 @@
             isoPath = "";
             launchMeleeOnPlay = false;
           };
-      };
+      };*/
 
     programs.steam.enable = true;
 

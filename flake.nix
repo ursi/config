@@ -16,11 +16,11 @@
       nixos-hardware.url = "github:nixos/nixos-hardware";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-      slippi-nix = { url = "github:lytedev/slippi-nix";
-                     inputs = { home-manager.follows = "home-manager";
-                                nixpkgs.follows = "nixpkgs";
-                              };
-                   };
+      # slippi-nix = { url = "github:lytedev/slippi-nix";
+      #                inputs = { home-manager.follows = "home-manager";
+      #                           nixpkgs.follows = "nixpkgs";
+      #                         };
+      #              };
       z.url = "github:ursi/z-nix";
     };
 
