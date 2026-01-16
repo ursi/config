@@ -7,6 +7,7 @@ inoremap <buffer> <Tab> <Space><Space>
 
 nnoremap <buffer> <Leader>i ^y$Pa :: <Home>instance <Esc>l~hhelxA<Space>
 nnoremap <buffer> <Leader>t YpA =<Esc>kA ::<Space>
+nnoremap <buffer> <Leader>f :w \| !purs-tidy format-in-place %<CR>
 
 iabbrev <buffer> forall ∀
 nmap <buffer> <Leader>d <Plug>(coc-diagnostic-next)
