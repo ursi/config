@@ -23,6 +23,7 @@ with builtins;
           with p;
           [ btop
             (writeShellScriptBin "bye" "systemctl hibernate")
+            copyparty
             deadnix
             entr
             file
