@@ -34,6 +34,7 @@ with builtins;
             graphviz
             hexedit
             imagemagick
+            iproute2
             killall
             lolcat
             lsof
