@@ -25,6 +25,6 @@ p:
 
     uiua =
       build "uiua.vim"
-        "https://github.com/sputnick1124/uiua.vim"
-        "b6b5651d60b96825f60c9d598a39d1eae1069e45";
+        "https://github.com/Apeiros-46B/uiua.vim"
+        "7088832aa53258a30ec50639193af8510f621f69";
   }
