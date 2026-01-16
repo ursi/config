@@ -9,7 +9,7 @@ with builtins;
 
     environment.systemPackages =
       with p;
-      [ anki-bin
+      [ anki
         audacity
         brave
         cheese
