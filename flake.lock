@@ -826,15 +826,16 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1749056381,
-        "narHash": "sha256-QITcurR19KZlrCngBoCjsFF2BdYsiCG4UqmlrVcLb8Q=",
-        "owner": "nixos",
+        "lastModified": 1765371797,
+        "narHash": "sha256-yaHE0vpK7XN/BR6B8jufAWrp7uYzwkhUbqk8G9EU1ak=",
+        "owner": "8bitbuddhist",
         "repo": "nixos-hardware",
-        "rev": "029bd66faa180e11262dd1bc2732254c33415f52",
+        "rev": "4bf4cf11ca79c4169617eabd7d57696fe6d2954c",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
+        "owner": "8bitbuddhist",
+        "ref": "surface-rust-target-spec-fix",
         "repo": "nixos-hardware",
         "type": "github"
       }

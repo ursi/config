@@ -13,7 +13,7 @@
                        inputs.nixpkgs.follows = "nixpkgs";
                      };
       localVim.url = "github:ursi/nix-local-vim";
-      nixos-hardware.url = "github:nixos/nixos-hardware";
+      nixos-hardware.url = "github:8bitbuddhist/nixos-hardware/surface-rust-target-spec-fix";
       nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
       # slippi-nix = { url = "github:lytedev/slippi-nix";
