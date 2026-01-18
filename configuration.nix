@@ -204,7 +204,7 @@ with builtins;
 
                functions =
                  { e-inkn = ''${e-ink} new -n "$1" -s "$1"'';
-                   tmuxn = ''tmux new -n "$1" -s "$1"'';
+                   tmuxn = ''tmux new-session -n "$1" -s "$1"'';
                  };
              }
             )
