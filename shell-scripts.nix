@@ -18,7 +18,8 @@ p.lib.mapAttrsToList p.writeShellScriptBin
         additional =
           toFile "additional-hc-characters.json"
             (toJSON
-               { "&sup0;".characters = "⁰";
+               { "&okina;".characters = "ʻ";
+                 "&sup0;".characters = "⁰";
                  "&sup4;".characters = "⁴";
                  "&sup5;".characters = "⁵";
                  "&sup6;".characters = "⁶";
