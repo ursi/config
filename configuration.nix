@@ -284,6 +284,18 @@ with builtins;
     services =
       { ntp.enable = true;
 
+        mysql =
+          { enable = true;
+            initialScript = p.writeText "mariadb-init"
+              ''
+              CREATE USER mason@localhost;
+              GRANT ALL ON hex.* TO mason@localhost;
+              '';
+
+            package = p.mariadb;
+            ensureDatabases = ["hex"];
+          };
+
         openssh =
           { enable = true;
             settings.PasswordAuthentication = false;
