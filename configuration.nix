@@ -69,6 +69,7 @@ with builtins;
 
     my-modules =
       { hm =
+          { options, ... }:
           { imports = [ inputs.bevel.homeManagerModules.${p.stdenv.hostPlatform.system}.default ];
             home.stateVersion = "23.11";
             programs =
@@ -86,6 +87,14 @@ with builtins;
 
                 bevel =
                   { enable = true;
+                    bevel-harness =
+                      pkgs.runCommand "my-bevel-harness" {}
+                        ''
+                        cp -r ${options.programs.bevel.bevel-harness.default} $out
+                        chmod -R +w $out
+                        cd $out/share
+                        sed -i 's/\\C-r/\\C-s/' bindings.bash
+                        '';
                     # this needs to be enabled to run `bevel sync`
                     # which is required one time to initialize the database
                     # sync.enable = true;
