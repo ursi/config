@@ -31,8 +31,8 @@ with builtins;
         tor-browser
         ungoogled-chromium
         vlc
-        xorg.xev
-        xorg.xkill
+        xev
+        xkill
       ]
       ++ flake-packages-gui;
 

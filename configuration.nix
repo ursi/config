@@ -40,7 +40,6 @@ with builtins;
             lsof
             moreutils
             ncdu
-            neofetch
             nix-tree
             ntfs3g
             pciutils
@@ -169,7 +168,7 @@ with builtins;
                 };
             }
 
-            { pkg = nodePackages.http-server;
+            { pkg = http-server;
               aliases.http-server = "http-server -c-1";
             }
 
