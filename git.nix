@@ -42,7 +42,7 @@ with builtins;
 
             core =
               { editor = neovim;
-                pager = "less -FX -x1,5";
+                pager = "less -FX --tabs=4";
               };
 
             commit.verbose = 2;
