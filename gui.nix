@@ -25,6 +25,7 @@ with builtins;
         peek
         qbittorrent
         qemu
+        remote-touchpad
         signal-desktop
         telegram-desktop
         texliveMedium
