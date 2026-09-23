@@ -21,10 +21,9 @@
       #                           nixpkgs.follows = "nixpkgs";
       #                         };
       #              };
-      z.url = "github:ursi/z-nix";
     };
 
-  outputs = { nixpkgs, z, ... }@inputs: with builtins;
+  outputs = { nixpkgs, ... }@inputs: with builtins;
     let
       l = nixpkgs.lib; p = pkgs;
       system = "x86_64-linux";
@@ -71,8 +70,6 @@
                         };
                    }
                 )
-
-                z.overlay
               ];
           };
 
@@ -112,7 +109,6 @@
                      ./configuration.nix
                      (./systems + "/${hostName}")
                      inputs.agenix.nixosModules.age
-                     z.nixosModule
                    ]
                    ++ modules;
 
